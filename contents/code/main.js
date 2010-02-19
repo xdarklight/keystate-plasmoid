@@ -6,21 +6,16 @@ capsLockObjectName = "Caps Lock";
 numLockEnabled = false;
 capsLockEnabled = false;
 
-// style settings
-iconPadding = 1;
-imageSpacing = 1;
-
 // the plasmoid's size
 containerRectF = plasmoid.size();
 
-numLockColor = new QColor();
-capsLockColor = new QColor();
-noColor = new QColor(0, 0, 0, 0);
-
 // by default we want to be quite small
 plasmoid.setPreferredSize(32, 32);
-
 plasmoid.aspectRatioMode = Square;
+
+plasmoid.include("configuration.js");
+
+configuration = new Configuration();
 
 /**
   * called when the configuration of the plasmoid changed
@@ -28,7 +23,7 @@ plasmoid.aspectRatioMode = Square;
 plasmoid.configChanged = function()
 {
 	// re-read the config file
-	initializeConfiguration();
+	configuration.initialize();
 	
 	// then update the icon
 	plasmoid.update();
@@ -54,32 +49,32 @@ plasmoid.paintInterface = function(painter)
 	plasmoid.busy = true;
 	
 	var imageWidth = containerRectF.width;
-	var imageHeight = (containerRectF.height / 2) - (2 * iconPadding) - imageSpacing;
+	var imageHeight = (containerRectF.height / 2) - (2 * configuration.iconPadding()) - configuration.imageSpacing();
 	
 	var numColor;
 	var capsColor;
 	
 	if (numLockEnabled)
 	{
-		numColor = numLockColor
+		numColor = configuration.numLockColor();
 	}
 	else
 	{
-		numColor = noColor;
+		numColor = configuration.fullyTransparentColor();
 	}
 
 	if (capsLockEnabled)
 	{
-		capsColor = capsLockColor
+		capsColor = configuration.capsLockColor();
 	}
 	else
 	{
-		capsColor = noColor;
+		capsColor = configuration.fullyTransparentColor();
 	}
 	
 	// paint the icon
 	painter.fillRect(1, 1, imageWidth, imageHeight, numColor);
-	painter.fillRect(1, 1 + imageSpacing + imageHeight, imageWidth, imageHeight, capsColor);
+	painter.fillRect(1, 1 + configuration.imageSpacing() + imageHeight, imageWidth, imageHeight, capsColor);
 	
 	// we're done
 	plasmoid.busy = false;
@@ -131,27 +126,6 @@ plasmoid.dataUpdated = function(name, data)
 }
 
 /**
-  * reads the settings from the configuration file
-  */
-initializeConfiguration = function()
-{
-	// constants
-	var numLockColorConfigName = "NumLockColor";
-	var capsLockColorConfigName = "CapsLockColor";
-	var imageSpacingConfigName = "ImageSpacing";
-	
-	// config values
-	var numLockColorConfigValue = plasmoid.readConfig(numLockColorConfigName);
-	var capsLockColorConfigValue = plasmoid.readConfig(capsLockColorConfigName);
-	var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
-	
-	// save our settings internally
-	numLockColor = new QColor(numLockColorConfigValue);
-	capsLockColor = new QColor(capsLockColorConfigValue);
-	imageSpacing = parseInt(imageSpacingConfigValue);
-}
-
-/**
   * initializes the plasmoid
   */
 initializePlasmoid = function()
@@ -160,7 +134,7 @@ initializePlasmoid = function()
 	plasmoid.busy = true;
 	
 	// read the config file
-	initializeConfiguration();
+	configuration.initialize();
 	
 	// register dataengines
 	dataEngine("keystate").connectSource(numLockObjectName, plasmoid);
