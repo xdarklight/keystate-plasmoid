@@ -10,17 +10,17 @@ Configuration = function()
 	capsLockColor = new QColor();
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
 	
+	// internal constants
+	numLockColorConfigName = "NumLockColor";
+	capsLockColorConfigName = "CapsLockColor";
+	imageSpacingConfigName = "ImageSpacing";
+	
 	/**
 	  * reads the settings from the configuration file
 	  * and fills the properties of the configuration object
 	  */
 	this.initialize = function()
 	{
-		// constants
-		var numLockColorConfigName = "NumLockColor";
-		var capsLockColorConfigName = "CapsLockColor";
-		var imageSpacingConfigName = "ImageSpacing";
-		
 		// config values
 		var numLockColorConfigValue = plasmoid.readConfig(numLockColorConfigName);
 		var capsLockColorConfigValue = plasmoid.readConfig(capsLockColorConfigName);
