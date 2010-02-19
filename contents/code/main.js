@@ -1,7 +1,3 @@
-// constants
-numLockObjectName = "Num Lock";
-capsLockObjectName = "Caps Lock";
-
 // global variables
 numLockEnabled = false;
 capsLockEnabled = false;
@@ -13,9 +9,11 @@ containerRectF = plasmoid.size();
 plasmoid.setPreferredSize(32, 32);
 plasmoid.aspectRatioMode = Square;
 
+plasmoid.include("constants.js");
 plasmoid.include("configuration.js");
 
 configuration = new Configuration();
+constants = new Constants();
 
 /**
   * called when the configuration of the plasmoid changed
@@ -94,7 +92,7 @@ plasmoid.dataUpdated = function(name, data)
 	// check which modifier was changed
 	switch (name)
 	{
-		case capsLockObjectName:
+		case constants.capsLockObjectName():
 			// check the CAPS lock modifier
 			if (capsLockEnabled != currentModifierIsLocked)
 			{
@@ -103,7 +101,7 @@ plasmoid.dataUpdated = function(name, data)
 			}
 			
 			break;
-		case numLockObjectName:
+		case constants.numLockObjectName():
 			// check the NUM lock modifier
 			if (numLockEnabled != currentModifierIsLocked)
 			{
@@ -137,8 +135,8 @@ initializePlasmoid = function()
 	configuration.initialize();
 	
 	// register dataengines
-	dataEngine("keystate").connectSource(numLockObjectName, plasmoid);
-	dataEngine("keystate").connectSource(capsLockObjectName, plasmoid);
+	dataEngine(constants.engineName()).connectSource(constants.numLockObjectName(), plasmoid);
+	dataEngine(constants.engineName()).connectSource(constants.capsLockObjectName(), plasmoid);
 }
 
 // initialize the plasmoid
