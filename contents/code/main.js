@@ -2,18 +2,16 @@
 numLockEnabled = false;
 capsLockEnabled = false;
 
-// the plasmoid's size
-containerRectF = plasmoid.size();
-
 // by default we want to be quite small
 plasmoid.setPreferredSize(32, 32);
-plasmoid.aspectRatioMode = Square;
 
+plasmoid.include("layout.js");
 plasmoid.include("constants.js");
 plasmoid.include("configuration.js");
 
 configuration = new Configuration();
 constants = new Constants();
+layout = new Layout(configuration);
 
 /**
   * called when the configuration of the plasmoid changed
@@ -46,33 +44,8 @@ plasmoid.paintInterface = function(painter)
 	// say we're busy
 	plasmoid.busy = true;
 	
-	var imageWidth = containerRectF.width;
-	var imageHeight = (containerRectF.height / 2) - (2 * configuration.iconPadding()) - configuration.imageSpacing();
-	
-	var numColor;
-	var capsColor;
-	
-	if (numLockEnabled)
-	{
-		numColor = configuration.numLockColor();
-	}
-	else
-	{
-		numColor = configuration.fullyTransparentColor();
-	}
-
-	if (capsLockEnabled)
-	{
-		capsColor = configuration.capsLockColor();
-	}
-	else
-	{
-		capsColor = configuration.fullyTransparentColor();
-	}
-	
 	// paint the icon
-	painter.fillRect(1, 1, imageWidth, imageHeight, numColor);
-	painter.fillRect(1, 1 + configuration.imageSpacing() + imageHeight, imageWidth, imageHeight, capsColor);
+	layout.paintIcon(painter, numLockEnabled, capsLockEnabled);
 	
 	// we're done
 	plasmoid.busy = false;
@@ -87,7 +60,7 @@ plasmoid.paintInterface = function(painter)
 plasmoid.dataUpdated = function(name, data)
 {
 	var dataChanged = false;
-	var currentModifierIsLocked = data.Locked;
+	var currentModifierIsLocked = Boolean(data.Locked);
 	
 	// check which modifier was changed
 	switch (name)

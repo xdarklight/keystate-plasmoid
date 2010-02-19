@@ -7,6 +7,8 @@ Constants = function()
 	engineName = "keystate";
 	numLockObjectName = "Num Lock";
 	capsLockObjectName = "Caps Lock";
+	verticalLayoutName = "vertical";
+	horizontalLayoutName = "horizontal";
 	
 	/**
 	  * returns the name of the data engine
@@ -30,5 +32,21 @@ Constants = function()
 	this.capsLockObjectName = function()
 	{
 		return capsLockObjectName;
+	}
+	
+	/**
+	  * returns the name of the vertical layout
+	  */
+	this.verticalLayoutName = function()
+	{
+		return verticalLayoutName;
+	}
+	
+	/**
+	  * returns the name of the horizontal layout
+	  */
+	this.horizontalLayoutName = function()
+	{
+		return horizontalLayoutName;
 	}
 }

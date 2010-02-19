@@ -29,7 +29,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -109,16 +109,16 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>10</y>
        <width>241</width>
-       <height>31</height>
+       <height>23</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QRadioButton" name="kcfg_VerticalLayout">
+       <widget class="QRadioButton" name="kcfg_HorizontalLayout">
         <property name="text">
-         <string>Vertical</string>
+         <string>Horizontal</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -126,9 +126,12 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="kcfg_HorizontalLayout">
+       <widget class="QRadioButton" name="kcfg_VerticalLayout">
         <property name="text">
-         <string>Horizontal</string>
+         <string>Vertical</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>

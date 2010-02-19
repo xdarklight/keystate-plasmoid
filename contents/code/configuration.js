@@ -8,12 +8,56 @@ Configuration = function()
 	imageSpacing = 1;
 	numLockColor = new QColor();
 	capsLockColor = new QColor();
+	layoutName = "";
+	
+	// transient values (values that are never saved)
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
+	constants = null;
 	
 	// internal constants
 	numLockColorConfigName = "NumLockColor";
 	capsLockColorConfigName = "CapsLockColor";
 	imageSpacingConfigName = "ImageSpacing";
+	verticalLayoutConfigName= "VerticalLayout";
+	horizontalLayoutConfigName= "HorizontalLayout";
+	
+	/**
+	  * gets the layout name depending on the configuration options
+	  */
+	this.getLayoutName = function()
+	{
+		// read the config file values
+		var verticalLayoutConfigValue = plasmoid.readConfig(verticalLayoutConfigName);
+		var horizontalLayoutConfigValue = plasmoid.readConfig(horizontalLayoutConfigName);
+		
+		// parse the values from the config file
+		var verticalLayout = Boolean(verticalLayoutConfigValue);
+		var horizontalLayout = Boolean(horizontalLayoutConfigValue);
+		
+		// check which layout is enabled
+		if (verticalLayout == true)
+		{
+			// the vertical layout is enabled
+			return constants.verticalLayoutName();
+		}
+		else
+		{
+			// default to horizontal layout
+			return constants.horizontalLayoutName();
+		}
+	}
+	
+	/**
+	  * constructor - does initial setup for the object
+	  */
+	this.Configuration = function()
+	{
+		// include the constants file
+		plasmoid.include("constants.js");
+		
+		// create a constants object
+		constants = new Constants();
+	}
 	
 	/**
 	  * reads the settings from the configuration file
@@ -30,6 +74,9 @@ Configuration = function()
 		numLockColor = new QColor(numLockColorConfigValue);
 		capsLockColor = new QColor(capsLockColorConfigValue);
 		imageSpacing = parseInt(imageSpacingConfigValue);
+		
+		// get the correct layout
+		layoutName = this.getLayoutName();
 	}
 	
 	/**
@@ -70,5 +117,13 @@ Configuration = function()
 	this.fullyTransparentColor = function()
 	{
 		return fullyTransparentColor;
+	}
+	
+	/**
+	  * returns the name of the selected layout
+	  */
+	this.layoutName = function()
+	{
+		return layoutName;
 	}
 }
