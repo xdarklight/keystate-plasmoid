@@ -11,7 +11,7 @@ plasmoid.include("configuration.js");
 
 configuration = new Configuration();
 constants = new Constants();
-layout = new Layout(configuration);
+contentLayout = new Layout(configuration);
 
 /**
   * called when the configuration of the plasmoid changed
@@ -45,7 +45,7 @@ plasmoid.paintInterface = function(painter)
 	plasmoid.busy = true;
 	
 	// paint the icon
-	layout.paintIcon(painter, numLockEnabled, capsLockEnabled);
+	contentLayout.paintIcon(painter, numLockEnabled, capsLockEnabled);
 	
 	// we're done
 	plasmoid.busy = false;
