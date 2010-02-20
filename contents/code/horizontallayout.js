@@ -20,9 +20,6 @@ HorizontalLayout = function(config)
 		// the height is half of the plasmoid's size...
 		var imageHeight = plasmoid.size().height / 2;
 		
-		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * configuration.iconPadding();
-		
 		// minus spacing (between the two rectangles)
 		imageHeight -= configuration.imageSpacing();
 		

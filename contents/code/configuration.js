@@ -4,7 +4,6 @@
 Configuration = function()
 {
 	// configuration properties
-	iconPadding = 1;
 	imageSpacing = 1;
 	numLockColor = new QColor();
 	capsLockColor = new QColor();
@@ -77,14 +76,6 @@ Configuration = function()
 		
 		// get the correct layout
 		layoutName = this.getLayoutName();
-	}
-	
-	/**
-	  * returns the (top and bottom) padding of the icon
-	  */
-	this.iconPadding = function()
-	{
-		return iconPadding;
 	}
 	
 	/**
