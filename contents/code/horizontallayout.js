@@ -38,8 +38,8 @@ HorizontalLayout = function(config)
 	  */
 	this.paint = function(painter, numColor, capsColor)
 	{
-		var xPos = 1;
-		var yPos = 1;
+		var xPos = 0;
+		var yPos = 0;
 		
 		// paint the icon
 		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
