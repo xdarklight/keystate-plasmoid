@@ -1,3 +1,6 @@
+/**
+  * an object which provides a horizontal layout
+  */
 HorizontalLayout = function(config)
 {
 	// configuration stuff
