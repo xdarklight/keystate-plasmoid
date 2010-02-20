@@ -18,18 +18,18 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>251</width>
-     <height>121</height>
+     <width>221</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>251</width>
+     <width>200</width>
      <height>121</height>
     </size>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -40,27 +40,23 @@
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>231</width>
+       <width>211</width>
        <height>66</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::ExpandingFieldsGrow</enum>
+      </property>
+      <property name="labelAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="NumLockColor_Label">
         <property name="text">
          <string>NUM Lock:</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="CapsLockColor_Label">
-        <property name="text">
-         <string>CAPS Lock:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="KSeparator" name="kseparator"/>
       </item>
       <item row="0" column="1">
        <widget class="KColorButton" name="kcfg_NumLockColor">
@@ -77,6 +73,16 @@
           <green>192</green>
           <blue>0</blue>
          </color>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="KSeparator" name="kseparator"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="CapsLockColor_Label">
+        <property name="text">
+         <string>CAPS Lock:</string>
         </property>
        </widget>
       </item>
@@ -110,7 +116,7 @@
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>241</width>
+       <width>211</width>
        <height>23</height>
       </rect>
      </property>
@@ -142,14 +148,11 @@
       <rect>
        <x>0</x>
        <y>50</y>
-       <width>241</width>
-       <height>31</height>
+       <width>208</width>
+       <height>50</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_2">
-      <property name="fieldGrowthPolicy">
-       <enum>QFormLayout::ExpandingFieldsGrow</enum>
-      </property>
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="kcfg_ImageSpacing">
         <property name="text">
@@ -157,8 +160,15 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="0">
        <widget class="KIntSpinBox" name="kintspinbox_2"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Pixel</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -167,7 +177,7 @@
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>241</width>
+       <width>211</width>
        <height>16</height>
       </rect>
      </property>
