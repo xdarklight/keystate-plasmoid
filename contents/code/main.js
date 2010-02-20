@@ -3,7 +3,7 @@ numLockEnabled = false;
 capsLockEnabled = false;
 
 // by default we want to be quite small
-plasmoid.setPreferredSize(32, 32);
+plasmoid.setPreferredSize(24, 24);
 
 plasmoid.include("layout.js");
 plasmoid.include("constants.js");
