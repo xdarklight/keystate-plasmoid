@@ -46,6 +46,14 @@ Layout = function(config)
 				layout = new HorizontalLayout(configuration);
 				
 				break;
+			case constants.verticalLayoutName():
+				// include the layout code
+				plasmoid.include("verticallayout.js");
+				
+				// get the layout
+				layout = new VerticalLayout(configuration);
+				
+				break;
 		}
 		
 		// paint the layout
