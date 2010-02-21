@@ -11,10 +11,10 @@ VerticalLayout = function(config)
 	  */
 	this.imageWidth = function()
 	{
-		// use the full width
+		// use half of the width
 		var imageWidth = plasmoid.size().width / 2;
 		
-		// minus the spaacing (between the two rectangles)
+		// minus the spacing (between the two rectangles)
 		imageWidth -= configuration.imageSpacing();
 		
 		return imageWidth;
@@ -25,7 +25,12 @@ VerticalLayout = function(config)
 	  */
 	this.imageHeight = function()
 	{
-		return plasmoid.size().height;
+		var imageHeight = plasmoid.size().height;
+		
+		// minus twice the padding (top and bottom)
+		imageHeight -= 2 * configuration.imagePadding();
+		
+		return imageHeight;
 	}
 	
 	/**
@@ -43,19 +48,13 @@ VerticalLayout = function(config)
 		// start with a padded value
 		yPos += configuration.imagePadding();
 		
-		// calculate the image height
-		var imageHeight = this.imageHeight();
-		
-		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * configuration.imagePadding();
-		
 		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, numColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
 		
 		// calculate the new positions
 		// yPos did not change
 		xPos += configuration.imageSpacing() + this.imageWidth()
 		
-		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, capsColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), capsColor);
 	}
 }
