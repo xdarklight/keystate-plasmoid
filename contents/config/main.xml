@@ -24,5 +24,8 @@
 		<entry name="ImageSpacing" type="Int">
 			<default>1</default>
 		</entry>
+		<entry name="ImagePadding" type="Int">
+			<default>2</default>
+		</entry>
 	</group>
 </kcfg>

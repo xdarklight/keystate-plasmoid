@@ -41,13 +41,21 @@ HorizontalLayout = function(config)
 		var xPos = 0;
 		var yPos = 0;
 		
+		// start at 0 + padding
+		yPos = configuration.imagePadding();
+		
+		// calculate the image height
+		var imageHeight = this.imageHeight();
+		
+		// minus twice the padding (top and bottom)
+		imageHeight -= 2 * configuration.imagePadding();
+		
 		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, numColor);
 		
-		// calculate the new positions
-		// xPos did not change
-		yPos += configuration.imageSpacing() + this.imageHeight()
+		// add the spacing
+		yPos += configuration.imageSpacing() + imageHeight + configuration.imagePadding();
 		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), capsColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, capsColor);
 	}
 }

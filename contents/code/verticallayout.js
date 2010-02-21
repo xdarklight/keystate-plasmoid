@@ -40,13 +40,22 @@ VerticalLayout = function(config)
 		var xPos = 0;
 		var yPos = 0;
 		
+		// start with a padded value
+		yPos += configuration.imagePadding();
+		
+		// calculate the image height
+		var imageHeight = this.imageHeight();
+		
+		// minus twice the padding (top and bottom)
+		imageHeight -= 2 * configuration.imagePadding();
+		
 		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, numColor);
 		
 		// calculate the new positions
 		// yPos did not change
 		xPos += configuration.imageSpacing() + this.imageWidth()
 		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), capsColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), imageHeight, capsColor);
 	}
 }

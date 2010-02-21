@@ -5,6 +5,7 @@ Configuration = function()
 {
 	// configuration properties
 	imageSpacing = 1;
+	topAndBottomPadding = 2;
 	numLockColor = new QColor();
 	capsLockColor = new QColor();
 	layoutName = "";
@@ -17,6 +18,7 @@ Configuration = function()
 	numLockColorConfigName = "NumLockColor";
 	capsLockColorConfigName = "CapsLockColor";
 	imageSpacingConfigName = "ImageSpacing";
+	imagePaddingConfigName = "ImagePadding";
 	verticalLayoutConfigName= "VerticalLayout";
 	horizontalLayoutConfigName= "HorizontalLayout";
 	textLayoutConfigName = "TextLayout";
@@ -76,11 +78,13 @@ Configuration = function()
 		var numLockColorConfigValue = plasmoid.readConfig(numLockColorConfigName);
 		var capsLockColorConfigValue = plasmoid.readConfig(capsLockColorConfigName);
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
+		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		
 		// save our settings internally
 		numLockColor = new QColor(numLockColorConfigValue);
 		capsLockColor = new QColor(capsLockColorConfigValue);
 		imageSpacing = parseInt(imageSpacingConfigValue);
+		imagePadding = parseInt(imagePaddingConfigValue);
 		
 		// get the correct layout
 		layoutName = this.getLayoutName();
@@ -92,6 +96,11 @@ Configuration = function()
 	this.imageSpacing = function()
 	{
 		return imageSpacing;
+	}
+	
+	this.imagePadding = function()
+	{
+		return imagePadding;
 	}
 	
 	/**

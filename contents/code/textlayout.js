@@ -54,22 +54,9 @@ TextLayout = function(config)
 		
 		painter.font = new QFont("Arial", fontSize);
 		
-		// start in the middle
-		var yPos = plasmoid.size().height / 2;
-		
-		// minus twice the font size
-		yPos -= 2 * fontSize;
-		
-		// minus spacing
-		yPos -= configuration.imageSpacing();
-		
-		// make sure we can display at least the first text
-		if (yPos < fontSize)
-		{
-			// make the yPos be the font size in pixels (this will make the text start
-			// at the first position of the y-axis)
-			yPos = fontSize;
-		}
+		// make the yPos be the font size in pixels (this will make the text start
+		// at the first position of the y-axis)
+		var yPos = fontSize + configuration.imagePadding();
 		
 		// draw the num text
 		painter.drawText(0, yPos, numText);
