@@ -6,6 +6,10 @@ HorizontalLayout = function(config)
 	// configuration stuff
 	configuration = config;
 	
+	// public properties (should be set from the outside)
+	this.numColor = new QColor();
+	this.capsColor = new QColor();
+	
 	/**
 	  * returns the calculated width of the image
 	  */
@@ -36,10 +40,8 @@ HorizontalLayout = function(config)
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
-	  * @param numColor the color for the num lock part
-	  * @param capsColor the color for the caps lock part
 	  */
-	this.paint = function(painter, numColor, capsColor)
+	this.paint = function(painter)
 	{
 		var xPos = 0;
 		var yPos = 0;
@@ -48,11 +50,11 @@ HorizontalLayout = function(config)
 		yPos = configuration.imagePadding();
 		
 		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
 		
 		// add the spacing
 		yPos += configuration.imageSpacing() + this.imageHeight();
 		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), capsColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
 	}
 }

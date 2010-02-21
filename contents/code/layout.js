@@ -61,14 +61,18 @@ Layout = function(config)
 				// get the layout
 				layout = new TextLayout(configuration);
 				
-				// layout specific stuff: the layout needs the status of the modifiers
-				layout.numLocked = numLocked;
-				layout.capsLocked = capsLocked;
-				
 				break;
 		}
 		
+		// tell the layout about the status of the modifiers
+		layout.numLocked = numLocked;
+		layout.capsLocked = capsLocked;
+		
+		// also tell the layout about the colors
+		layout.numColor = numColor;
+		layout.capsColor = capsColor;
+		
 		// paint the layout
-		layout.paint(painter, numColor, capsColor);
+		layout.paint(painter);
 	}
 }

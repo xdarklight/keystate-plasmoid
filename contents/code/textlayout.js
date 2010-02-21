@@ -7,9 +7,11 @@ TextLayout = function(config)
 	configuration = config;
 	constants = new Constants();
 	
-	// public properties (should be set by the layout code)
+	// public properties (should be set from the outside)
 	this.numLocked = false;
 	this.capsLocked = false;
+	this.numColor = new QColor();
+	this.capsColor = new QColor();
 	
 	/**
 	  * gets a "locked: yes" or "locked: no" string (localized)
@@ -33,10 +35,8 @@ TextLayout = function(config)
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
-	  * @param numColor the color for the num lock part
-	  * @param capsColor the color for the caps lock part
 	  */
-	this.paint = function(painter, numColor, capsColor)
+	this.paint = function(painter)
 	{
 		var numText = i18n(constants.textLayoutNumText());
 		var capsText = i18n(constants.textLayoutCapsText());
@@ -44,7 +44,7 @@ TextLayout = function(config)
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
 		// create a new pen
 		var pen = new QPen();
-		pen.color = numColor;
+		pen.color = this.numColor;
 		
 		// tell the painter to use our pen
 		painter.pen = pen;
@@ -62,7 +62,7 @@ TextLayout = function(config)
 		painter.drawText(0, yPos, numText);
 		
 		// now draw the caps lock stuff
-		pen.color = capsColor;
+		pen.color = this.capsColor;
 		
 		// tell the painter to use our pen
 		painter.pen = pen;

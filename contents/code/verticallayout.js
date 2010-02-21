@@ -6,6 +6,10 @@ VerticalLayout = function(config)
 	// configuration stuff
 	configuration = config;
 	
+	// public properties (should be set from the outside)
+	this.numColor = new QColor();
+	this.capsColor = new QColor();
+	
 	/**
 	  * returns the calculated width of the image
 	  */
@@ -37,10 +41,8 @@ VerticalLayout = function(config)
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
-	  * @param numColor the color for the num lock part
-	  * @param capsColor the color for the caps lock part
 	  */
-	this.paint = function(painter, numColor, capsColor)
+	this.paint = function(painter)
 	{
 		var xPos = 0;
 		var yPos = 0;
@@ -49,12 +51,12 @@ VerticalLayout = function(config)
 		yPos += configuration.imagePadding();
 		
 		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), numColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
 		
 		// calculate the new positions
 		// yPos did not change
 		xPos += configuration.imageSpacing() + this.imageWidth()
 		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), capsColor);
+		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
 	}
 }
