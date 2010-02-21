@@ -10,10 +10,8 @@ Constants = function()
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
-	textLayoutNumText = "Num Lock: %1";
-	textLayoutCapsText = "Caps Lock: %1";
-	textLayoutPlaceholderNotLocked = "Off";
-	textLayoutPlaceholderLocked = "On";
+	textLayoutNumText = "Num";
+	textLayoutCapsText = "Caps";
 	
 	/**
 	  * returns the name of the data engine
@@ -77,21 +75,5 @@ Constants = function()
 	this.textLayoutCapsText = function()
 	{
 		return textLayoutCapsText;
-	}
-	
-	/**
-	  * returns the text for the "is locked" placeholder in the text layout when the modifier is enabled
-	  */
-	this.textLayoutPlaceholderLocked = function()
-	{
-		return textLayoutPlaceholderLocked;
-	}
-	
-	/**
-	  * returns the text for the "not locked" placeholder in the text layout when the modifier is disabled
-	  */
-	this.textLayoutPlaceholderNotLocked = function()
-	{
-		return textLayoutPlaceholderNotLocked;
 	}
 }

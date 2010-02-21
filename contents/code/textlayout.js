@@ -38,8 +38,8 @@ TextLayout = function(config)
 	  */
 	this.paint = function(painter, numColor, capsColor)
 	{
-		var numText = i18n(constants.textLayoutNumText(), this.getLockedText(this.numLocked));
-		var capsText = i18n(constants.textLayoutCapsText(), this.getLockedText(this.numLocked));
+		var numText = i18n(constants.textLayoutNumText());
+		var capsText = i18n(constants.textLayoutCapsText());
 		
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
 		// create a new pen
@@ -50,7 +50,7 @@ TextLayout = function(config)
 		painter.pen = pen;
 		
 		// use a special font
-		var fontSize = 8;
+		var fontSize = 7;
 		
 		painter.font = new QFont("Arial", fontSize);
 		
