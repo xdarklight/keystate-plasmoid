@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>253</width>
+    <width>239</width>
     <height>155</height>
    </rect>
   </property>
@@ -24,13 +24,13 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>211</width>
+     <width>221</width>
      <height>141</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>211</width>
+     <width>221</width>
      <height>121</height>
     </size>
    </property>
@@ -46,8 +46,8 @@
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>201</width>
-       <height>73</height>
+       <width>211</width>
+       <height>91</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -90,7 +90,7 @@
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>201</width>
+       <width>211</width>
        <height>66</height>
       </rect>
      </property>
@@ -166,7 +166,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>201</width>
+       <width>211</width>
        <height>102</height>
       </rect>
      </property>
@@ -183,6 +183,12 @@
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>97</width>
+          <height>27</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pixel</string>
         </property>
