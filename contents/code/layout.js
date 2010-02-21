@@ -54,6 +54,18 @@ Layout = function(config)
 				layout = new VerticalLayout(configuration);
 				
 				break;
+			case constants.textLayoutName():
+				// include the layout code
+				plasmoid.include("textlayout.js");
+				
+				// get the layout
+				layout = new TextLayout(configuration);
+				
+				// layout specific stuff: the layout needs the status of the modifiers
+				layout.numLocked = numLocked;
+				layout.capsLocked = capsLocked;
+				
+				break;
 		}
 		
 		// paint the layout

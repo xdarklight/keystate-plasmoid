@@ -19,6 +19,7 @@ Configuration = function()
 	imageSpacingConfigName = "ImageSpacing";
 	verticalLayoutConfigName= "VerticalLayout";
 	horizontalLayoutConfigName= "HorizontalLayout";
+	textLayoutConfigName = "TextLayout";
 	
 	/**
 	  * gets the layout name depending on the configuration options
@@ -28,16 +29,23 @@ Configuration = function()
 		// read the config file values
 		var verticalLayoutConfigValue = plasmoid.readConfig(verticalLayoutConfigName);
 		var horizontalLayoutConfigValue = plasmoid.readConfig(horizontalLayoutConfigName);
+		var textLayoutConfigValue = plasmoid.readConfig(textLayoutConfigName);
 		
 		// parse the values from the config file
 		var verticalLayout = Boolean(verticalLayoutConfigValue);
 		var horizontalLayout = Boolean(horizontalLayoutConfigValue);
+		var textLayout = Boolean(textLayoutConfigValue);
 		
 		// check which layout is enabled
 		if (verticalLayout == true)
 		{
 			// the vertical layout is enabled
 			return constants.verticalLayoutName();
+		}
+		else if (textLayout == true)
+		{
+			// the text layout is enabled
+			return constants.textLayoutName();
 		}
 		else
 		{

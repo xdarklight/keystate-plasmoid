@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>235</width>
-    <height>156</height>
+    <width>253</width>
+    <height>138</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>235</width>
-    <height>156</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -25,13 +25,13 @@
      <x>10</x>
      <y>10</y>
      <width>231</width>
-     <height>141</height>
+     <height>121</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>231</width>
-     <height>141</height>
+     <height>121</height>
     </size>
    </property>
    <property name="currentIndex">
@@ -115,18 +115,18 @@
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
-     <string>Layout</string>
+     <string>Icon Layout</string>
     </attribute>
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>211</width>
-       <height>23</height>
+       <width>105</width>
+       <height>73</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QRadioButton" name="kcfg_HorizontalLayout">
         <property name="text">
@@ -147,30 +147,42 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QRadioButton" name="kcfg_TextLayout">
+        <property name="text">
+         <string>Text</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>General</string>
+    </attribute>
     <widget class="QWidget" name="formLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>50</y>
+       <y>0</y>
        <width>208</width>
        <height>50</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
+     <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QLabel" name="kcfg_ImageSpacing">
+       <widget class="QLabel" name="ImageSpacing_Label">
         <property name="text">
          <string>Space between rectangles:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="KIntSpinBox" name="kintspinbox_2"/>
+       <widget class="KIntSpinBox" name="kcfg_ImageSpacing"/>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Pixel</string>
         </property>
