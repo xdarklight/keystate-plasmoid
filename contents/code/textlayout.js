@@ -50,7 +50,7 @@ TextLayout = function(config)
 		painter.pen = pen;
 		
 		// use a special font
-		var fontSize = 10;
+		var fontSize = 8;
 		
 		painter.font = new QFont("Arial", fontSize);
 		
@@ -83,8 +83,8 @@ TextLayout = function(config)
 		// for the second text: add the spacing
 		yPos += configuration.imageSpacing();
 		
-		// also add twice the font size
-		yPos += 2 * fontSize;
+		// add the font size (so there's enough space for the text to display
+		yPos += fontSize;
 		
 		// draw the caps text
 		painter.drawText(0, yPos, capsText);
