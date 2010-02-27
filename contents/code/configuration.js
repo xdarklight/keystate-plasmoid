@@ -11,7 +11,6 @@ Configuration = function()
 	layoutName = "";
 	
 	// transient values (values that are never saved)
-	fullyTransparentColor = new QColor(0, 0, 0, 0);
 	constants = null;
 	
 	// internal constants
@@ -117,14 +116,6 @@ Configuration = function()
 	this.capsLockColor = function()
 	{
 		return capsLockColor;
-	}
-	
-	/**
-	  * returns a fully transparent color
-	  */
-	this.fullyTransparentColor = function()
-	{
-		return fullyTransparentColor;
 	}
 	
 	/**

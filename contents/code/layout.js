@@ -17,7 +17,7 @@ Layout = function(config)
 			return keyColor;
 		}
 		
-		return configuration.fullyTransparentColor();
+		return constants.fullyTransparentColor();
 	}
 	
 	/**

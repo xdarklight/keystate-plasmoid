@@ -13,6 +13,8 @@ Constants = function()
 	textLayoutNumText = "Num";
 	textLayoutCapsText = "Caps";
 	
+	fullyTransparentColor = new QColor(0, 0, 0, 0);
+	
 	/**
 	  * returns the name of the data engine
 	  */
@@ -75,5 +77,13 @@ Constants = function()
 	this.textLayoutCapsText = function()
 	{
 		return textLayoutCapsText;
+	}
+	
+	/**
+	  * returns a fully transparent color
+	  */
+	this.fullyTransparentColor = function()
+	{
+		return fullyTransparentColor;
 	}
 }
