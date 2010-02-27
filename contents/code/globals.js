@@ -25,7 +25,7 @@ Globals = function()
 	this.constants = null;
 	
 	/**
-	  * points to the plasmoid's configuration
+	  * points to the plasmoid's layout handling object
 	  */
 	this.layout = null;
 }
