@@ -19,7 +19,7 @@ PlasmoidHandler = function()
 		// fill our globals object with information
 		globals.configuration = new Configuration();
 		globals.constants = new Constants();
-		globals.contentLayout = new Layout();
+		globals.layout = new Layout();
 		
 		// read the config file
 		globals.configuration.initialize();
@@ -77,7 +77,7 @@ PlasmoidHandler = function()
 		plasmoid.busy = true;
 		
 		// paint the icon
-		globals.contentLayout.paintIcon(painter);
+		globals.layout.paintIcon(painter);
 		
 		// we're done
 		plasmoid.busy = false;

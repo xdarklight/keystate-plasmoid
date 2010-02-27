@@ -27,5 +27,5 @@ Globals = function()
 	/**
 	  * points to the plasmoid's configuration
 	  */
-	this.contentLayout = null;
+	this.layout = null;
 }
