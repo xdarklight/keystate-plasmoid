@@ -1,3 +1,7 @@
+/**
+  * the generic layout object which is responsible
+  * for drawing the correct layout (selected by the user)
+  */
 Layout = function()
 {
 	/**

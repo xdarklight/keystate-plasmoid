@@ -1,3 +1,6 @@
+/**
+  * an object which handles the general logic
+  */
 PlasmoidHandler = function()
 {
 	/**
