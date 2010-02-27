@@ -10,9 +10,6 @@ Configuration = function()
 	capsLockColor = new QColor();
 	layoutName = "";
 	
-	// transient values (values that are never saved)
-	constants = null;
-	
 	// internal constants
 	numLockColorConfigName = "NumLockColor";
 	capsLockColorConfigName = "CapsLockColor";
@@ -41,30 +38,18 @@ Configuration = function()
 		if (verticalLayout == true)
 		{
 			// the vertical layout is enabled
-			return constants.verticalLayoutName();
+			return globals.constants.verticalLayoutName();
 		}
 		else if (textLayout == true)
 		{
 			// the text layout is enabled
-			return constants.textLayoutName();
+			return globals.constants.textLayoutName();
 		}
 		else
 		{
 			// default to horizontal layout
-			return constants.horizontalLayoutName();
+			return globals.constants.horizontalLayoutName();
 		}
-	}
-	
-	/**
-	  * constructor - does initial setup for the object
-	  */
-	this.Configuration = function()
-	{
-		// include the constants file
-		plasmoid.include("constants.js");
-		
-		// create a constants object
-		constants = new Constants();
 	}
 	
 	/**

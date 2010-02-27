@@ -1,9 +1,5 @@
-Layout = function(config)
+Layout = function()
 {
-	// internal variables
-	configuration = config;
-	constants = new Constants();
-	
 	/**
 	  * returns the color of a key depending on whether it's locked or not
 	  *
@@ -17,7 +13,7 @@ Layout = function(config)
 			return keyColor;
 		}
 		
-		return constants.fullyTransparentColor();
+		return globals.constants.fullyTransparentColor();
 	}
 	
 	/**
@@ -27,46 +23,42 @@ Layout = function(config)
 	  * @param numLocked decides if the num key is locked or not
 	  * @param capsLocked decides if the caps key is locked or not
 	  */
-	this.paintIcon = function(painter, numLocked, capsLocked)
+	this.paintIcon = function(painter)
 	{
 		var layout = null;
 		
 		// get the colors
-		var numColor = this.getColor(numLocked, configuration.numLockColor());
-		var capsColor = this.getColor(capsLocked, configuration.capsLockColor());
+		var numColor = this.getColor(globals.numLockEnabled, globals.configuration.numLockColor());
+		var capsColor = this.getColor(globals.capsLockEnabled, globals.configuration.capsLockColor());
 		
 		// handle the current layout
-		switch (configuration.layoutName())
+		switch (globals.configuration.layoutName())
 		{
-			case constants.horizontalLayoutName():
+			case globals.constants.horizontalLayoutName():
 				// include the layout code
 				plasmoid.include("horizontallayout.js");
 				
 				// get the layout
-				layout = new HorizontalLayout(configuration);
+				layout = new HorizontalLayout();
 				
 				break;
-			case constants.verticalLayoutName():
+			case globals.constants.verticalLayoutName():
 				// include the layout code
 				plasmoid.include("verticallayout.js");
 				
 				// get the layout
-				layout = new VerticalLayout(configuration);
+				layout = new VerticalLayout();
 				
 				break;
-			case constants.textLayoutName():
+			case globals.constants.textLayoutName():
 				// include the layout code
 				plasmoid.include("textlayout.js");
 				
 				// get the layout
-				layout = new TextLayout(configuration);
+				layout = new TextLayout();
 				
 				break;
 		}
-		
-		// tell the layout about the status of the modifiers
-		layout.numLocked = numLocked;
-		layout.capsLocked = capsLocked;
 		
 		// also tell the layout about the colors
 		layout.numColor = numColor;

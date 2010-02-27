@@ -1,11 +1,8 @@
 /**
   * an object which provides a horizontal layout
   */
-HorizontalLayout = function(config)
+HorizontalLayout = function()
 {
-	// configuration stuff
-	configuration = config;
-	
 	// public properties (should be set from the outside)
 	this.numColor = new QColor();
 	this.capsColor = new QColor();
@@ -28,10 +25,10 @@ HorizontalLayout = function(config)
 		var imageHeight = plasmoid.size().height / 2;
 		
 		// minus spacing (between the two rectangles)
-		imageHeight -= configuration.imageSpacing();
+		imageHeight -= globals.configuration.imageSpacing();
 		
 		// minus the padding
-		imageHeight -= configuration.imagePadding();
+		imageHeight -= globals.configuration.imagePadding();
 		
 		return imageHeight;
 	}
@@ -47,13 +44,13 @@ HorizontalLayout = function(config)
 		var yPos = 0;
 		
 		// start at 0 + padding
-		yPos = configuration.imagePadding();
+		yPos = globals.configuration.imagePadding();
 		
 		// paint the icon
 		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
 		
 		// add the spacing
-		yPos += configuration.imageSpacing() + this.imageHeight();
+		yPos += globals.configuration.imageSpacing() + this.imageHeight();
 		
 		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
 	}

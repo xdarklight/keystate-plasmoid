@@ -1,15 +1,9 @@
 /**
   * an object which provides a text layout
   */
-TextLayout = function(config)
+TextLayout = function()
 {
-	// configuration stuff
-	configuration = config;
-	constants = new Constants();
-	
 	// public properties (should be set from the outside)
-	this.numLocked = false;
-	this.capsLocked = false;
 	this.numColor = new QColor();
 	this.capsColor = new QColor();
 	
@@ -24,11 +18,11 @@ TextLayout = function(config)
 		if (isLocked)
 		{
 			// if so: return "locked = true" (localized)
-			return i18n(constants.textLayoutPlaceholderLocked());
+			return i18n(globals.constants.textLayoutPlaceholderLocked());
 		}
 		
 		// otherwise: return "locked = false" (localized)
-		return i18n(constants.textLayoutPlaceholderNotLocked());
+		return i18n(globals.constants.textLayoutPlaceholderNotLocked());
 	}
 	
 	/**
@@ -38,8 +32,8 @@ TextLayout = function(config)
 	  */
 	this.paint = function(painter)
 	{
-		var numText = i18n(constants.textLayoutNumText());
-		var capsText = i18n(constants.textLayoutCapsText());
+		var numText = i18n(globals.constants.textLayoutNumText());
+		var capsText = i18n(globals.constants.textLayoutCapsText());
 		
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
 		// create a new pen
@@ -56,7 +50,7 @@ TextLayout = function(config)
 		
 		// make the yPos be the font size in pixels (this will make the text start
 		// at the first position of the y-axis)
-		var yPos = fontSize + configuration.imagePadding();
+		var yPos = fontSize + globals.configuration.imagePadding();
 		
 		// draw the num text
 		painter.drawText(0, yPos, numText);
@@ -68,7 +62,7 @@ TextLayout = function(config)
 		painter.pen = pen;
 		
 		// for the second text: add the spacing
-		yPos += configuration.imageSpacing();
+		yPos += globals.configuration.imageSpacing();
 		
 		// add the font size (so there's enough space for the text to display
 		yPos += fontSize;

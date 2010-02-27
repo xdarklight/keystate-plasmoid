@@ -1,11 +1,8 @@
 /**
   * an object which provides a vertical layout
   */
-VerticalLayout = function(config)
+VerticalLayout = function()
 {
-	// configuration stuff
-	configuration = config;
-	
 	// public properties (should be set from the outside)
 	this.numColor = new QColor();
 	this.capsColor = new QColor();
@@ -19,7 +16,7 @@ VerticalLayout = function(config)
 		var imageWidth = plasmoid.size().width / 2;
 		
 		// minus the spacing (between the two rectangles)
-		imageWidth -= configuration.imageSpacing();
+		imageWidth -= globals.configuration.imageSpacing();
 		
 		return imageWidth;
 	}
@@ -32,7 +29,7 @@ VerticalLayout = function(config)
 		var imageHeight = plasmoid.size().height;
 		
 		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * configuration.imagePadding();
+		imageHeight -= 2 * globals.configuration.imagePadding();
 		
 		return imageHeight;
 	}
@@ -48,14 +45,14 @@ VerticalLayout = function(config)
 		var yPos = 0;
 		
 		// start with a padded value
-		yPos += configuration.imagePadding();
+		yPos += globals.configuration.imagePadding();
 		
 		// paint the icon
 		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
 		
 		// calculate the new positions
 		// yPos did not change
-		xPos += configuration.imageSpacing() + this.imageWidth()
+		xPos += globals.configuration.imageSpacing() + this.imageWidth()
 		
 		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
 	}
