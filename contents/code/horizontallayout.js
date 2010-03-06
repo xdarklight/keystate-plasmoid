@@ -13,7 +13,7 @@ HorizontalLayout = function()
 	this.imageWidth = function()
 	{
 		// use the full width
-		return plasmoid.size().width;
+		return plasmoid.size.width;
 	}
 	
 	/**
@@ -22,7 +22,7 @@ HorizontalLayout = function()
 	this.imageHeight = function()
 	{
 		// the height is half of the plasmoid's size...
-		var imageHeight = plasmoid.size().height / 2;
+		var imageHeight = plasmoid.size.height / 2;
 		
 		// minus spacing (between the two rectangles)
 		imageHeight -= globals.configuration.imageSpacing();

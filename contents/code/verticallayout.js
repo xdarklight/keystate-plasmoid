@@ -13,7 +13,7 @@ VerticalLayout = function()
 	this.imageWidth = function()
 	{
 		// use half of the width
-		var imageWidth = plasmoid.size().width / 2;
+		var imageWidth = plasmoid.size.width / 2;
 		
 		// minus the spacing (between the two rectangles)
 		imageWidth -= globals.configuration.imageSpacing();
@@ -26,7 +26,7 @@ VerticalLayout = function()
 	  */
 	this.imageHeight = function()
 	{
-		var imageHeight = plasmoid.size().height;
+		var imageHeight = plasmoid.size.height;
 		
 		// minus twice the padding (top and bottom)
 		imageHeight -= 2 * globals.configuration.imagePadding();
