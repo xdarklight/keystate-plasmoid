@@ -35,6 +35,9 @@ TextLayout = function()
 		var numText = i18n(globals.constants.textLayoutNumText());
 		var capsText = i18n(globals.constants.textLayoutCapsText());
 		
+		var font = globals.configuration.font();
+		var fontSize = font.pointSize;
+		
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
 		// create a new pen
 		var pen = new QPen();
@@ -43,10 +46,7 @@ TextLayout = function()
 		// tell the painter to use our pen
 		painter.pen = pen;
 		
-		// use a special font
-		var fontSize = 7;
-		
-		painter.font = new QFont("Arial", fontSize);
+		painter.font = font;
 		
 		// make the yPos be the font size in pixels (this will make the text start
 		// at the first position of the y-axis)
