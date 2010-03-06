@@ -21,7 +21,7 @@ Configuration = function()
 	textLayoutConfigName = "TextLayout";
 	fontConfigName = "Font";
 	
-	defaultFontKey = "FONT_FALLBACK,12,-1,5,50,0,0,0,0,0";
+	uninitializedFontFamily = "FONT_FALLBACK";
 	
 	/**
 	  * gets the layout name depending on the configuration options
@@ -71,9 +71,9 @@ Configuration = function()
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
-		// instead we use a fake default font - the font's key is generated from
-		// thake fake default and we can check if the font has been initialized correctly
-		if (fontConfigValue.key == defaultFontKey)
+		// instead we use a fake default font family -> we can compare
+		// the fake font familiy and see if it already has been initialized
+		if (fontConfigValue.family == uninitializedFontFamily)
 		{
 			// write the default font settings to the config file
 			plasmoid.writeConfig(fontConfigName, font);
