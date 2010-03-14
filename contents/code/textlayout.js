@@ -8,24 +8,6 @@ TextLayout = function()
 	this.capsColor = new QColor();
 	
 	/**
-	  * gets a "locked: yes" or "locked: no" string (localized)
-	  *
-	  * @param isLocked decides what text is returned (depends on whether the modifer is enabled or not)
-	  */
-	this.getLockedText = function(isLocked)
-	{
-		// check if the modifier is enabled
-		if (isLocked)
-		{
-			// if so: return "locked = true" (localized)
-			return i18n(globals.constants.textLayoutPlaceholderLocked());
-		}
-		
-		// otherwise: return "locked = false" (localized)
-		return i18n(globals.constants.textLayoutPlaceholderNotLocked());
-	}
-	
-	/**
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
