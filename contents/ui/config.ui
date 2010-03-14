@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>323</width>
-    <height>155</height>
+    <width>368</width>
+    <height>158</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -25,31 +25,148 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>10</y>
-     <width>221</width>
-     <height>141</height>
+     <width>320</width>
+     <height>145</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>221</width>
-     <height>121</height>
+     <width>320</width>
+     <height>145</height>
     </size>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Layout</string>
+    </attribute>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>301</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="kcfg_HorizontalLayout">
+        <property name="text">
+         <string>Horizontal</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="kcfg_VerticalLayout">
+        <property name="text">
+         <string>Vertical</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="kcfg_TextLayout">
+        <property name="text">
+         <string>Text</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Colors</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>301</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="NumLockColor_Label">
+        <property name="text">
+         <string>NUM Lock:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="KColorButton" name="kcfg_NumLockColor">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="color">
+         <color>
+          <red>0</red>
+          <green>192</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>0</red>
+          <green>192</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="KSeparator" name="kseparator"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="CapsLockColor_Label">
+        <property name="text">
+         <string>CAPS Lock:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="KColorButton" name="kcfg_CapsLockColor">
+        <property name="color">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
-     <string>General</string>
+     <string>Margins</string>
     </attribute>
     <widget class="QWidget" name="formLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>211</width>
+       <width>301</width>
        <height>102</height>
       </rect>
      </property>
@@ -97,127 +214,21 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="tab_2">
+   <widget class="QWidget" name="tab_4">
     <attribute name="title">
-     <string>Icon Layout</string>
+     <string>Text</string>
     </attribute>
-    <widget class="QWidget" name="horizontalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>211</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QRadioButton" name="kcfg_HorizontalLayout">
-        <property name="text">
-         <string>Horizontal</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="kcfg_VerticalLayout">
-        <property name="text">
-         <string>Vertical</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="kcfg_TextLayout">
-        <property name="text">
-         <string>Text</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Appearance</string>
-    </attribute>
-    <widget class="QWidget" name="formLayoutWidget">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>211</width>
-       <height>105</height>
+       <width>301</width>
+       <height>31</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout">
-      <property name="fieldGrowthPolicy">
-       <enum>QFormLayout::ExpandingFieldsGrow</enum>
-      </property>
-      <property name="labelAlignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="NumLockColor_Label">
-        <property name="text">
-         <string>NUM Lock:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="KSeparator" name="kseparator"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="CapsLockColor_Label">
-        <property name="text">
-         <string>CAPS Lock:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="KColorButton" name="kcfg_CapsLockColor">
-        <property name="color">
-         <color>
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </property>
-        <property name="defaultColor">
-         <color>
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="KColorButton" name="kcfg_NumLockColor">
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="color">
-         <color>
-          <red>0</red>
-          <green>192</green>
-          <blue>0</blue>
-         </color>
-        </property>
-        <property name="defaultColor">
-         <color>
-          <red>0</red>
-          <green>192</green>
-          <blue>0</blue>
-         </color>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
        <widget class="KFontRequester" name="kcfg_Font">
         <property name="maximumSize">
          <size>
@@ -233,30 +244,6 @@
           <italic>false</italic>
           <bold>false</bold>
          </font>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_4">
-    <attribute name="title">
-     <string>Text</string>
-    </attribute>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>222</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Font:</string>
         </property>
        </widget>
       </item>
