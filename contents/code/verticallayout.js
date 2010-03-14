@@ -3,17 +3,13 @@
   */
 VerticalLayout = function()
 {
-	// public properties (should be set from the outside)
-	this.numColor = new QColor();
-	this.capsColor = new QColor();
-	
 	/**
 	  * returns the calculated width of the image
 	  */
 	this.imageWidth = function()
 	{
 		// use half of the width
-		var imageWidth = plasmoid.size.width / 2;
+		var imageWidth = plasmoid.size.width / globals.keyInformationList.count();
 		
 		// minus the spacing (between the two rectangles)
 		imageWidth -= globals.configuration.imageSpacing();
@@ -47,13 +43,16 @@ VerticalLayout = function()
 		// start with a padded value
 		yPos += globals.configuration.imagePadding();
 		
-		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
+		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		{
+			var keyInfo = globals.keyInformationList.get(i);
+			
+			// paint the icon
+			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyInfo.color());
 		
-		// calculate the new positions
-		// yPos did not change
-		xPos += globals.configuration.imageSpacing() + this.imageWidth()
-		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
+			// calculate the new positions
+			// yPos did not change
+			xPos += globals.configuration.imageSpacing() + this.imageWidth()
+		}
 	}
 }

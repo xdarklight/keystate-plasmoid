@@ -5,22 +5,6 @@
 Layout = function()
 {
 	/**
-	  * returns the color of a key depending on whether it's locked or not
-	  *
-	  * @param keyLocked decides if the key is locked or not
-	  * @param keyColor the color if the key is locked, otherwise a neutral color is returned
-	  */
-	this.getColor = function(keyLocked, keyColor)
-	{
-		if (keyLocked)
-		{
-			return keyColor;
-		}
-		
-		return globals.constants.fullyTransparentColor();
-	}
-	
-	/**
 	  * paints the icon to the screen
 	  *
 	  * @param painter the painter used to paint the icon
@@ -30,10 +14,6 @@ Layout = function()
 	this.paintIcon = function(painter)
 	{
 		var layout = null;
-		
-		// get the colors
-		var numColor = this.getColor(globals.numLockEnabled, globals.configuration.numLockColor());
-		var capsColor = this.getColor(globals.capsLockEnabled, globals.configuration.capsLockColor());
 		
 		// handle the current layout
 		switch (globals.configuration.layoutName())
@@ -63,10 +43,6 @@ Layout = function()
 				
 				break;
 		}
-		
-		// also tell the layout about the colors
-		layout.numColor = numColor;
-		layout.capsColor = capsColor;
 		
 		// paint the layout
 		layout.paint(painter);

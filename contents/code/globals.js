@@ -28,4 +28,9 @@ Globals = function()
 	  * points to the plasmoid's layout handling object
 	  */
 	this.layout = null;
+	
+	/**
+	  * points to a list of key information objects
+	  */
+	this.keyInformationList = null;
 }

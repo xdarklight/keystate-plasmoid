@@ -15,10 +15,13 @@ PlasmoidHandler = function()
 		plasmoid.include("layout.js");
 		plasmoid.include("constants.js");
 		plasmoid.include("configuration.js");
+		plasmoid.include("keyinformation.js");
+		plasmoid.include("keyinformationlist.js");
 		
 		// fill our globals object with information
 		globals.configuration = new Configuration();
 		globals.constants = new Constants();
+		globals.keyInformationList = new KeyInformationList();
 		globals.layout = new Layout();
 		
 		// read the config file
@@ -125,6 +128,8 @@ PlasmoidHandler = function()
 		// only update if the data changed
 		if (dataChanged)
 		{
+			globals.keyInformationList.updateKeyInformation();
+			
 			plasmoid.update();
 		}
 	}

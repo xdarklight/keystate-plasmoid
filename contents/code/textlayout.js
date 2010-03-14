@@ -3,9 +3,26 @@
   */
 TextLayout = function()
 {
-	// public properties (should be set from the outside)
-	this.numColor = new QColor();
-	this.capsColor = new QColor();
+	/**
+	  * returns the localized text for the given key name
+	  */
+	this.getText = function(keyName)
+	{
+		var text = "";
+		
+		switch (keyName)
+		{
+			case globals.constants.numLockObjectName():
+				text = i18n(globals.constants.textLayoutNumText());
+				break;
+			
+			case globals.constants.capsLockObjectName():
+				text = i18n(globals.constants.textLayoutCapsText());
+				break;
+		}
+		
+		return text;
+	}
 	
 	/**
 	  * paints the image with the given painter to the screen
@@ -14,42 +31,37 @@ TextLayout = function()
 	  */
 	this.paint = function(painter)
 	{
-		var numText = i18n(globals.constants.textLayoutNumText());
-		var capsText = i18n(globals.constants.textLayoutCapsText());
-		
 		var font = globals.configuration.font();
 		var fontSize = font.pointSize;
-		
-		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
-		// create a new pen
-		var pen = new QPen();
-		pen.color = this.numColor;
-		
-		// tell the painter to use our pen
-		painter.pen = pen;
-		
-		painter.font = font;
 		
 		// make the yPos be the font size in pixels (this will make the text start
 		// at the first position of the y-axis)
 		var yPos = fontSize + globals.configuration.imagePadding();
 		
-		// draw the num text
-		painter.drawText(0, yPos, numText);
+		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
+		// create a new pen
+		var pen = new QPen();
 		
-		// now draw the caps lock stuff
-		pen.color = this.capsColor;
-		
-		// tell the painter to use our pen
-		painter.pen = pen;
-		
-		// for the second text: add the spacing
-		yPos += globals.configuration.imageSpacing();
-		
-		// add the font size (so there's enough space for the text to display
-		yPos += fontSize;
-		
-		// draw the caps text
-		painter.drawText(0, yPos, capsText);
+		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		{
+			var keyInfo = globals.keyInformationList.get(i);
+			
+			pen.color = keyInfo.color();
+			
+			// tell the painter to use our pen
+			painter.pen = pen;
+			
+			// set our font
+			painter.font = font;
+			
+			// draw the num text
+			painter.drawText(0, yPos, this.getText(keyInfo.name()));
+			
+			// for the second text: add the spacing
+			yPos += globals.configuration.imageSpacing();
+			
+			// add the font size (so there's enough space for the text to display
+			yPos += fontSize;
+		}
 	}
 }

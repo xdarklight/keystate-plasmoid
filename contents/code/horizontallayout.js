@@ -3,10 +3,6 @@
   */
 HorizontalLayout = function()
 {
-	// public properties (should be set from the outside)
-	this.numColor = new QColor();
-	this.capsColor = new QColor();
-	
 	/**
 	  * returns the calculated width of the image
 	  */
@@ -22,7 +18,7 @@ HorizontalLayout = function()
 	this.imageHeight = function()
 	{
 		// the height is half of the plasmoid's size...
-		var imageHeight = plasmoid.size.height / 2;
+		var imageHeight = plasmoid.size.height / globals.keyInformationList.count();
 		
 		// minus spacing (between the two rectangles)
 		imageHeight -= globals.configuration.imageSpacing();
@@ -46,12 +42,15 @@ HorizontalLayout = function()
 		// start at 0 + padding
 		yPos = globals.configuration.imagePadding();
 		
-		// paint the icon
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.numColor);
-		
-		// add the spacing
-		yPos += globals.configuration.imageSpacing() + this.imageHeight();
-		
-		painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), this.capsColor);
+		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		{
+			var keyInfo = globals.keyInformationList.get(i);
+			
+			// paint the icon
+			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyInfo.color());
+			
+			// add the spacing
+			yPos += globals.configuration.imageSpacing() + this.imageHeight();
+		}
 	}
 }
