@@ -4,27 +4,6 @@
 TextLayout = function()
 {
 	/**
-	  * returns the localized text for the given key name
-	  */
-	this.getText = function(keyName)
-	{
-		var text = "";
-		
-		switch (keyName)
-		{
-			case globals.constants.numLockObjectName():
-				text = i18n(globals.constants.textLayoutNumText());
-				break;
-			
-			case globals.constants.capsLockObjectName():
-				text = i18n(globals.constants.textLayoutCapsText());
-				break;
-		}
-		
-		return text;
-	}
-	
-	/**
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
@@ -45,6 +24,7 @@ TextLayout = function()
 		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
 			var name = globals.keyInformation.getName(i);
+			var text = globals.keyInformation.getText(name);
 			
 			pen.color = globals.keyInformation.getColor(name);
 			
@@ -55,7 +35,7 @@ TextLayout = function()
 			painter.font = font;
 			
 			// draw the num text
-			painter.drawText(0, yPos, this.getText(name));
+			painter.drawText(0, yPos, text);
 			
 			// for the second text: add the spacing
 			yPos += globals.configuration.imageSpacing();

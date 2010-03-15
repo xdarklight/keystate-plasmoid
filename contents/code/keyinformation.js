@@ -120,6 +120,27 @@ KeyInformation = function()
 	}
 	
 	/**
+	  * returns the localized text for the given key name
+	  */
+	this.getText = function(keyName)
+	{
+		var text = "";
+		
+		switch (keyName)
+		{
+			case globals.constants.numLockObjectName():
+				text = i18n(globals.constants.textLayoutNumText());
+				break;
+			
+			case globals.constants.capsLockObjectName():
+				text = i18n(globals.constants.textLayoutCapsText());
+				break;
+		}
+		
+		return text;
+	}
+	
+	/**
 	  * gets the status of the key with the given name
 	  */
 	this.getStatus = function(keyName)
