@@ -44,10 +44,11 @@ HorizontalLayout = function()
 		
 		for (var i = 0; i < globals.keyInformationList.count(); i++)
 		{
-			var keyInfo = globals.keyInformationList.get(i);
+			var name = globals.keyInformationList.getName(i);
+			var color = globals.keyInformationList.getColor(name);
 			
 			// paint the icon
-			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyInfo.color());
+			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), color);
 			
 			// add the spacing
 			yPos += globals.configuration.imageSpacing() + this.imageHeight();

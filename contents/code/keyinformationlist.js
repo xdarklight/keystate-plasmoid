@@ -5,16 +5,16 @@ KeyInformationList = function()
 {
 	this.statusInformation = new Array();
 	this.colorInformation = new Array();
-	this.keyInformation = new Array();
+	this.keys = new Array();
 	this.keyCount = 0;
 	
 	/**
 	  * updates the list of key information objects
 	  */
-	this.updateKeyInformation = function()
+	this.updateKeys = function()
 	{
-		this.addRemoveKeyInformation(globals.constants.numLockObjectName(), globals.configuration.showNumLock());
-		this.addRemoveKeyInformation(globals.constants.capsLockObjectName(), globals.configuration.showCapsLock());
+		this.addRemoveKey(globals.constants.numLockObjectName(), globals.configuration.showNumLock());
+		this.addRemoveKey(globals.constants.capsLockObjectName(), globals.configuration.showCapsLock());
 	}
 	
 	/**
@@ -25,12 +25,8 @@ KeyInformationList = function()
 		// only add the key information if the key does not exist yet
 		if (this.findIndex(keyName) == globals.constants.indexNotFound())
 		{
-			// create a new KeyInformation object with all information
-			var keyInformation = new KeyInformation();
-			keyInformation.setName(keyName);
-			
 			// add the object to the list
-			this.keyInformation[this.keyCount] = keyInformation;
+			this.keys[this.keyCount] = keyName;
 			
 			// increment our counter
 			this.keyCount++;
@@ -44,14 +40,14 @@ KeyInformationList = function()
 	/**
 	  * removes key information object with the given name from the list
 	  */
-	this.removeKeyInformation = function(keyName)
+	this.removeKey = function(keyName)
 	{
 		var index = this.findIndex(keyName);
 		
 		// remove the key information from our array if it was found
 		if (index > globals.constants.indexNotFound())
 		{
-			this.keyInformation.splice(index, 1);
+			this.keys.splice(index, 1);
 			this.keyCount--;
 		}
 	}
@@ -60,7 +56,7 @@ KeyInformationList = function()
 	  * adds or removes key information depending on
 	  * if it the key is enabled or not
 	  */
-	this.addRemoveKeyInformation = function(keyName, isEnabled)
+	this.addRemoveKey = function(keyName, isEnabled)
 	{
 		if (isEnabled)
 		{
@@ -68,7 +64,7 @@ KeyInformationList = function()
 		}
 		else
 		{
-			this.removeKeyInformation(keyName);
+			this.removeKey(keyName);
 		}
 	}
 	
@@ -78,14 +74,16 @@ KeyInformationList = function()
 	  * @param keyLocked decides if the key is locked or not
 	  * @param keyColor the color if the key is locked, otherwise a neutral color is returned
 	  */
-	this.getColorByState = function(keyLocked, keyColor)
+	this.getColorByStatus = function(keyLocked, keyColor)
 	{
+		var color = globals.constants.fullyTransparentColor();
+		
 		if (keyLocked)
 		{
-			return keyColor;
+			color = keyColor;
 		}
 		
-		return globals.constants.fullyTransparentColor();
+		return color;
 	}
 	
 	/**
@@ -94,38 +92,6 @@ KeyInformationList = function()
 	this.count = function()
 	{
 		return this.keyCount;
-	}
-	
-	/**
-	  * returns the key information at the given index
-	  *
-	  * @param index the index of the information
-	  */
-	this.get = function(index)
-	{
-		return this.keyInformation[index];
-	}
-	
-	/**
-	  * returns the KeyInformation object with the given name
-	  */
-	this.find = function(keyName)
-	{
-		var retVal = 0;
-		
-		for (var i = 0; i < this.count(); i++)
-		{
-			var keyInfo = this.get(i);
-			
-			// check if the key's name matches the given name
-			if (keyInfo.name() == keyName)
-			{
-				retVal = keyInfo;
-				break;
-			}
-		}
-		
-		return retVal;
 	}
 	
 	/**
@@ -140,10 +106,10 @@ KeyInformationList = function()
 		// find the index of the key in the keyInformation array
 		for (var i = 0; i < this.count(); i++)
 		{
-			var keyInfo = this.keyInformation[i];
+			var name = this.keys[i];
 			
 			// check if the key's name matches the given name
-			if (keyName == keyInfo.name())
+			if (keyName == name)
 			{
 				index = i;
 				break;
@@ -166,7 +132,18 @@ KeyInformationList = function()
 	  */
 	this.getColor = function(keyName)
 	{
-		return this.colorInformation[keyName];
+		var color = this.colorInformation[keyName];
+		var status = this.getStatus(keyName);
+		
+		return this.getColorByStatus(status, color);
+	}
+	
+	/**
+	  * gets the key name at the given index
+	  */
+	this.getName = function(index)
+	{
+		return this.keys[index];
 	}
 	
 	/**
@@ -174,16 +151,6 @@ KeyInformationList = function()
 	  */
 	this.updateStatus = function(keyName, keyStatus)
 	{
-		var index = this.findIndex(keyName);
-		
-		if (index > globals.constants.indexNotFound())
-		{
-			var keyInfo = this.get(index);
-			
-			// update the status if we found the key info
-			keyInfo.setStatus(keyStatus);
-		}
-		
 		// keep the status in our internal array
 		this.statusInformation[keyName] = keyStatus;
 	}
@@ -193,16 +160,6 @@ KeyInformationList = function()
 	  */
 	this.updateColor = function(keyName, keyColor)
 	{
-		var index = this.findIndex(keyName);
-		
-		if (index > globals.constants.indexNotFound())
-		{
-			var keyInfo = this.get(index);
-			
-			// update the key color
-			keyInfo.setColor(this.getColorByState(this.getStatus(keyName), keyColor));
-		}
-		
 		this.colorInformation[keyName] = keyColor;
 	}
 }

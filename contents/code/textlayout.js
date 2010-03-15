@@ -44,9 +44,9 @@ TextLayout = function()
 		
 		for (var i = 0; i < globals.keyInformationList.count(); i++)
 		{
-			var keyInfo = globals.keyInformationList.get(i);
+			var name = globals.keyInformationList.get(i);
 			
-			pen.color = keyInfo.color();
+			pen.color = globals.keyInformationList.getColor(name);
 			
 			// tell the painter to use our pen
 			painter.pen = pen;
@@ -55,7 +55,7 @@ TextLayout = function()
 			painter.font = font;
 			
 			// draw the num text
-			painter.drawText(0, yPos, this.getText(keyInfo.name()));
+			painter.drawText(0, yPos, this.getText(name);
 			
 			// for the second text: add the spacing
 			yPos += globals.configuration.imageSpacing();

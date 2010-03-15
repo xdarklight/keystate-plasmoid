@@ -15,7 +15,6 @@ PlasmoidHandler = function()
 		plasmoid.include("layout.js");
 		plasmoid.include("constants.js");
 		plasmoid.include("configuration.js");
-		plasmoid.include("keyinformation.js");
 		plasmoid.include("keyinformationlist.js");
 		
 		// fill our globals object with information
@@ -28,7 +27,7 @@ PlasmoidHandler = function()
 		globals.configuration.initialize();
 		
 		// initially update the key information list
-		globals.keyInformationList.updateKeyInformation();
+		globals.keyInformationList.updateKeys();
 		
 		// register all events of the plasmoid object
 		this.registerPlasmoidEvents();
@@ -60,7 +59,7 @@ PlasmoidHandler = function()
 		globals.configuration.initialize();
 		
 		// update our key information list
-		globals.keyInformationList.updateKeyInformation();
+		globals.keyInformationList.updateKeys();
 		
 		// then update the icon
 		plasmoid.update();
