@@ -16,6 +16,7 @@ TextLayout = function()
 		// make the yPos be the font size in pixels (this will make the text start
 		// at the first position of the y-axis)
 		var yPos = fontSize + globals.configuration.imagePadding();
+		var xPos = 0;
 		
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
 		// create a new pen
@@ -35,7 +36,7 @@ TextLayout = function()
 			painter.font = font;
 			
 			// draw the num text
-			painter.drawText(0, yPos, text);
+			painter.drawText(xPos, yPos, text);
 			
 			// for the second text: add the spacing
 			yPos += globals.configuration.imageSpacing();
