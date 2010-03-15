@@ -31,5 +31,11 @@
 		<entry name="Font" type="Font">
 			<default>FONT_FALLBACK</default>
 		</entry>
+		<entry name="ShowNumLock" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="ShowCapsLock" type="Bool">
+			<default>true</default>
+		</entry>
 	</group>
 </kcfg>

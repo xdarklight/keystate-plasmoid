@@ -86,7 +86,7 @@
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>Colors</string>
+     <string>Key Information</string>
     </attribute>
     <widget class="QWidget" name="formLayoutWidget">
      <property name="geometry">
@@ -94,18 +94,11 @@
        <x>0</x>
        <y>0</y>
        <width>301</width>
-       <height>61</height>
+       <height>54</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="NumLockColor_Label">
-        <property name="text">
-         <string>NUM Lock:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
+      <item row="1" column="2">
        <widget class="KColorButton" name="kcfg_NumLockColor">
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
@@ -126,17 +119,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="KSeparator" name="kseparator"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="CapsLockColor_Label">
-        <property name="text">
-         <string>CAPS Lock:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
+      <item row="3" column="2">
        <widget class="KColorButton" name="kcfg_CapsLockColor">
         <property name="color">
          <color>
@@ -151,6 +134,20 @@
           <green>0</green>
           <blue>0</blue>
          </color>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowNumLock">
+        <property name="text">
+         <string>Num Lock</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowCapsLock">
+        <property name="text">
+         <string>Caps Lock</string>
         </property>
        </widget>
       </item>
@@ -268,12 +265,88 @@
    <extends>QPushButton</extends>
    <header>kcolorbutton.h</header>
   </customwidget>
-  <customwidget>
-   <class>KSeparator</class>
-   <extends>QFrame</extends>
-   <header>kseparator.h</header>
-  </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>kcfg_ShowNumLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_NumLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowCapsLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_CapsLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_HorizontalLayout</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_Font</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_VerticalLayout</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_Font</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_TextLayout</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_Font</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

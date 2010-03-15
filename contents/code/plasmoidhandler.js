@@ -27,6 +27,9 @@ PlasmoidHandler = function()
 		// read the config file
 		globals.configuration.initialize();
 		
+		// initially update the key information list
+		globals.keyInformationList.updateKeyInformation();
+		
 		// register all events of the plasmoid object
 		this.registerPlasmoidEvents();
 	}
@@ -55,6 +58,9 @@ PlasmoidHandler = function()
 	{
 		// re-read the config file
 		globals.configuration.initialize();
+		
+		// update our key information list
+		globals.keyInformationList.updateKeyInformation();
 		
 		// then update the icon
 		plasmoid.update();
@@ -97,24 +103,30 @@ PlasmoidHandler = function()
 	{
 		var dataChanged = false;
 		var currentModifierIsLocked = Boolean(data.Locked);
+		var keyStatus = globals.keyInformationList.getStatus(name);
+		
+		var currentStatus = null;
+		var currentColor = null;
 		
 		// check which modifier was changed
 		switch (name)
 		{
 			case globals.constants.capsLockObjectName():
 				// check the CAPS lock modifier
-				if (globals.capsLockEnabled != currentModifierIsLocked)
+				if (keyStatus != currentModifierIsLocked)
 				{
-					globals.capsLockEnabled = currentModifierIsLocked;
+					currentStatus = currentModifierIsLocked;
+					currentColor = globals.configuration.capsLockColor();
 					dataChanged = true;
 				}
 				
 				break;
 			case globals.constants.numLockObjectName():
 				// check the NUM lock modifier
-				if (globals.numLockEnabled != currentModifierIsLocked)
+				if (keyStatus != currentModifierIsLocked)
 				{
-					globals.numLockEnabled = currentModifierIsLocked;
+					currentStatus = currentModifierIsLocked;
+					currentColor = globals.configuration.numLockColor();
 					dataChanged = true;
 				}
 				
@@ -128,7 +140,9 @@ PlasmoidHandler = function()
 		// only update if the data changed
 		if (dataChanged)
 		{
-			globals.keyInformationList.updateKeyInformation();
+			// update the KeyInformation object
+			globals.keyInformationList.updateStatus(name, currentStatus);
+			globals.keyInformationList.updateColor(name, currentColor);
 			
 			plasmoid.update();
 		}

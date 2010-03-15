@@ -12,6 +12,7 @@ Constants = function()
 	textLayoutName = "text";
 	textLayoutNumText = "Num";
 	textLayoutCapsText = "Caps";
+	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
 	
@@ -85,5 +86,13 @@ Constants = function()
 	this.fullyTransparentColor = function()
 	{
 		return fullyTransparentColor;
+	}
+	
+	/**
+	  * returns a value when an index was not found
+	  */
+	this.indexNotFound = function()
+	{
+		return indexNotFound;
 	}
 }

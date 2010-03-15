@@ -10,6 +10,8 @@ Configuration = function()
 	capsLockColor = new QColor();
 	layoutName = "";
 	font = new QFont("Sans Serif", 7);
+	showNumLock = true;
+	showCapsLock = true;
 	
 	// internal constants
 	numLockColorConfigName = "NumLockColor";
@@ -20,6 +22,8 @@ Configuration = function()
 	horizontalLayoutConfigName= "HorizontalLayout";
 	textLayoutConfigName = "TextLayout";
 	fontConfigName = "Font";
+	showNumLockConfigName = "ShowNumLock";
+	showCapsLockConfigName = "ShowCapsLock";
 	
 	uninitializedFontFamily = "FONT_FALLBACK";
 	
@@ -68,6 +72,8 @@ Configuration = function()
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
+		var showNumLockConfigValue = plasmoid.readConfig(showNumLockConfigName);
+		var showCapsLockConfigValue = plasmoid.readConfig(showCapsLockConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -88,6 +94,8 @@ Configuration = function()
 		imageSpacing = parseInt(imageSpacingConfigValue);
 		imagePadding = parseInt(imagePaddingConfigValue);
 		font = fontConfigValue;
+		showNumLock = Boolean(showNumLockConfigValue);
+		showCapsLock = Boolean(showCapsLockConfigValue);
 		
 		// get the correct layout
 		layoutName = this.getLayoutName();
@@ -136,5 +144,21 @@ Configuration = function()
 	this.font = function()
 	{
 		return font;
+	}
+	
+	/**
+	  * returns if the num lock modifier should be shown or not
+	  */
+	this.showNumLock = function()
+	{
+		return showNumLock;
+	}
+	
+	/**
+	  * returns if the caps lock modifier should be shown or not
+	  */
+	this.showCapsLock = function()
+	{
+		return showCapsLock;
 	}
 }
