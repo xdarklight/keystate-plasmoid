@@ -9,6 +9,7 @@ Constants = function()
 	capsLockObjectName = "Caps Lock";
 	shiftPressedObjectName = "Shift";
 	controlPressedObjectName = "Ctrl";
+	altPressedObjectName = "Alt";
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
@@ -16,6 +17,7 @@ Constants = function()
 	capsLockedText = "Caps";
 	shiftPressedText = "Shift";
 	controlPressedText = "Ctrl";
+	altPressedText = "Alt";
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
@@ -58,6 +60,14 @@ Constants = function()
 	this.controlPressedObjectName = function()
 	{
 		return controlPressedObjectName;
+	}
+	
+	/**
+	  * returns the value of the alt pressed object name
+	  */
+	this.altPressedObjectName = function()
+	{
+		return altPressedObjectName;
 	}
 	
 	/**
@@ -114,6 +124,14 @@ Constants = function()
 	this.controlPressedText = function()
 	{
 		return controlPressedText;
+	}
+	
+	/**
+	  * returns the text (with placeholders) for the alt pressed status
+	  */
+	this.altPressedText = function()
+	{
+		return altPressedText;
 	}
 	
 	/**

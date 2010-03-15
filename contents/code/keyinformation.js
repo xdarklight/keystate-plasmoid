@@ -17,6 +17,7 @@ KeyInformation = function()
 		this.addRemoveKey(globals.constants.capsLockObjectName(), globals.configuration.showCapsLock());
 		this.addRemoveKey(globals.constants.shiftPressedObjectName(), globals.configuration.showShiftPressed());
 		this.addRemoveKey(globals.constants.controlPressedObjectName(), globals.configuration.showControlPressed());
+		this.addRemoveKey(globals.constants.altPressedObjectName(), globals.configuration.showAltPressed());
 	}
 	
 	/**
@@ -142,6 +143,9 @@ KeyInformation = function()
 				break;
 			case globals.constants.controlPressedObjectName():
 				text = i18n(globals.constants.controlPressedText());
+				break;
+			case globals.constants.altPressedObjectName():
+				text = i18n(globals.constants.altPressedText());
 				break;
 		}
 		

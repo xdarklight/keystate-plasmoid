@@ -50,6 +50,7 @@ PlasmoidHandler = function()
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.capsLockObjectName(), plasmoid);
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.shiftPressedObjectName(), plasmoid);
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.controlPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.altPressedObjectName(), plasmoid);
 	}
 	
 	/**
@@ -144,11 +145,22 @@ PlasmoidHandler = function()
 				
 				break;
 			case globals.constants.controlPressedObjectName():
-				// check if shift is pressed
+				// check if control is pressed
 				if (keyStatus != currentModifierIsPressed)
 				{
 					currentStatus = currentModifierIsPressed;
 					currentColor = globals.configuration.controlPressedColor();
+					dataChanged = true;
+				}
+				
+				break;
+			
+			case globals.constants.altPressedObjectName():
+				// check if alt is pressed
+				if (keyStatus != currentModifierIsPressed)
+				{
+					currentStatus = currentModifierIsPressed;
+					currentColor = globals.configuration.altPressedColor();
 					dataChanged = true;
 				}
 				

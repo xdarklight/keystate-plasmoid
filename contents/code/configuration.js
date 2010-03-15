@@ -8,18 +8,23 @@ Configuration = function()
 	topAndBottomPadding = 2;
 	numLockColor = new QColor();
 	capsLockColor = new QColor();
+	shiftPressedColor = new QColor();
+	controlPressedColor = new QColor();
+	altPressedColor = new QColor();
 	layoutName = "";
 	font = new QFont("Sans Serif", 7);
 	showNumLock = true;
 	showCapsLock = true;
 	showShiftPressed = false;
 	showControlPressed = false;
+	showAltPressed = false;
 	
 	// internal constants
 	numLockColorConfigName = "NumLockColor";
 	capsLockColorConfigName = "CapsLockColor";
 	shiftPressedColorConfigName = "ShiftPressedColor";
 	controlPressedColorConfigName = "ControlPressedColor";
+	altPressedColorConfigName = "AltPressedColor";
 	imageSpacingConfigName = "ImageSpacing";
 	imagePaddingConfigName = "ImagePadding";
 	verticalLayoutConfigName= "VerticalLayout";
@@ -30,6 +35,7 @@ Configuration = function()
 	showCapsLockConfigName = "ShowCapsLock";
 	showShiftPressedConfigName = "ShowShiftPressed";
 	showControlPressedConfigName = "ShowControlPressed";
+	showAltPressedConfigName = "ShowAltPressed";
 	
 	uninitializedFontFamily = "FONT_FALLBACK";
 	
@@ -77,6 +83,7 @@ Configuration = function()
 		var capsLockColorConfigValue = plasmoid.readConfig(capsLockColorConfigName);
 		var shiftPressedColorConfigValue = plasmoid.readConfig(shiftPressedColorConfigName);
 		var controlPressedColorConfigValue = plasmoid.readConfig(controlPressedColorConfigName);
+		var altPressedColorConfigValue = plasmoid.readConfig(altPressedColorConfigName);
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
@@ -84,6 +91,7 @@ Configuration = function()
 		var showCapsLockConfigValue = plasmoid.readConfig(showCapsLockConfigName);
 		var showShiftPressedConfigValue = plasmoid.readConfig(showShiftPressedConfigName);
 		var showControlPressedConfigValue = plasmoid.readConfig(showControlPressedConfigName);
+		var showAltPressedConfigValue = plasmoid.readConfig(showAltPressedConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -103,6 +111,7 @@ Configuration = function()
 		capsLockColor = new QColor(capsLockColorConfigValue);
 		shiftPressedColor = new QColor(shiftPressedColorConfigValue);
 		controlPressedColor = new QColor(controlPressedColorConfigValue);
+		altPressedColor = new QColor(altPressedColorConfigValue);
 		imageSpacing = parseInt(imageSpacingConfigValue);
 		imagePadding = parseInt(imagePaddingConfigValue);
 		font = fontConfigValue;
@@ -110,6 +119,7 @@ Configuration = function()
 		showCapsLock = Boolean(showCapsLockConfigValue);
 		showShiftPressed = Boolean(showShiftPressedConfigValue);
 		showControlPressed = Boolean(showControlPressedConfigValue);
+		showAltPressed = Boolean(showAltPressedConfigValue);
 		
 		// get the correct layout
 		layoutName = this.getLayoutName();
@@ -161,6 +171,14 @@ Configuration = function()
 	}
 	
 	/**
+	  * returns the color for the alt pressed part
+	  */
+	this.altPressedColor = function()
+	{
+		return altPressedColor;
+	}
+	
+	/**
 	  * returns the name of the selected layout
 	  */
 	this.layoutName = function()
@@ -206,5 +224,13 @@ Configuration = function()
 	this.showControlPressed = function()
 	{
 		return showControlPressed;
+	}
+	
+	/**
+	  * returns if the alt pressed status should be shown or not
+	  */
+	this.showAltPressed = function()
+	{
+		return showAltPressed;
 	}
 }
