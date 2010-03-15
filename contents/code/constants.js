@@ -12,8 +12,10 @@ Constants = function()
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
-	textLayoutNumText = "Num";
-	textLayoutCapsText = "Caps";
+	numLockedText = "Num";
+	capsLockedText = "Caps";
+	shiftPressedText = "Shift";
+	controlPressedText = "Ctrl";
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
@@ -83,19 +85,35 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the num lock status for the text layout
+	  * returns the text (with placeholders) for the num lock status
 	  */
-	this.textLayoutNumText = function()
+	this.numLockedText = function()
 	{
-		return textLayoutNumText;
+		return numLockedText;
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the caps lock status for the text layout
+	  * returns the text (with placeholders) for the caps lock status
 	  */
-	this.textLayoutCapsText = function()
+	this.capsLockedText = function()
 	{
-		return textLayoutCapsText;
+		return capsLockedText;
+	}
+	
+	/**
+	  * returns the text (with placeholders) for the shift pressed status
+	  */
+	this.shiftPressedText = function()
+	{
+		return shiftPressedText;
+	}
+	
+	/**
+	  * returns the text (with placeholders) for the control pressed status
+	  */
+	this.controlPressedText = function()
+	{
+		return controlPressedText;
 	}
 	
 	/**

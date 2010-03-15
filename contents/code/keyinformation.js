@@ -131,11 +131,17 @@ KeyInformation = function()
 		switch (keyName)
 		{
 			case globals.constants.numLockObjectName():
-				text = i18n(globals.constants.textLayoutNumText());
+				text = i18n(globals.constants.numLockedText());
 				break;
 			
 			case globals.constants.capsLockObjectName():
-				text = i18n(globals.constants.textLayoutCapsText());
+				text = i18n(globals.constants.capsLockedText());
+				break;
+			case globals.constants.shiftPressedObjectName():
+				text = i18n(globals.constants.shiftPressedText());
+				break;
+			case globals.constants.controlPressedObjectName():
+				text = i18n(globals.constants.controlPressedText());
 				break;
 		}
 		
