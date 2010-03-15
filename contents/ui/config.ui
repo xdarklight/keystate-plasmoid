@@ -98,7 +98,7 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="2">
+      <item row="0" column="1">
        <widget class="KColorButton" name="kcfg_NumLockColor">
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
@@ -119,7 +119,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
+      <item row="1" column="1">
        <widget class="KColorButton" name="kcfg_CapsLockColor">
         <property name="color">
          <color>
@@ -137,35 +137,35 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="0" column="0">
        <widget class="QCheckBox" name="kcfg_ShowNumLock">
         <property name="text">
          <string>Num Lock</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="1" column="0">
        <widget class="QCheckBox" name="kcfg_ShowCapsLock">
         <property name="text">
          <string>Caps Lock</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
+      <item row="2" column="0">
        <widget class="QCheckBox" name="kcfg_ShowShiftPressed">
         <property name="text">
          <string>Shift pressed</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
+      <item row="3" column="0">
        <widget class="QCheckBox" name="kcfg_ShowControlPressed">
         <property name="text">
          <string>Control pressed</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="2">
+      <item row="2" column="1">
        <widget class="KColorButton" name="kcfg_ShiftPressedColor">
         <property name="text">
          <string>kc</string>
@@ -186,7 +186,7 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="2">
+      <item row="3" column="1">
        <widget class="KColorButton" name="kcfg_ControlPressedColor">
         <property name="color">
          <color>
@@ -322,38 +322,6 @@
  <resources/>
  <connections>
   <connection>
-   <sender>kcfg_ShowNumLock</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_NumLockColor</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>78</x>
-     <y>49</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>230</x>
-     <y>49</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_ShowCapsLock</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_CapsLockColor</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>78</x>
-     <y>75</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>230</x>
-     <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>kcfg_HorizontalLayout</sender>
    <signal>toggled(bool)</signal>
    <receiver>kcfg_Font</receiver>
@@ -398,6 +366,70 @@
     <hint type="destinationlabel">
      <x>154</x>
      <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowNumLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_NumLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowCapsLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_CapsLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowControlPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_ControlPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowShiftPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_ShiftPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>119</y>
     </hint>
    </hints>
   </connection>
