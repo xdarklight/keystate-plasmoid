@@ -17,14 +17,14 @@ HorizontalLayout = function()
 	  */
 	this.imageHeight = function()
 	{
-		// the height is half of the plasmoid's size...
-		var imageHeight = plasmoid.size.height / globals.keyInformation.count();
+		// the height the height of the plasmoid minus twice the image padding (top and bottom)
+		var imageHeight = (plasmoid.size.height - 2 * globals.configuration.imagePadding());
+		
+		// divide the height through the key count (so we get the height per key)
+		imageHeight /= globals.keyInformation.count();
 		
 		// minus spacing (between the two rectangles)
 		imageHeight -= globals.configuration.imageSpacing();
-		
-		// minus the padding
-		imageHeight -= globals.configuration.imagePadding();
 		
 		return imageHeight;
 	}
