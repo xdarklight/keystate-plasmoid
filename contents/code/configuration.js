@@ -12,10 +12,14 @@ Configuration = function()
 	font = new QFont("Sans Serif", 7);
 	showNumLock = true;
 	showCapsLock = true;
+	showShiftPressed = false;
+	showControlPressed = false;
 	
 	// internal constants
 	numLockColorConfigName = "NumLockColor";
 	capsLockColorConfigName = "CapsLockColor";
+	shiftPressedColorConfigName = "ShiftPressedColor";
+	controlPressedColorConfigName = "ControlPressedColor";
 	imageSpacingConfigName = "ImageSpacing";
 	imagePaddingConfigName = "ImagePadding";
 	verticalLayoutConfigName= "VerticalLayout";
@@ -24,6 +28,8 @@ Configuration = function()
 	fontConfigName = "Font";
 	showNumLockConfigName = "ShowNumLock";
 	showCapsLockConfigName = "ShowCapsLock";
+	showShiftPressedConfigName = "ShowShiftPressed";
+	showControlPressedConfigName = "ShowControlPressed";
 	
 	uninitializedFontFamily = "FONT_FALLBACK";
 	
@@ -69,11 +75,15 @@ Configuration = function()
 		// config values
 		var numLockColorConfigValue = plasmoid.readConfig(numLockColorConfigName);
 		var capsLockColorConfigValue = plasmoid.readConfig(capsLockColorConfigName);
+		var shiftPressedColorConfigValue = plasmoid.readConfig(shiftPressedColorConfigName);
+		var controlPressedColorConfigValue = plasmoid.readConfig(controlPressedColorConfigName);
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
 		var showNumLockConfigValue = plasmoid.readConfig(showNumLockConfigName);
 		var showCapsLockConfigValue = plasmoid.readConfig(showCapsLockConfigName);
+		var showShiftPressedConfigValue = plasmoid.readConfig(showShiftPressedConfigName);
+		var showControlPressedConfigValue = plasmoid.readConfig(showControlPressedConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -91,11 +101,15 @@ Configuration = function()
 		// save our settings internally
 		numLockColor = new QColor(numLockColorConfigValue);
 		capsLockColor = new QColor(capsLockColorConfigValue);
+		shiftPressedColor = new QColor(shiftPressedColorConfigValue);
+		controlPressedColor = new QColor(controlPressedColorConfigValue);
 		imageSpacing = parseInt(imageSpacingConfigValue);
 		imagePadding = parseInt(imagePaddingConfigValue);
 		font = fontConfigValue;
 		showNumLock = Boolean(showNumLockConfigValue);
 		showCapsLock = Boolean(showCapsLockConfigValue);
+		showShiftPressed = Boolean(showShiftPressedConfigValue);
+		showControlPressed = Boolean(showControlPressedConfigValue);
 		
 		// get the correct layout
 		layoutName = this.getLayoutName();
@@ -131,6 +145,22 @@ Configuration = function()
 	}
 	
 	/**
+	  * returns the color for the shift pressed part
+	  */
+	this.shiftPressedColor = function()
+	{
+		return shiftPressedColor;
+	}
+	
+	/**
+	  * returns the color for the control pressed part
+	  */
+	this.controlPressedColor = function()
+	{
+		return controlPressedColor;
+	}
+	
+	/**
 	  * returns the name of the selected layout
 	  */
 	this.layoutName = function()
@@ -160,5 +190,21 @@ Configuration = function()
 	this.showCapsLock = function()
 	{
 		return showCapsLock;
+	}
+	
+	/**
+	  * returns if the shift pressed status should be shown or not
+	  */
+	this.showShiftPressed = function()
+	{
+		return showShiftPressed;
+	}
+	
+	/**
+	  * returns if the control pressed status should be shown or not
+	  */
+	this.showControlPressed = function()
+	{
+		return showControlPressed;
 	}
 }

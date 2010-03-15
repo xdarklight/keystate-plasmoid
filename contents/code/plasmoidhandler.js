@@ -48,6 +48,8 @@ PlasmoidHandler = function()
 		// register dataengines with our events
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.numLockObjectName(), plasmoid);
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.capsLockObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.shiftPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.controlPressedObjectName(), plasmoid);
 	}
 	
 	/**
@@ -102,6 +104,7 @@ PlasmoidHandler = function()
 	{
 		var dataChanged = false;
 		var currentModifierIsLocked = Boolean(data.Locked);
+		var currentModifierIsPressed = Boolean(data.Pressed);
 		var keyStatus = globals.keyInformation.getStatus(name);
 		
 		var currentStatus = null;
@@ -126,6 +129,26 @@ PlasmoidHandler = function()
 				{
 					currentStatus = currentModifierIsLocked;
 					currentColor = globals.configuration.numLockColor();
+					dataChanged = true;
+				}
+				
+				break;
+			case globals.constants.shiftPressedObjectName():
+				// check if shift is pressed
+				if (keyStatus != currentModifierIsPressed)
+				{
+					currentStatus = currentModifierIsPressed;
+					currentColor = globals.configuration.shiftPressedColor();
+					dataChanged = true;
+				}
+				
+				break;
+			case globals.constants.controlPressedObjectName():
+				// check if shift is pressed
+				if (keyStatus != currentModifierIsPressed)
+				{
+					currentStatus = currentModifierIsPressed;
+					currentColor = globals.configuration.controlPressedColor();
 					dataChanged = true;
 				}
 				

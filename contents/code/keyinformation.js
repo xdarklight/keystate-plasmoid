@@ -15,6 +15,8 @@ KeyInformation = function()
 	{
 		this.addRemoveKey(globals.constants.numLockObjectName(), globals.configuration.showNumLock());
 		this.addRemoveKey(globals.constants.capsLockObjectName(), globals.configuration.showCapsLock());
+		this.addRemoveKey(globals.constants.shiftPressedObjectName(), globals.configuration.showShiftPressed());
+		this.addRemoveKey(globals.constants.controlPressedObjectName(), globals.configuration.showControlPressed());
 	}
 	
 	/**

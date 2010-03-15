@@ -7,11 +7,16 @@
 	
 	<group name="keystatusplasmoid">
 		<entry name="NumLockColor" type="Color">
-			<label>test</label>
 			<default>green</default>
 		</entry>
 		<entry name="CapsLockColor" type="Color">
 			<default>red</default>
+		</entry>
+		<entry name="ShiftPressedColor" type="Color">
+			<default>#887422</default>
+		</entry>
+		<entry name="ControlPressedColor" type="Color">
+			<default>#887422</default>
 		</entry>
 		<entry name="VerticalLayout" type="Bool">
 			<default>false</default>
@@ -36,6 +41,12 @@
 		</entry>
 		<entry name="ShowCapsLock" type="Bool">
 			<default>true</default>
+		</entry>
+		<entry name="ShowControlPressed" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="ShowShiftPressed" type="Bool">
+			<default>false</default>
 		</entry>
 	</group>
 </kcfg>

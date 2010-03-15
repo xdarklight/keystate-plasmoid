@@ -7,6 +7,8 @@ Constants = function()
 	engineName = "keystate";
 	numLockObjectName = "Num Lock";
 	capsLockObjectName = "Caps Lock";
+	shiftPressedObjectName = "Shift";
+	controlPressedObjectName = "Ctrl";
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
@@ -38,6 +40,22 @@ Constants = function()
 	this.capsLockObjectName = function()
 	{
 		return capsLockObjectName;
+	}
+	
+	/**
+	  * returns the value of the shift pressed object name
+	  */
+	this.shiftPressedObjectName = function()
+	{
+		return shiftPressedObjectName;
+	}
+	
+	/**
+	  * returns the value of the control pressed object name
+	  */
+	this.controlPressedObjectName = function()
+	{
+		return controlPressedObjectName;
 	}
 	
 	/**
