@@ -18,7 +18,7 @@ HorizontalLayout = function()
 	this.imageHeight = function()
 	{
 		// the height is half of the plasmoid's size...
-		var imageHeight = plasmoid.size.height / globals.keyInformationList.count();
+		var imageHeight = plasmoid.size.height / globals.keyInformation.count();
 		
 		// minus spacing (between the two rectangles)
 		imageHeight -= globals.configuration.imageSpacing();
@@ -42,10 +42,10 @@ HorizontalLayout = function()
 		// start at 0 + padding
 		yPos = globals.configuration.imagePadding();
 		
-		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
-			var name = globals.keyInformationList.getName(i);
-			var color = globals.keyInformationList.getColor(name);
+			var name = globals.keyInformation.getName(i);
+			var color = globals.keyInformation.getColor(name);
 			
 			// paint the icon
 			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), color);

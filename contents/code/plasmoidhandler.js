@@ -15,19 +15,19 @@ PlasmoidHandler = function()
 		plasmoid.include("layout.js");
 		plasmoid.include("constants.js");
 		plasmoid.include("configuration.js");
-		plasmoid.include("keyinformationlist.js");
+		plasmoid.include("keyinformation.js");
 		
 		// fill our globals object with information
 		globals.configuration = new Configuration();
 		globals.constants = new Constants();
-		globals.keyInformationList = new KeyInformationList();
+		globals.keyInformation= new KeyInformation();
 		globals.layout = new Layout();
 		
 		// read the config file
 		globals.configuration.initialize();
 		
 		// initially update the key information list
-		globals.keyInformationList.updateKeys();
+		globals.keyInformation.updateKeys();
 		
 		// register all events of the plasmoid object
 		this.registerPlasmoidEvents();
@@ -59,7 +59,7 @@ PlasmoidHandler = function()
 		globals.configuration.initialize();
 		
 		// update our key information list
-		globals.keyInformationList.updateKeys();
+		globals.keyInformation.updateKeys();
 		
 		// then update the icon
 		plasmoid.update();
@@ -102,7 +102,7 @@ PlasmoidHandler = function()
 	{
 		var dataChanged = false;
 		var currentModifierIsLocked = Boolean(data.Locked);
-		var keyStatus = globals.keyInformationList.getStatus(name);
+		var keyStatus = globals.keyInformation.getStatus(name);
 		
 		var currentStatus = null;
 		var currentColor = null;
@@ -140,8 +140,8 @@ PlasmoidHandler = function()
 		if (dataChanged)
 		{
 			// update the KeyInformation object
-			globals.keyInformationList.updateStatus(name, currentStatus);
-			globals.keyInformationList.updateColor(name, currentColor);
+			globals.keyInformation.updateStatus(name, currentStatus);
+			globals.keyInformation.updateColor(name, currentColor);
 			
 			plasmoid.update();
 		}

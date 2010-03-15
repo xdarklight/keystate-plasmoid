@@ -9,7 +9,7 @@ VerticalLayout = function()
 	this.imageWidth = function()
 	{
 		// use half of the width
-		var imageWidth = plasmoid.size.width / globals.keyInformationList.count();
+		var imageWidth = plasmoid.size.width / globals.keyInformation.count();
 		
 		// minus the spacing (between the two rectangles)
 		imageWidth -= globals.configuration.imageSpacing();
@@ -43,13 +43,13 @@ VerticalLayout = function()
 		// start with a padded value
 		yPos += globals.configuration.imagePadding();
 		
-		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
-			var name = globals.keyInformationList.getName(i);
-			var color = globals.keyInformationList.getColor(name);
+			var name = globals.keyInformation.getName(i);
+			var color = globals.keyInformation.getColor(name);
 			
 			// paint the icon
-			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyInfo.color());
+			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), color);
 		
 			// calculate the new positions
 			// yPos did not change

@@ -1,7 +1,7 @@
 /**
-  * an object with a list of all available keys in it
+  * an object with a all key information in it
   */
-KeyInformationList = function()
+KeyInformation = function()
 {
 	this.statusInformation = new Array();
 	this.colorInformation = new Array();

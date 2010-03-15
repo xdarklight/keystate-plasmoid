@@ -20,7 +20,7 @@ Globals = function()
 	this.layout = null;
 	
 	/**
-	  * points to a list of key information objects
+	  * points to an object with all key information in it
 	  */
-	this.keyInformationList = null;
+	this.keyInformation = null;
 }

@@ -42,11 +42,11 @@ TextLayout = function()
 		// create a new pen
 		var pen = new QPen();
 		
-		for (var i = 0; i < globals.keyInformationList.count(); i++)
+		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
-			var name = globals.keyInformationList.get(i);
+			var name = globals.keyInformation.getName(i);
 			
-			pen.color = globals.keyInformationList.getColor(name);
+			pen.color = globals.keyInformation.getColor(name);
 			
 			// tell the painter to use our pen
 			painter.pen = pen;
@@ -55,7 +55,7 @@ TextLayout = function()
 			painter.font = font;
 			
 			// draw the num text
-			painter.drawText(0, yPos, this.getText(name);
+			painter.drawText(0, yPos, this.getText(name));
 			
 			// for the second text: add the spacing
 			yPos += globals.configuration.imageSpacing();
