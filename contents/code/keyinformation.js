@@ -50,7 +50,10 @@ KeyInformation = function()
 		// remove the key information from our array if it was found
 		if (index > globals.constants.indexNotFound())
 		{
+			// remove one element at the given index from the array
 			this.keys.splice(index, 1);
+			
+			// then fix our key count
 			this.keyCount--;
 		}
 	}
@@ -80,12 +83,15 @@ KeyInformation = function()
 	  * @param keyLocked decides if the key is locked or not
 	  * @param keyColor the color if the key is locked, otherwise a neutral color is returned
 	  */
-	this.getColorByStatus = function(keyLocked, keyColor)
+	this.getColorByStatus = function(keyEnabled, keyColor)
 	{
 		var color = globals.constants.fullyTransparentColor();
 		
-		if (keyLocked)
+		// check if the key is enabled (pressed/locked/etc)
+		if (keyEnabled)
 		{
+			// then we need to use the key's color
+			// otherwise the color is "transparent"
 			color = keyColor;
 		}
 		
@@ -137,7 +143,6 @@ KeyInformation = function()
 			case globals.constants.numLockObjectName():
 				text = i18n(globals.constants.numLockedText());
 				break;
-			
 			case globals.constants.capsLockObjectName():
 				text = i18n(globals.constants.capsLockedText());
 				break;
@@ -160,6 +165,7 @@ KeyInformation = function()
 	  */
 	this.getStatus = function(keyName)
 	{
+		// conver to boolean to make sure 'undefined' is covered
 		return Boolean(this.statusInformation[keyName]);
 	}
 	
