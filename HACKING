@@ -1,0 +1,30 @@
+##############
+---- FAQ ----
+##############
+
+Q: How can I add more keys?
+A: It's not that hard, but it requires some work - see 'HOWTO: add new keys'.
+
+Q: Where does the plasmoid get it's data from?
+A: It gets it's data from the 'keystatus' DataEngine (which is shipped with KDE)
+
+
+##############
+--- HOWTOs ---
+##############
+
+HOWTO: add new keys
+-add a checkbox and a KColorButton to the config's "Key Information" tab
+-add the corresponding stuff in the main.xml KConfigXT file
+-add the corresponding stuff to 'configuration.js' (the script's configuration object)
+ this includes:
+   * boolean flags whether to show the indicator or not (the checkbox from the config UI)
+   * the color of the button (the KColorButton from the config UI)
+-the correct constants to 'constants.js'
+ this includes:
+   * a constants for the DataSource (name of the object in the 'keystatus' DataEngine)
+   * the english translation of the key
+-you need to add the key to the key information list in 'keyinformation.js' (in the updateKeys function)
+-you need to add the key to the switch/case statement in 'keyinformation.js' (in the getText function)
+-register the DataSource with the DataEngine in 'plasmoidhandler.js' (in the registerPlasmoidEvents function)
+-add the DataSource to the switch/case statement in 'plasmoidhandler.js' (in the dataUpdated function)
