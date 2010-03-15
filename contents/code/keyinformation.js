@@ -13,11 +13,11 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
-		this.addRemoveKey(globals.constants.numLockObjectName(), globals.configuration.showNumLock());
-		this.addRemoveKey(globals.constants.capsLockObjectName(), globals.configuration.showCapsLock());
-		this.addRemoveKey(globals.constants.shiftPressedObjectName(), globals.configuration.showShiftPressed());
-		this.addRemoveKey(globals.constants.controlPressedObjectName(), globals.configuration.showControlPressed());
-		this.addRemoveKey(globals.constants.altPressedObjectName(), globals.configuration.showAltPressed());
+		this.updateKey(globals.constants.numLockObjectName(), globals.configuration.numLockColor(), globals.configuration.showNumLock());
+		this.updateKey(globals.constants.capsLockObjectName(), globals.configuration.capsLockColor(), globals.configuration.showCapsLock());
+		this.updateKey(globals.constants.shiftPressedObjectName(), globals.configuration.shiftPressedColor(), globals.configuration.showShiftPressed());
+		this.updateKey(globals.constants.controlPressedObjectName(), globals.configuration.controlPressedColor(), globals.configuration.showControlPressed());
+		this.updateKey(globals.constants.altPressedObjectName(), globals.configuration.altPressedColor(), globals.configuration.showAltPressed());
 	}
 	
 	/**
@@ -59,7 +59,7 @@ KeyInformation = function()
 	  * adds or removes key information depending on
 	  * if it the key is enabled or not
 	  */
-	this.addRemoveKey = function(keyName, isEnabled)
+	this.updateKey = function(keyName, keyColor, isEnabled)
 	{
 		if (isEnabled)
 		{
@@ -69,6 +69,9 @@ KeyInformation = function()
 		{
 			this.removeKey(keyName);
 		}
+		
+		// update the key color
+		this.updateColor(keyName, keyColor);
 	}
 	
 	/**

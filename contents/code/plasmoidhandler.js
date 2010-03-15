@@ -119,7 +119,6 @@ PlasmoidHandler = function()
 				if (keyStatus != currentModifierIsLocked)
 				{
 					currentStatus = currentModifierIsLocked;
-					currentColor = globals.configuration.capsLockColor();
 					dataChanged = true;
 				}
 				
@@ -129,7 +128,6 @@ PlasmoidHandler = function()
 				if (keyStatus != currentModifierIsLocked)
 				{
 					currentStatus = currentModifierIsLocked;
-					currentColor = globals.configuration.numLockColor();
 					dataChanged = true;
 				}
 				
@@ -139,7 +137,6 @@ PlasmoidHandler = function()
 				if (keyStatus != currentModifierIsPressed)
 				{
 					currentStatus = currentModifierIsPressed;
-					currentColor = globals.configuration.shiftPressedColor();
 					dataChanged = true;
 				}
 				
@@ -149,7 +146,6 @@ PlasmoidHandler = function()
 				if (keyStatus != currentModifierIsPressed)
 				{
 					currentStatus = currentModifierIsPressed;
-					currentColor = globals.configuration.controlPressedColor();
 					dataChanged = true;
 				}
 				
@@ -160,7 +156,6 @@ PlasmoidHandler = function()
 				if (keyStatus != currentModifierIsPressed)
 				{
 					currentStatus = currentModifierIsPressed;
-					currentColor = globals.configuration.altPressedColor();
 					dataChanged = true;
 				}
 				
@@ -176,7 +171,6 @@ PlasmoidHandler = function()
 		{
 			// update the KeyInformation object
 			globals.keyInformation.updateStatus(name, currentStatus);
-			globals.keyInformation.updateColor(name, currentColor);
 			
 			plasmoid.update();
 		}
