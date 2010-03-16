@@ -62,7 +62,7 @@
         <x>10</x>
         <y>30</y>
         <width>291</width>
-        <height>81</height>
+        <height>98</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -83,6 +83,13 @@
          </property>
          <property name="checked">
           <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_SingleLayout">
+         <property name="text">
+          <string>Single</string>
          </property>
         </widget>
        </item>

@@ -30,6 +30,7 @@ Configuration = function()
 	verticalLayoutConfigName= "VerticalLayout";
 	horizontalLayoutConfigName= "HorizontalLayout";
 	textLayoutConfigName = "TextLayout";
+	singleLayoutConfigName = "SingleLayout";
 	fontConfigName = "Font";
 	showNumLockConfigName = "ShowNumLock";
 	showCapsLockConfigName = "ShowCapsLock";
@@ -48,11 +49,13 @@ Configuration = function()
 		var verticalLayoutConfigValue = plasmoid.readConfig(verticalLayoutConfigName);
 		var horizontalLayoutConfigValue = plasmoid.readConfig(horizontalLayoutConfigName);
 		var textLayoutConfigValue = plasmoid.readConfig(textLayoutConfigName);
+		var singleLayoutConfigValue = plasmoid.readConfig(singleLayoutConfigName);
 		
 		// parse the values from the config file
 		var verticalLayout = Boolean(verticalLayoutConfigValue);
 		var horizontalLayout = Boolean(horizontalLayoutConfigValue);
 		var textLayout = Boolean(textLayoutConfigValue);
+		var singleLayout = Boolean(singleLayoutConfigValue);
 		
 		// check which layout is enabled
 		if (verticalLayout == true)
@@ -65,11 +68,14 @@ Configuration = function()
 			// the text layout is enabled
 			return globals.constants.textLayoutName();
 		}
-		else
+		else if (singleLayout == true);
 		{
-			// default to horizontal layout
-			return globals.constants.horizontalLayoutName();
+			// the single layout is enabled
+			return globals.constants.singleLayoutName();
 		}
+		
+		// default to horizontal layout
+		return globals.constants.horizontalLayoutName();
 	}
 	
 	/**

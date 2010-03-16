@@ -13,6 +13,7 @@ Constants = function()
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
+	singleLayoutName = "single";
 	numLockedText = "Num";
 	capsLockedText = "Caps";
 	shiftPressedText = "Shift";
@@ -92,6 +93,14 @@ Constants = function()
 	this.horizontalLayoutName = function()
 	{
 		return horizontalLayoutName;
+	}
+	
+	/**
+	  * returns the name of the single layout
+	  */
+	this.singleLayoutName = function()
+	{
+		return this.singleLayoutName;
 	}
 	
 	/**

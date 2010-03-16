@@ -42,6 +42,15 @@ Layout = function()
 				layout = new TextLayout();
 				
 				break;
+			
+			case globals.constants.singleLayoutName():
+				// include the layout code
+				plasmoid.include("singlelayout.js");
+				
+				// get the layout
+				layout = new SingleLayout();
+				
+				break;
 		}
 		
 		// paint the layout
