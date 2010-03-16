@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>368</width>
-    <height>158</height>
+    <width>325</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>325</width>
+    <height>425</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,13 +28,13 @@
      <x>0</x>
      <y>10</y>
      <width>320</width>
-     <height>145</height>
+     <height>410</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>320</width>
-     <height>145</height>
+     <height>410</height>
     </size>
    </property>
    <property name="currentIndex">
@@ -44,200 +44,161 @@
     <attribute name="title">
      <string>Layout</string>
     </attribute>
-    <widget class="QWidget" name="horizontalLayoutWidget">
+    <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>301</width>
-       <height>81</height>
+       <width>311</width>
+       <height>151</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QRadioButton" name="kcfg_HorizontalLayout">
-        <property name="text">
-         <string>Horizontal</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="kcfg_VerticalLayout">
-        <property name="text">
-         <string>Vertical</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="kcfg_TextLayout">
-        <property name="text">
-         <string>Text</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Key Information</string>
-    </attribute>
-    <widget class="QScrollArea" name="formFrame">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>301</width>
-       <height>111</height>
-      </rect>
+     <property name="title">
+      <string>Basic Layout</string>
      </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
+     <widget class="QWidget" name="horizontalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>-38</y>
-        <width>277</width>
-        <height>144</height>
+        <x>10</x>
+        <y>30</y>
+        <width>291</width>
+        <height>81</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="1">
-        <widget class="KColorButton" name="kcfg_NumLockColor">
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="color">
-          <color>
-           <red>0</red>
-           <green>192</green>
-           <blue>0</blue>
-          </color>
-         </property>
-         <property name="defaultColor">
-          <color>
-           <red>0</red>
-           <green>192</green>
-           <blue>0</blue>
-          </color>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="KColorButton" name="kcfg_CapsLockColor">
-         <property name="color">
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </property>
-         <property name="defaultColor">
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QCheckBox" name="kcfg_ShowNumLock">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QRadioButton" name="kcfg_HorizontalLayout">
          <property name="text">
-          <string>Num Lock</string>
+          <string>Horizontal</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_VerticalLayout">
+         <property name="text">
+          <string>Vertical</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_TextLayout">
+         <property name="text">
+          <string>Text</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>311</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Margins</string>
+     </property>
+     <widget class="QWidget" name="formLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>211</width>
+        <height>102</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="ImageSpacing_Label">
+         <property name="text">
+          <string>Spacing:</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QCheckBox" name="kcfg_ShowCapsLock">
+        <widget class="KIntSpinBox" name="kcfg_ImageSpacing"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>97</width>
+           <height>27</height>
+          </size>
+         </property>
          <property name="text">
-          <string>Caps Lock</string>
+          <string>Pixel</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QCheckBox" name="kcfg_ShowShiftPressed">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Shift pressed</string>
+          <string>Padding:</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QCheckBox" name="kcfg_ShowControlPressed">
-         <property name="text">
-          <string>Control pressed</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="KColorButton" name="kcfg_ShiftPressedColor">
-         <property name="text">
-          <string>kc</string>
-         </property>
-         <property name="color">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
-         </property>
-         <property name="defaultColor">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
-         </property>
-        </widget>
+        <widget class="KIntSpinBox" name="kcfg_ImagePadding"/>
        </item>
        <item row="3" column="1">
-        <widget class="KColorButton" name="kcfg_ControlPressedColor">
-         <property name="color">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
-         </property>
-         <property name="defaultColor">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="kcfg_ShowAltPressed">
+        <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Alt pressed</string>
+          <string>Pixel</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="KColorButton" name="kcfg_AltPressedColor">
-         <property name="color">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>310</y>
+       <width>311</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Text</string>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="KFontRequester" name="kcfg_Font">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
          </property>
-         <property name="defaultColor">
-          <color>
-           <red>136</red>
-           <green>116</green>
-           <blue>34</blue>
-          </color>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>7</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
          </property>
         </widget>
        </item>
@@ -245,93 +206,151 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="tab_3">
+   <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>Margins</string>
+     <string>Key Information</string>
     </attribute>
-    <widget class="QWidget" name="formLayoutWidget_2">
+    <widget class="QWidget" name="scrollAreaWidgetContents">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
        <width>301</width>
-       <height>102</height>
+       <height>151</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="ImageSpacing_Label">
+       <widget class="QCheckBox" name="kcfg_ShowNumLock">
         <property name="text">
-         <string>Spacing:</string>
+         <string>Num Lock</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="KColorButton" name="kcfg_NumLockColor">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="color">
+         <color>
+          <red>0</red>
+          <green>192</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>0</red>
+          <green>192</green>
+          <blue>0</blue>
+         </color>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="KIntSpinBox" name="kcfg_ImageSpacing"/>
+       <widget class="QCheckBox" name="kcfg_ShowCapsLock">
+        <property name="text">
+         <string>Caps Lock</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>97</width>
-          <height>27</height>
-         </size>
+       <widget class="KColorButton" name="kcfg_CapsLockColor">
+        <property name="color">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
         </property>
-        <property name="text">
-         <string>Pixel</string>
+        <property name="defaultColor">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QCheckBox" name="kcfg_ShowShiftPressed">
         <property name="text">
-         <string>Padding:</string>
+         <string>Shift pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="KColorButton" name="kcfg_ShiftPressedColor">
+        <property name="text">
+         <string>kc</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="KIntSpinBox" name="kcfg_ImagePadding"/>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="label_3">
+       <widget class="QCheckBox" name="kcfg_ShowControlPressed">
         <property name="text">
-         <string>Pixel</string>
+         <string>Control pressed</string>
         </property>
        </widget>
       </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_4">
-    <attribute name="title">
-     <string>Text</string>
-    </attribute>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>301</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="KFontRequester" name="kcfg_Font">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>16777215</height>
-         </size>
+      <item row="3" column="1">
+       <widget class="KColorButton" name="kcfg_ControlPressedColor">
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
         </property>
-        <property name="font">
-         <font>
-          <family>Sans Serif</family>
-          <pointsize>7</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowAltPressed">
+        <property name="text">
+         <string>Alt pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="KColorButton" name="kcfg_AltPressedColor">
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
         </property>
        </widget>
       </item>
@@ -360,50 +379,82 @@
  <resources/>
  <connections>
   <connection>
-   <sender>kcfg_HorizontalLayout</sender>
+   <sender>kcfg_ShowAltPressed</sender>
    <signal>toggled(bool)</signal>
-   <receiver>kcfg_Font</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>154</x>
-     <y>51</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>154</x>
-     <y>53</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_VerticalLayout</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_Font</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>154</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>154</x>
-     <y>53</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_TextLayout</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_Font</receiver>
+   <receiver>kcfg_AltPressedColor</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>154</x>
-     <y>105</y>
+     <x>78</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>154</x>
-     <y>53</y>
+     <x>230</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowControlPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_ControlPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowShiftPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_ShiftPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowCapsLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_CapsLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowNumLock</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_NumLockColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>52</y>
     </hint>
    </hints>
   </connection>
