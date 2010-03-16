@@ -37,6 +37,9 @@
      <height>410</height>
     </size>
    </property>
+   <property name="toolTip">
+    <string/>
+   </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
@@ -68,6 +71,9 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QRadioButton" name="kcfg_HorizontalLayout">
+         <property name="toolTip">
+          <string>A horizontal layout which displays one key status below another one</string>
+         </property>
          <property name="text">
           <string>Horizontal</string>
          </property>
@@ -78,6 +84,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="kcfg_VerticalLayout">
+         <property name="toolTip">
+          <string>A vertical layout which displays the status of a key next to another one</string>
+         </property>
          <property name="text">
           <string>Vertical</string>
          </property>
@@ -88,6 +97,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="kcfg_SingleLayout">
+         <property name="toolTip">
+          <string>A single layout which displays only the status of the key whose status has been changed last (usually used for Control/Alt/Shift etc. pressed status)</string>
+         </property>
          <property name="text">
           <string>Single</string>
          </property>
@@ -95,6 +107,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="kcfg_TextLayout">
+         <property name="toolTip">
+          <string>A text layout which displays all information as text on the screen</string>
+         </property>
          <property name="text">
           <string>Text</string>
          </property>
@@ -133,7 +148,11 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="KIntSpinBox" name="kcfg_ImageSpacing"/>
+        <widget class="KIntSpinBox" name="kcfg_ImageSpacing">
+         <property name="toolTip">
+          <string>The spacing between the status information of two keys</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="label_2">
@@ -156,7 +175,11 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="KIntSpinBox" name="kcfg_ImagePadding"/>
+        <widget class="KIntSpinBox" name="kcfg_ImagePadding">
+         <property name="toolTip">
+          <string>The space which is left free on top and on bottom</string>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
         <widget class="QLabel" name="label_3">
@@ -198,6 +221,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>The font in which the displayed text is written</string>
+         </property>
          <property name="font">
           <font>
            <family>Sans Serif</family>
@@ -229,6 +255,9 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QCheckBox" name="kcfg_ShowNumLock">
+        <property name="toolTip">
+         <string>Indicate whether 'Num Lock' is enabled or not</string>
+        </property>
         <property name="text">
          <string>Num Lock</string>
         </property>
@@ -238,6 +267,9 @@
        <widget class="KColorButton" name="kcfg_NumLockColor">
         <property name="enabled">
          <bool>true</bool>
+        </property>
+        <property name="toolTip">
+         <string>Num Lock</string>
         </property>
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
@@ -260,6 +292,9 @@
       </item>
       <item row="1" column="0">
        <widget class="QCheckBox" name="kcfg_ShowCapsLock">
+        <property name="toolTip">
+         <string>Indicate whether 'Caps Lock' is enabled or not</string>
+        </property>
         <property name="text">
          <string>Caps Lock</string>
         </property>
@@ -267,6 +302,9 @@
       </item>
       <item row="1" column="1">
        <widget class="KColorButton" name="kcfg_CapsLockColor">
+        <property name="toolTip">
+         <string>Caps Lock</string>
+        </property>
         <property name="color">
          <color>
           <red>255</red>
@@ -285,6 +323,9 @@
       </item>
       <item row="2" column="0">
        <widget class="QCheckBox" name="kcfg_ShowShiftPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Shift' is pressed or not</string>
+        </property>
         <property name="text">
          <string>Shift pressed</string>
         </property>
@@ -292,6 +333,9 @@
       </item>
       <item row="2" column="1">
        <widget class="KColorButton" name="kcfg_ShiftPressedColor">
+        <property name="toolTip">
+         <string>Shift pressed</string>
+        </property>
         <property name="text">
          <string>kc</string>
         </property>
@@ -313,6 +357,9 @@
       </item>
       <item row="3" column="0">
        <widget class="QCheckBox" name="kcfg_ShowControlPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Control' is pressed or not</string>
+        </property>
         <property name="text">
          <string>Control pressed</string>
         </property>
@@ -320,6 +367,9 @@
       </item>
       <item row="3" column="1">
        <widget class="KColorButton" name="kcfg_ControlPressedColor">
+        <property name="toolTip">
+         <string>Control pressed</string>
+        </property>
         <property name="color">
          <color>
           <red>136</red>
@@ -338,6 +388,9 @@
       </item>
       <item row="4" column="0">
        <widget class="QCheckBox" name="kcfg_ShowAltPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Alt' is pressed or not</string>
+        </property>
         <property name="text">
          <string>Alt pressed</string>
         </property>
@@ -345,6 +398,9 @@
       </item>
       <item row="4" column="1">
        <widget class="KColorButton" name="kcfg_AltPressedColor">
+        <property name="toolTip">
+         <string>Alt pressed</string>
+        </property>
         <property name="color">
          <color>
           <red>136</red>
