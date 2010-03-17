@@ -46,16 +46,14 @@ PlasmoidHandler = function()
 		plasmoid.paintInterface = this.paintInterface;
 		plasmoid.dataUpdated = this.dataUpdated;
 		
-		// register dataengines with our events
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.numLockObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.capsLockObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.shiftPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.controlPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.altPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.altgrPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.metaPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.superPressedObjectName(), plasmoid);
-		dataEngine(globals.constants.engineName()).connectSource(globals.constants.hyperPressedObjectName(), plasmoid);
+		// register all keys to the dataengine
+		for (var i in globals.keyObjectNames)
+		{
+			var objectName = globals.keyObjectNames[i];
+			
+			// register the object name to the dataengine
+			dataEngine(globals.constants.engineName()).connectSource(objectName, plasmoid);
+		}
 	}
 	
 	/**

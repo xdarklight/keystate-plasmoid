@@ -13,15 +13,13 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
-		this.updateKey(globals.constants.numLockObjectName());
-		this.updateKey(globals.constants.capsLockObjectName());
-		this.updateKey(globals.constants.shiftPressedObjectName());
-		this.updateKey(globals.constants.controlPressedObjectName());
-		this.updateKey(globals.constants.altPressedObjectName());
-		this.updateKey(globals.constants.altgrPressedObjectName());
-		this.updateKey(globals.constants.metaPressedObjectName());
-		this.updateKey(globals.constants.superPressedObjectName());
-		this.updateKey(globals.constants.hyperPressedObjectName());
+		for (var i in globals.keyObjectNames)
+		{
+			var objectName = globals.keyObjectNames[i];
+			
+			// update the key with the object name
+			this.updateKey(objectName);
+		}
 	}
 	
 	/**

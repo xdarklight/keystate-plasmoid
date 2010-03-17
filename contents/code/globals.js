@@ -15,6 +15,11 @@ Globals = function()
 	this.constants = null;
 	
 	/**
+	  * points to an array of key object names
+	  */
+	this.keyObjectNames = new Array();
+	
+	/**
 	  * points to the plasmoid's layout handling object
 	  */
 	this.layout = null;
