@@ -115,16 +115,8 @@ PlasmoidHandler = function()
 		switch (name)
 		{
 			case globals.constants.capsLockObjectName():
-				// check the CAPS lock modifier
-				if (keyStatus != currentModifierIsLocked)
-				{
-					currentStatus = currentModifierIsLocked;
-					dataChanged = true;
-				}
-				
-				break;
 			case globals.constants.numLockObjectName():
-				// check the NUM lock modifier
+				// check the locked modifiers
 				if (keyStatus != currentModifierIsLocked)
 				{
 					currentStatus = currentModifierIsLocked;
@@ -133,26 +125,9 @@ PlasmoidHandler = function()
 				
 				break;
 			case globals.constants.shiftPressedObjectName():
-				// check if shift is pressed
-				if (keyStatus != currentModifierIsPressed)
-				{
-					currentStatus = currentModifierIsPressed;
-					dataChanged = true;
-				}
-				
-				break;
 			case globals.constants.controlPressedObjectName():
-				// check if control is pressed
-				if (keyStatus != currentModifierIsPressed)
-				{
-					currentStatus = currentModifierIsPressed;
-					dataChanged = true;
-				}
-				
-				break;
-			
 			case globals.constants.altPressedObjectName():
-				// check if alt is pressed
+				// check if the key is pressed
 				if (keyStatus != currentModifierIsPressed)
 				{
 					currentStatus = currentModifierIsPressed;
