@@ -106,50 +106,30 @@ PlasmoidHandler = function()
 	  */
 	this.dataUpdated = function(name, data)
 	{
-		var dataChanged = false;
 		var currentModifierIsLocked = Boolean(data.Locked);
 		var currentModifierIsPressed = Boolean(data.Pressed);
-		var keyStatus = globals.keyInformation.getStatus(name);
 		
-		var currentStatus = null;
-		var currentColor = null;
+		var keyStatus = globals.keyInformation.getStatus(name);
+		var keyValueObjectName = globals.keyInformation.getValueObjectName(name);
+		
+		// initialize currentStatus with the value of keyStatus
+		// if the key value object name is unknown the plasmoid will
+		// not get updated
+		var currentStatus = keyStatus;
 		
 		// check which modifier was changed
-		switch (name)
+		switch (keyValueObjectName)
 		{
-			case globals.constants.capsLockObjectName():
-			case globals.constants.numLockObjectName():
-				// check the locked modifiers
-				if (keyStatus != currentModifierIsLocked)
-				{
-					currentStatus = currentModifierIsLocked;
-					dataChanged = true;
-				}
-				
+			case globals.constants.objectValueLockedName():
+				currentStatus = currentModifierIsLocked;
 				break;
-			case globals.constants.shiftPressedObjectName():
-			case globals.constants.controlPressedObjectName():
-			case globals.constants.altPressedObjectName():
-			case globals.constants.altgrPressedObjectName():
-			case globals.constants.metaPressedObjectName():
-			case globals.constants.superPressedObjectName():
-			case globals.constants.hyperPressedObjectName():
-				// check if the key is pressed
-				if (keyStatus != currentModifierIsPressed)
-				{
-					currentStatus = currentModifierIsPressed;
-					dataChanged = true;
-				}
-				
-				break;
-			default:
-				// well... this shouldn't have happened :(
-				// but anyway: dataChanged is false: we will not update
+			case globals.constants.objectValuePressedName():
+				currentStatus = currentModifierIsPressed;
 				break;
 		}
 		
 		// only update if the data changed
-		if (dataChanged)
+		if (keyStatus != currentStatus)
 		{
 			// update the KeyInformation object
 			globals.keyInformation.updateStatus(name, currentStatus);

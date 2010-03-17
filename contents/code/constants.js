@@ -27,6 +27,8 @@ Constants = function()
 	metaPressedText = "Meta";
 	superPressedText = "Super";
 	hyperPressedText = "Hyper";
+	objectValueLockedName = "Locked";
+	objectValuePressedName = "Pressed";
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
@@ -221,6 +223,22 @@ Constants = function()
 	this.fullyTransparentColor = function()
 	{
 		return fullyTransparentColor;
+	}
+	
+	/**
+	  * returns the object name which holds the value of the 'Locked' status
+	  */
+	this.objectValueLockedName = function()
+	{
+		return objectValueLockedName;
+	}
+	
+	/**
+	  * returns the object name which holds the value of the 'Pressed' status
+	  */
+	this.objectValuePressedName = function()
+	{
+		return objectValuePressedName;
 	}
 	
 	/**

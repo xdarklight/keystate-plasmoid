@@ -6,6 +6,7 @@ KeyInformation = function()
 	this.statusInformation = new Array();
 	this.colorInformation = new Array();
 	this.keys = new Array();
+	this.keyValueMapping = new Array();
 	this.keyCount = 0;
 	
 	/**
@@ -206,6 +207,14 @@ KeyInformation = function()
 	}
 	
 	/**
+	  * gets the value object name (the property of the 'data' object in the dataUpdated event)
+	  */
+	this.getValueObjectName = function(keyName)
+	{
+		return this.keyValueMapping[keyName];
+	}
+	
+	/**
 	  * updates the status of the key with the given name
 	  */
 	this.updateStatus = function(keyName, keyStatus)
@@ -220,5 +229,13 @@ KeyInformation = function()
 	this.updateColor = function(keyName, keyColor)
 	{
 		this.colorInformation[keyName] = keyColor;
+	}
+	
+	/**
+	  * updates the value object name (the property of the 'data' object in the dataUpdated event)
+	  */
+	this.updateValueObjectName = function(keyName, valueObjectName)
+	{
+		this.keyValueMapping[keyName] = valueObjectName;
 	}
 }
