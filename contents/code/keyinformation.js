@@ -67,6 +67,7 @@ KeyInformation = function()
 	  */
 	this.updateKey = function(keyName)
 	{
+		// get the user's settings for the key
 		var isEnabled = globals.configuration.keyConfiguration().isKeyShown(keyName);
 		var keyColor = globals.configuration.keyConfiguration().getKeyColor(keyName);
 		
@@ -147,30 +148,39 @@ KeyInformation = function()
 		switch (keyName)
 		{
 			case globals.constants.numLockObjectName():
+				// Num Lock
 				text = i18n(globals.constants.numLockedText());
 				break;
 			case globals.constants.capsLockObjectName():
+				/// Caps Lock
 				text = i18n(globals.constants.capsLockedText());
 				break;
 			case globals.constants.shiftPressedObjectName():
+				// Shift pressed
 				text = i18n(globals.constants.shiftPressedText());
 				break;
 			case globals.constants.controlPressedObjectName():
+				// CTRL pressed
 				text = i18n(globals.constants.controlPressedText());
 				break;
 			case globals.constants.altPressedObjectName():
+				// ALT pressed
 				text = i18n(globals.constants.altPressedText());
 				break;
 			case globals.constants.altgrPressedObjectName():
+				// AltGr pressed
 				text = i18n(globals.constants.altgrPressedText());
 				break;
 			case globals.constants.metaPressedObjectName():
+				// meta pressed
 				text = i18n(globals.constants.metaPressedText());
 				break;
 			case globals.constants.superPressedObjectName():
+				// super pressed
 				text = i18n(globals.constants.superPressedText());
 				break;
 			case globals.constants.hyperPressedObjectName():
+				// hyper pressed
 				text = i18n(globals.constants.hyperPressedText());
 				break;
 		}

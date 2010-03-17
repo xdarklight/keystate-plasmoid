@@ -110,6 +110,7 @@ PlasmoidHandler = function()
 		var currentModifierIsLocked = Boolean(data.Locked);
 		var currentModifierIsPressed = Boolean(data.Pressed);
 		
+		// get all information for the current key
 		var keyContainer = globals.keyInformation.getContainer(name);
 		
 		// initialize currentStatus with the value of keyStatus
