@@ -14,6 +14,7 @@ PlasmoidHandler = function()
 		// all includes
 		plasmoid.include("layout.js");
 		plasmoid.include("constants.js");
+		plasmoid.include("keyconfiguration.js");
 		plasmoid.include("configuration.js");
 		plasmoid.include("keyinformation.js");
 		

@@ -13,15 +13,15 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
-		this.updateKey(globals.constants.numLockObjectName(), globals.configuration.numLockColor(), globals.configuration.showNumLock());
-		this.updateKey(globals.constants.capsLockObjectName(), globals.configuration.capsLockColor(), globals.configuration.showCapsLock());
-		this.updateKey(globals.constants.shiftPressedObjectName(), globals.configuration.shiftPressedColor(), globals.configuration.showShiftPressed());
-		this.updateKey(globals.constants.controlPressedObjectName(), globals.configuration.controlPressedColor(), globals.configuration.showControlPressed());
-		this.updateKey(globals.constants.altPressedObjectName(), globals.configuration.altPressedColor(), globals.configuration.showAltPressed());
-		this.updateKey(globals.constants.altgrPressedObjectName(), globals.configuration.altgrPressedColor(), globals.configuration.showAltgrPressed());
-		this.updateKey(globals.constants.metaPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showMetaPressed());
-		this.updateKey(globals.constants.superPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showSuperPressed());
-		this.updateKey(globals.constants.hyperPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showHyperPressed());
+		this.updateKey(globals.constants.numLockObjectName());
+		this.updateKey(globals.constants.capsLockObjectName());
+		this.updateKey(globals.constants.shiftPressedObjectName());
+		this.updateKey(globals.constants.controlPressedObjectName());
+		this.updateKey(globals.constants.altPressedObjectName());
+		this.updateKey(globals.constants.altgrPressedObjectName());
+		this.updateKey(globals.constants.metaPressedObjectName());
+		this.updateKey(globals.constants.superPressedObjectName());
+		this.updateKey(globals.constants.hyperPressedObjectName());
 	}
 	
 	/**
@@ -66,8 +66,11 @@ KeyInformation = function()
 	  * adds or removes key information depending on
 	  * if it the key is enabled or not
 	  */
-	this.updateKey = function(keyName, keyColor, isEnabled)
+	this.updateKey = function(keyName)
 	{
+		var isEnabled = globals.configuration.keyConfiguration().isKeyShown(keyName);
+		var keyColor = globals.configuration.keyConfiguration().getKeyColor(keyName);
+		
 		if (isEnabled)
 		{
 			this.addKeyInformation(keyName);
