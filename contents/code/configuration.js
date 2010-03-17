@@ -38,25 +38,27 @@ Configuration = function()
 		var textLayout = Boolean(textLayoutConfigValue);
 		var singleLayout = Boolean(singleLayoutConfigValue);
 		
+		// default to horizontal layout
+		var selectedLayoutName = globals.constants.horizontalLayoutName();
+		
 		// check which layout is enabled
 		if (verticalLayout == true)
 		{
 			// the vertical layout is enabled
-			return globals.constants.verticalLayoutName();
+			selectedLayoutName = globals.constants.verticalLayoutName();
 		}
 		else if (textLayout == true)
 		{
 			// the text layout is enabled
-			return globals.constants.textLayoutName();
+			selectedLayoutName = globals.constants.textLayoutName();
 		}
-		else if (singleLayout == true);
+		else if (singleLayout == true)
 		{
 			// the single layout is enabled
-			return globals.constants.singleLayoutName();
+			selectedLayoutName = globals.constants.singleLayoutName();
 		}
 		
-		// default to horizontal layout
-		return globals.constants.horizontalLayoutName();
+		return selectedLayoutName;
 	}
 	
 	/**
