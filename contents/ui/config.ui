@@ -657,5 +657,69 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>kcfg_ShowAltGrPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_AltGrPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowMetaPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_MetaPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowSuperPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_SuperPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>278</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowHyperPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_HyperPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>
