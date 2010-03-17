@@ -249,7 +249,7 @@
        <x>0</x>
        <y>0</y>
        <width>301</width>
-       <height>151</height>
+       <height>291</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -400,6 +400,130 @@
        <widget class="KColorButton" name="kcfg_AltPressedColor">
         <property name="toolTip">
          <string>Alt pressed</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowAltGrPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'AltGr' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>AltGr pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowMetaPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Meta' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>Meta pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowSuperPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Super' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>Super pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowHyperPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Hyper' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>Hyper pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="KColorButton" name="kcfg_AltGrPressedColor">
+        <property name="toolTip">
+         <string>AltGr pressed</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="KColorButton" name="kcfg_MetaPressedColor">
+        <property name="toolTip">
+         <string>Meta pressed</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="KColorButton" name="kcfg_SuperPressedColor">
+        <property name="toolTip">
+         <string>Super pressed</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="KColorButton" name="kcfg_HyperPressedColor">
+        <property name="toolTip">
+         <string>Hyper pressed</string>
         </property>
         <property name="color">
          <color>

@@ -51,6 +51,10 @@ PlasmoidHandler = function()
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.shiftPressedObjectName(), plasmoid);
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.controlPressedObjectName(), plasmoid);
 		dataEngine(globals.constants.engineName()).connectSource(globals.constants.altPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.altgrPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.metaPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.superPressedObjectName(), plasmoid);
+		dataEngine(globals.constants.engineName()).connectSource(globals.constants.hyperPressedObjectName(), plasmoid);
 	}
 	
 	/**
@@ -127,6 +131,10 @@ PlasmoidHandler = function()
 			case globals.constants.shiftPressedObjectName():
 			case globals.constants.controlPressedObjectName():
 			case globals.constants.altPressedObjectName():
+			case globals.constants.altgrPressedObjectName():
+			case globals.constants.metaPressedObjectName():
+			case globals.constants.superPressedObjectName():
+			case globals.constants.hyperPressedObjectName():
 				// check if the key is pressed
 				if (keyStatus != currentModifierIsPressed)
 				{

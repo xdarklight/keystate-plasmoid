@@ -21,6 +21,18 @@
 		<entry name="AltPressedColor" type="Color">
 			<default>#887422</default>
 		</entry>
+		<entry name="AltGrPressedColor" type="Color">
+			<default>#887422</default>
+		</entry>
+		<entry name="MetaPressedColor" type="Color">
+			<default>#887422</default>
+		</entry>
+		<entry name="SuperPressedColor" type="Color">
+			<default>#887422</default>
+		</entry>
+		<entry name="HyperPressedColor" type="Color">
+			<default>#887422</default>
+		</entry>
 		<entry name="VerticalLayout" type="Bool">
 			<default>false</default>
 		</entry>
@@ -55,6 +67,18 @@
 			<default>false</default>
 		</entry>
 		<entry name="ShowAltPressed" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="ShowAltGrPressed" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="ShowMetaPressed" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="ShowSuperPressed" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="ShowHyperPressed" type="Bool">
 			<default>false</default>
 		</entry>
 	</group>

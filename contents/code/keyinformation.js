@@ -18,6 +18,10 @@ KeyInformation = function()
 		this.updateKey(globals.constants.shiftPressedObjectName(), globals.configuration.shiftPressedColor(), globals.configuration.showShiftPressed());
 		this.updateKey(globals.constants.controlPressedObjectName(), globals.configuration.controlPressedColor(), globals.configuration.showControlPressed());
 		this.updateKey(globals.constants.altPressedObjectName(), globals.configuration.altPressedColor(), globals.configuration.showAltPressed());
+		this.updateKey(globals.constants.altgrPressedObjectName(), globals.configuration.altgrPressedColor(), globals.configuration.showAltgrPressed());
+		this.updateKey(globals.constants.metaPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showMetaPressed());
+		this.updateKey(globals.constants.superPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showSuperPressed());
+		this.updateKey(globals.constants.hyperPressedObjectName(), globals.configuration.metaPressedColor(), globals.configuration.showHyperPressed());
 	}
 	
 	/**
@@ -154,6 +158,18 @@ KeyInformation = function()
 				break;
 			case globals.constants.altPressedObjectName():
 				text = i18n(globals.constants.altPressedText());
+				break;
+			case globals.constants.altgrPressedObjectName():
+				text = i18n(globals.constants.altgrPressedText());
+				break;
+			case globals.constants.metaPressedObjectName():
+				text = i18n(globals.constants.metaPressedText());
+				break;
+			case globals.constants.superPressedObjectName():
+				text = i18n(globals.constants.superPressedText());
+				break;
+			case globals.constants.hyperPressedObjectName():
+				text = i18n(globals.constants.hyperPressedText());
 				break;
 		}
 		

@@ -10,6 +10,10 @@ Constants = function()
 	shiftPressedObjectName = "Shift";
 	controlPressedObjectName = "Ctrl";
 	altPressedObjectName = "Alt";
+	altgrPressedObjectName = "AltGr";
+	metaPressedObjectName = "Meta";
+	superPressedObjectName = "Super";
+	hyperPressedObjectName = "Hyper";
 	verticalLayoutName = "vertical";
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
@@ -19,6 +23,10 @@ Constants = function()
 	shiftPressedText = "Shift";
 	controlPressedText = "Ctrl";
 	altPressedText = "Alt";
+	altgrPressedText = "AltGr";
+	metaPressedText = "Meta";
+	superPressedText = "Super";
+	hyperPressedText = "Hyper";
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
@@ -72,6 +80,38 @@ Constants = function()
 	}
 	
 	/**
+	  * returns the value of the alt gr pressed object name
+	  */
+	this.altgrPressedObjectName = function()
+	{
+		return altgrPressedObjectName;
+	}
+	
+	/**
+	  * returns the value of the meta pressed object name
+	  */
+	this.metaPressedObjectName = function()
+	{
+		return metaPressedObjectName;
+	}
+	
+	/**
+	  * returns the value of the super pressed object name
+	  */
+	this.superPressedObjectName = function()
+	{
+		return superPressedObjectName;
+	}
+	
+	/**
+	  * returns the value of the hyper pressed object name
+	  */
+	this.hyperPressedObjectName = function()
+	{
+		return hyperPressedObjectName;
+	}
+	
+	/**
 	  * returns the name of the vertical layout
 	  */
 	this.verticalLayoutName = function()
@@ -104,7 +144,7 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the num lock status
+	  * returns the text for the num lock status
 	  */
 	this.numLockedText = function()
 	{
@@ -112,7 +152,7 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the caps lock status
+	  * returns the text for the caps lock status
 	  */
 	this.capsLockedText = function()
 	{
@@ -120,7 +160,7 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the shift pressed status
+	  * returns the text for the shift pressed status
 	  */
 	this.shiftPressedText = function()
 	{
@@ -128,7 +168,7 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the control pressed status
+	  * returns the text for the control pressed status
 	  */
 	this.controlPressedText = function()
 	{
@@ -136,11 +176,43 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the text (with placeholders) for the alt pressed status
+	  * returns the text for the alt pressed status
 	  */
 	this.altPressedText = function()
 	{
 		return altPressedText;
+	}
+	
+	/**
+	  * returns the text for the alt gr pressed status
+	  */
+	this.altgrPressedText = function()
+	{
+		return altPressedText;
+	}
+	
+	/**
+	  * returns the text for the meta pressed status
+	  */
+	this.metaPressedText = function()
+	{
+		return metaPressedText;
+	}
+	
+	/**
+	  * returns the text for the super pressed status
+	  */
+	this.superPressedText = function()
+	{
+		return superPressedText;
+	}
+	
+	/**
+	  * returns the text for the hyper pressed status
+	  */
+	this.hyperPressedText = function()
+	{
+		return hyperPressedText;
 	}
 	
 	/**
