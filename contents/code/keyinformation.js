@@ -215,6 +215,30 @@ KeyInformation = function()
 	}
 	
 	/**
+	  * gets the KeyInformationContainer for the given object (which can be
+	  * either the key's index or the key's name/object name)
+	  */
+	this.getContainer = function(object)
+	{
+		var name = object;
+		
+		// check if the object is numeric
+		if (!/\D/.test(object))
+		{
+			// the given object is numeric -> we got an index
+			name = this.getName(object);
+		}
+		
+		// get all information
+		var status = this.getStatus(name);
+		var valueObjectName = this.getValueObjectName(name);
+		var color = this.getColor(name);
+		var text = this.getText(name);
+		
+		return new KeyInformationContainer(name, status, valueObjectName, color, text);
+	}
+	
+	/**
 	  * updates the status of the key with the given name
 	  */
 	this.updateStatus = function(keyName, keyStatus)

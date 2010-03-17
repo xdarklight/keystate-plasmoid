@@ -16,6 +16,7 @@ PlasmoidHandler = function()
 		plasmoid.include("constants.js");
 		plasmoid.include("keyconfiguration.js");
 		plasmoid.include("configuration.js");
+		plasmoid.include("keyinformationcontainer.js")
 		plasmoid.include("keyinformation.js");
 		
 		// fill our globals object with information
@@ -109,16 +110,15 @@ PlasmoidHandler = function()
 		var currentModifierIsLocked = Boolean(data.Locked);
 		var currentModifierIsPressed = Boolean(data.Pressed);
 		
-		var keyStatus = globals.keyInformation.getStatus(name);
-		var keyValueObjectName = globals.keyInformation.getValueObjectName(name);
+		var keyContainer = globals.keyInformation.getContainer(name);
 		
 		// initialize currentStatus with the value of keyStatus
 		// if the key value object name is unknown the plasmoid will
 		// not get updated
-		var currentStatus = keyStatus;
+		var currentStatus = keyContainer.status;
 		
 		// check which modifier was changed
-		switch (keyValueObjectName)
+		switch (keyContainer.valueObjectName)
 		{
 			case globals.constants.objectValueLockedName():
 				currentStatus = currentModifierIsLocked;
@@ -129,7 +129,7 @@ PlasmoidHandler = function()
 		}
 		
 		// only update if the data changed
-		if (keyStatus != currentStatus)
+		if (keyContainer.status != currentStatus)
 		{
 			// update the KeyInformation object
 			globals.keyInformation.updateStatus(name, currentStatus);

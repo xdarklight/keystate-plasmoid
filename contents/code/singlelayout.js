@@ -41,11 +41,10 @@ SingleLayout = function()
 		
 		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
-			var name = globals.keyInformation.getName(i);
-			var color = globals.keyInformation.getColor(name);
+			var keyContainer = globals.keyInformation.getContainer(i);
 			
 			// paint the icon
-			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), color);
+			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyContainer.color);
 		}
 	}
 }
