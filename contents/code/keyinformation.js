@@ -90,7 +90,7 @@ KeyInformation = function()
 	  * @param keyLocked decides if the key is locked or not
 	  * @param keyColor the color if the key is locked, otherwise a neutral color is returned
 	  */
-	this.getColorByStatus = function(keyEnabled, keyColor)
+	this.resolveColor = function(keyEnabled, keyColor)
 	{
 		var color = globals.constants.fullyTransparentColor();
 		
@@ -205,7 +205,7 @@ KeyInformation = function()
 		var color = this.colorInformation[keyName];
 		var status = this.getStatus(keyName);
 		
-		return this.getColorByStatus(status, color);
+		return this.resolveColor(status, color);
 	}
 	
 	/**
