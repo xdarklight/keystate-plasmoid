@@ -36,10 +36,6 @@ KeyInformation = function()
 			
 			// increment our counter
 			this.keyCount++;
-			
-			// update the data and the color of the key
-			this.updateData(keyName, this.getData(keyName));
-			this.updateColor(keyName, this.getColor(keyName));
 		}
 	}
 	
