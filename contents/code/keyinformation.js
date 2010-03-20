@@ -28,7 +28,7 @@ KeyInformation = function()
 	this.addKeyInformation = function(keyName)
 	{
 		// only add the key information if the key does not exist yet
-		if (this.findIndex(keyName) == global.constants.indexNotFound())
+		if (this.keys.findIndex(keyName) == global.constants.indexNotFound())
 		{
 			// add the object to the list
 			this.keys[this.keyCount] = keyName;
@@ -43,7 +43,7 @@ KeyInformation = function()
 	  */
 	this.removeKey = function(keyName)
 	{
-		var index = this.findIndex(keyName);
+		var index = this.keys.findIndex(keyName);
 		
 		// remove the key information from our array if it was found
 		if (index > global.constants.indexNotFound())
@@ -64,7 +64,6 @@ KeyInformation = function()
 	{
 		// get the user's settings for the key
 		var isEnabled = global.configuration.keyConfiguration().isKeyShown(keyName);
-		var keyColor = global.configuration.keyConfiguration().getKeyColor(keyName);
 		
 		if (isEnabled)
 		{
@@ -119,31 +118,6 @@ KeyInformation = function()
 	this.count = function()
 	{
 		return this.keyCount;
-	}
-	
-	/**
-	  * finds the index of the key with the given name
-	  * if no key with the given name was found global.constants.indexNotFound()
-	  * is returned
-	  */
-	this.findIndex = function(keyName)
-	{
-		var index = global.constants.indexNotFound();
-		
-		// find the index of the key in the keyInformation array
-		for (var i = 0; i < this.count(); i++)
-		{
-			var name = this.keys[i];
-			
-			// check if the key's name matches the given name
-			if (keyName == name)
-			{
-				index = i;
-				break;
-			}
-		}
-		
-		return index;
 	}
 	
 	/**

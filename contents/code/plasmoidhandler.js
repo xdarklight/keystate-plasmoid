@@ -103,6 +103,9 @@ PlasmoidHandler.initialize = function()
 	// tell everyone we're busy
 	plasmoid.busy = true;
 	
+	// prototypes for existing classes
+	plasmoid.include("array.js");
+	
 	// all includes
 	plasmoid.include("layout.js");
 	plasmoid.include("constants.js");
