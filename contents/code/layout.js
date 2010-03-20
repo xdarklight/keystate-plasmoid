@@ -12,12 +12,12 @@ Layout = function()
 	this.instantiateSelectedLayout = function()
 	{
 		var layout = null;
-		var layoutName = globals.configuration.layoutConfiguration().getSelectedLayoutName();
+		var layoutName = global.configuration.layoutConfiguration().getSelectedLayoutName();
 		
 		// handle the layout selection
 		switch (layoutName)
 		{
-			case globals.constants.horizontalLayoutName():
+			case global.constants.horizontalLayoutName():
 				// include the layout code
 				plasmoid.include("horizontallayout.js");
 				
@@ -25,7 +25,7 @@ Layout = function()
 				layout = new HorizontalLayout();
 				
 				break;
-			case globals.constants.verticalLayoutName():
+			case global.constants.verticalLayoutName():
 				// include the layout code
 				plasmoid.include("verticallayout.js");
 				
@@ -33,7 +33,7 @@ Layout = function()
 				layout = new VerticalLayout();
 				
 				break;
-			case globals.constants.textLayoutName():
+			case global.constants.textLayoutName():
 				// include the layout code
 				plasmoid.include("textlayout.js");
 				
@@ -42,7 +42,7 @@ Layout = function()
 				
 				break;
 			
-			case globals.constants.singleLayoutName():
+			case global.constants.singleLayoutName():
 				// include the layout code
 				plasmoid.include("singlelayout.js");
 				

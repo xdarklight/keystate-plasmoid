@@ -9,10 +9,10 @@ VerticalLayout = function()
 	this.imageWidth = function()
 	{
 		// use half of the width
-		var imageWidth = plasmoid.size.width / globals.keyInformation.count();
+		var imageWidth = plasmoid.size.width / global.keyInformation.count();
 		
 		// minus the spacing (between the two rectangles)
-		imageWidth -= globals.configuration.layoutConfiguration().getImageSpacing();
+		imageWidth -= global.configuration.layoutConfiguration().getImageSpacing();
 		
 		return imageWidth;
 	}
@@ -25,7 +25,7 @@ VerticalLayout = function()
 		var imageHeight = plasmoid.size.height;
 		
 		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * globals.configuration.layoutConfiguration().getImagePadding();
+		imageHeight -= 2 * global.configuration.layoutConfiguration().getImagePadding();
 		
 		return imageHeight;
 	}
@@ -41,18 +41,18 @@ VerticalLayout = function()
 		var yPos = 0;
 		
 		// start with a padded value
-		yPos += globals.configuration.layoutConfiguration().getImagePadding();
+		yPos += global.configuration.layoutConfiguration().getImagePadding();
 		
-		for (var i = 0; i < globals.keyInformation.count(); i++)
+		for (var i = 0; i < global.keyInformation.count(); i++)
 		{
-			var keyContainer = globals.keyInformation.getContainer(i);
+			var keyContainer = global.keyInformation.getContainer(i);
 			
 			// paint the icon
 			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyContainer.color);
 		
 			// calculate the new positions
 			// yPos did not change
-			xPos += globals.configuration.layoutConfiguration().getImageSpacing() + this.imageWidth();
+			xPos += global.configuration.layoutConfiguration().getImageSpacing() + this.imageWidth();
 		}
 	}
 }

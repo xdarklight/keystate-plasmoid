@@ -48,7 +48,7 @@ LayoutConfiguration = function()
 		this.font = fontConfigValue;
 		
 		// create an instance of the selected layout
-		globals.layout.instantiateSelectedLayout();
+		global.layout.instantiateSelectedLayout();
 	}
 	
 	/**
@@ -69,23 +69,23 @@ LayoutConfiguration = function()
 		var singleLayout = Boolean(singleLayoutConfigValue);
 		
 		// default to horizontal layout
-		var selectedLayoutName = globals.constants.horizontalLayoutName();
+		var selectedLayoutName = global.constants.horizontalLayoutName();
 		
 		// check which layout is enabled
 		if (verticalLayout)
 		{
 			// the vertical layout is enabled
-			selectedLayoutName = globals.constants.verticalLayoutName();
+			selectedLayoutName = global.constants.verticalLayoutName();
 		}
 		else if (textLayout)
 		{
 			// the text layout is enabled
-			selectedLayoutName = globals.constants.textLayoutName();
+			selectedLayoutName = global.constants.textLayoutName();
 		}
 		else if (singleLayout)
 		{
 			// the single layout is enabled
-			selectedLayoutName = globals.constants.singleLayoutName();
+			selectedLayoutName = global.constants.singleLayoutName();
 		}
 		
 		return selectedLayoutName;

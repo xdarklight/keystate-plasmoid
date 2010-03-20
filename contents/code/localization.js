@@ -22,47 +22,47 @@ Localization = function()
 	this.initialize = function()
 	{
 		// loop through all key names
-		for (var i in globals.keyNames)
+		for (var i in global.keyNames)
 		{
-			var keyName = globals.keyNames[i];
+			var keyName = global.keyNames[i];
 			var text = "";
 			
 			// determine the (english) text for the key
 			switch (keyName)
 			{
-				case globals.constants.numLockObjectName():
+				case global.constants.numLockObjectName():
 					// Num Lock
 					text = numLockedText;
 					break;
-				case globals.constants.capsLockObjectName():
+				case global.constants.capsLockObjectName():
 					/// Caps Lock
 					text = capsLockedText;
 					break;
-				case globals.constants.shiftPressedObjectName():
+				case global.constants.shiftPressedObjectName():
 					// Shift pressed
 					text = shiftPressedText;
 					break;
-				case globals.constants.controlPressedObjectName():
+				case global.constants.controlPressedObjectName():
 					// CTRL pressed
 					text = controlPressedText;
 					break;
-				case globals.constants.altPressedObjectName():
+				case global.constants.altPressedObjectName():
 					// ALT pressed
 					text = altPressedText;
 					break;
-				case globals.constants.altgrPressedObjectName():
+				case global.constants.altgrPressedObjectName():
 					// AltGr pressed
 					text = altgrPressedText;
 					break;
-				case globals.constants.metaPressedObjectName():
+				case global.constants.metaPressedObjectName():
 					// meta pressed
 					text = metaPressedText;
 					break;
-				case globals.constants.superPressedObjectName():
+				case global.constants.superPressedObjectName():
 					// super pressed
 					text = superPressedText;
 					break;
-				case globals.constants.hyperPressedObjectName():
+				case global.constants.hyperPressedObjectName():
 					// hyper pressed
 					text = hyperPressedText;
 					break;

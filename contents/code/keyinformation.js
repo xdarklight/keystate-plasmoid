@@ -14,9 +14,9 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
-		for (var i in globals.keyNames)
+		for (var i in global.keyNames)
 		{
-			var objectName = globals.keyNames[i];
+			var objectName = global.keyNames[i];
 			
 			// update the key with the object name
 			this.updateKey(objectName);
@@ -29,7 +29,7 @@ KeyInformation = function()
 	this.addKeyInformation = function(keyName)
 	{
 		// only add the key information if the key does not exist yet
-		if (this.findIndex(keyName) == globals.constants.indexNotFound())
+		if (this.findIndex(keyName) == global.constants.indexNotFound())
 		{
 			// add the object to the list
 			this.keys[this.keyCount] = keyName;
@@ -51,7 +51,7 @@ KeyInformation = function()
 		var index = this.findIndex(keyName);
 		
 		// remove the key information from our array if it was found
-		if (index > globals.constants.indexNotFound())
+		if (index > global.constants.indexNotFound())
 		{
 			// remove one element at the given index from the array
 			this.keys.splice(index, 1);
@@ -68,8 +68,8 @@ KeyInformation = function()
 	this.updateKey = function(keyName)
 	{
 		// get the user's settings for the key
-		var isEnabled = globals.configuration.keyConfiguration().isKeyShown(keyName);
-		var keyColor = globals.configuration.keyConfiguration().getKeyColor(keyName);
+		var isEnabled = global.configuration.keyConfiguration().isKeyShown(keyName);
+		var keyColor = global.configuration.keyConfiguration().getKeyColor(keyName);
 		
 		if (isEnabled)
 		{
@@ -92,7 +92,7 @@ KeyInformation = function()
 	  */
 	this.resolveColor = function(keyEnabled, keyColor)
 	{
-		var color = globals.constants.fullyTransparentColor();
+		var color = global.constants.fullyTransparentColor();
 		
 		// check if the key is enabled (pressed/locked/etc)
 		if (keyEnabled)
@@ -131,12 +131,12 @@ KeyInformation = function()
 	
 	/**
 	  * finds the index of the key with the given name
-	  * if no key with the given name was found globals.constants.indexNotFound()
+	  * if no key with the given name was found global.constants.indexNotFound()
 	  * is returned
 	  */
 	this.findIndex = function(keyName)
 	{
-		var index = globals.constants.indexNotFound();
+		var index = global.constants.indexNotFound();
 		
 		// find the index of the key in the keyInformation array
 		for (var i = 0; i < this.count(); i++)

@@ -21,7 +21,7 @@ SingleLayout = function()
 		var imageHeight = plasmoid.size.height;
 		
 		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * globals.configuration.layoutConfiguration().getImagePadding();
+		imageHeight -= 2 * global.configuration.layoutConfiguration().getImagePadding();
 		
 		return imageHeight;
 	}
@@ -37,11 +37,11 @@ SingleLayout = function()
 		var yPos = 0;
 		
 		// start at 0 + padding
-		yPos = globals.configuration.layoutConfiguration().getImagePadding();
+		yPos = global.configuration.layoutConfiguration().getImagePadding();
 		
-		for (var i = 0; i < globals.keyInformation.count(); i++)
+		for (var i = 0; i < global.keyInformation.count(); i++)
 		{
-			var keyContainer = globals.keyInformation.getContainer(i);
+			var keyContainer = global.keyInformation.getContainer(i);
 			
 			// paint the icon
 			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyContainer.color);

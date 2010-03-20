@@ -1,8 +1,8 @@
 /**
-  * our globals object which is available everywhere in the code
+  * our 'global' object which is available everywhere in the code
   * do NOT pass this to any function/class as that's not necessary
   */
-Globals = function()
+Global = function()
 {
 	/**
 	  * points to an array of key object names

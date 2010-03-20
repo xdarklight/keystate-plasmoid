@@ -20,11 +20,11 @@ KeyInformationContainer.createContainer = function(name)
 	var container = new KeyInformationContainer();
 	
 	// get all information
-	var color = globals.keyInformation.getColor(name);
-	var status = globals.keyInformation.getStatus(name);
-	var dataPropertyName = globals.keyInformation.getDataPropertyName(name);
-	var text = globals.localization.getText(name);
-	var data = globals.keyInformation.getData(name);
+	var color = global.keyInformation.getColor(name);
+	var status = global.keyInformation.getStatus(name);
+	var dataPropertyName = global.keyInformation.getDataPropertyName(name);
+	var text = global.localization.getText(name);
+	var data = global.keyInformation.getData(name);
 	
 	// fill the container with data
 	container.name = name;
