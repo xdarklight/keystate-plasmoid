@@ -107,33 +107,20 @@ PlasmoidHandler = function()
 	  */
 	this.dataUpdated = function(name, data)
 	{
-		var currentModifierIsLocked = Boolean(data.Locked);
-		var currentModifierIsPressed = Boolean(data.Pressed);
-		
 		// get all information for the current key
 		var keyContainer = globals.keyInformation.getContainer(name);
 		
-		// initialize currentStatus with the value of keyStatus
-		// if the key value object name is unknown the plasmoid will
-		// not get updated
-		var currentStatus = keyContainer.status;
+		// get the status from the data array
+		var newStatus = globals.keyInformation.resolveStatus(name, data);
 		
-		// check which modifier was changed
-		switch (keyContainer.dataPropertyName)
-		{
-			case globals.constants.dataLockedPropertyName():
-				currentStatus = currentModifierIsLocked;
-				break;
-			case globals.constants.dataPressedPropertyName():
-				currentStatus = currentModifierIsPressed;
-				break;
-		}
+		// get the current status of the key
+		var currentStatus = keyContainer.status
 		
 		// only update if the data changed
-		if (keyContainer.status != currentStatus)
+		if (currentStatus != newStatus)
 		{
 			// update the KeyInformation object
-			globals.keyInformation.updateStatus(name, currentStatus);
+			globals.keyInformation.updateData(name, data);
 			
 			plasmoid.update();
 		}

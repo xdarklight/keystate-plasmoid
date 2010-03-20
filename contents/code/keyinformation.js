@@ -3,7 +3,7 @@
   */
 KeyInformation = function()
 {
-	this.statusInformation = new Array();
+	this.keyData = new Array();
 	this.colorInformation = new Array();
 	this.keys = new Array();
 	this.dataPropertyNames = new Array();
@@ -37,8 +37,8 @@ KeyInformation = function()
 			// increment our counter
 			this.keyCount++;
 			
-			// update the status and the color of the key
-			this.updateStatus(keyName, this.getStatus(keyName));
+			// update the data and the color of the key
+			this.updateData(keyName, this.getData(keyName));
 			this.updateColor(keyName, this.getColor(keyName));
 		}
 	}
@@ -103,6 +103,22 @@ KeyInformation = function()
 		}
 		
 		return color;
+	}
+	
+	/**
+	  * returns the status of the key with the given name and the given data
+	  */
+	this.resolveStatus = function(keyName, data)
+	{
+		var property = this.getDataPropertyName(keyName);
+		
+		// only try to access the data array if it's really initialized
+		if (data)
+		{
+			// return the value from the data array with the 
+			// property as index
+			return data[property];
+		}
 	}
 	
 	/**
@@ -193,8 +209,10 @@ KeyInformation = function()
 	  */
 	this.getStatus = function(keyName)
 	{
+		var status = this.resolveStatus(keyName, this.getData(keyName));
+		
 		// conver to boolean to make sure 'undefined' is covered
-		return Boolean(this.statusInformation[keyName]);
+		return Boolean(status);
 	}
 	
 	/**
@@ -225,6 +243,14 @@ KeyInformation = function()
 	}
 	
 	/**
+	  * gets the key data for the key with the given name
+	  */
+	this.getData = function(keyName)
+	{
+		return this.keyData[keyName];
+	}
+	
+	/**
 	  * gets the KeyInformationContainer for the given object (which can be
 	  * either the key's index or the key's name/object name)
 	  */
@@ -244,17 +270,18 @@ KeyInformation = function()
 		var dataPropertyName = this.getDataPropertyName(name);
 		var color = this.getColor(name);
 		var text = this.getText(name);
+		var data = this.getData(name);
 		
-		return new KeyInformationContainer(name, status, dataPropertyName, color, text);
+		return new KeyInformationContainer(name, status, dataPropertyName, color, text, data);
 	}
 	
 	/**
-	  * updates the status of the key with the given name
+	  * updates the data of the key with the given name
 	  */
-	this.updateStatus = function(keyName, keyStatus)
+	this.updateData = function(keyName, data)
 	{
-		// keep the status in our internal array
-		this.statusInformation[keyName] = keyStatus;
+		// keep the data in our internal array
+		this.keyData[keyName] = data;
 	}
 	
 	/**
