@@ -26,12 +26,9 @@ HOWTO: add new keys
 
 
 HOWTO: add new layouts
--add a constant to 'constants.js' for the name of the layout
+-add a constant to 'constants.js' for the (config) name of the layout
 -handle the layout in the switch-case statement in 'layout.js'
--add code to the 'layoutconfiguration.js' which parses the config:
-   * add a internal contant to that file
-   * add parsing in the initialize() method
-   * add the layout to the if/elseif statement in getSelectedLayoutName()
+-add the constant (from step #1) to the 'availableLayouts' array in the getSelectedLayoutName() method in 'layoutconfiguration.js'
 -add an entry to the main.xml KConfigXT file
 -add a RadioButton in the config UI
 -implement the layout itself

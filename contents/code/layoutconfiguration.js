@@ -14,10 +14,6 @@ LayoutConfiguration = function()
 	imageSpacingConfigName = "ImageSpacing";
 	imagePaddingConfigName = "ImagePadding";
 	fontConfigName = "Font";
-	verticalLayoutConfigName= "VerticalLayout";
-	horizontalLayoutConfigName= "HorizontalLayout";
-	textLayoutConfigName = "TextLayout";
-	singleLayoutConfigName = "SingleLayout";
 	
 	/**
 	  * initializes the layout configuration
@@ -56,36 +52,29 @@ LayoutConfiguration = function()
 	  */
 	this.getSelectedLayoutName = function()
 	{
-		// read the config file values
-		var verticalLayoutConfigValue = plasmoid.readConfig(verticalLayoutConfigName);
-		var horizontalLayoutConfigValue = plasmoid.readConfig(horizontalLayoutConfigName);
-		var textLayoutConfigValue = plasmoid.readConfig(textLayoutConfigName);
-		var singleLayoutConfigValue = plasmoid.readConfig(singleLayoutConfigName);
-		
-		// parse the values from the config file
-		var verticalLayout = Boolean(verticalLayoutConfigValue);
-		var horizontalLayout = Boolean(horizontalLayoutConfigValue);
-		var textLayout = Boolean(textLayoutConfigValue);
-		var singleLayout = Boolean(singleLayoutConfigValue);
+		// build an array with all available layout names in it
+		var availableLayouts = new Array(
+			global.constants.horizontalLayoutName(),
+			global.constants.verticalLayoutName(),
+			global.constants.textLayoutName(),
+			global.constants.singleLayoutName());
 		
 		// default to horizontal layout
 		var selectedLayoutName = global.constants.horizontalLayoutName();
 		
-		// check which layout is enabled
-		if (verticalLayout)
+		for (var i = 0; i < availableLayouts.length; i++)
 		{
-			// the vertical layout is enabled
-			selectedLayoutName = global.constants.verticalLayoutName();
-		}
-		else if (textLayout)
-		{
-			// the text layout is enabled
-			selectedLayoutName = global.constants.textLayoutName();
-		}
-		else if (singleLayout)
-		{
-			// the single layout is enabled
-			selectedLayoutName = global.constants.singleLayoutName();
+			var layoutName = availableLayouts[i];
+			
+			// read the value from the config file
+			var layoutConfigValue = plasmoid.readConfig(layoutName);
+			
+			// check if the layout is enabled
+			if (Boolean(layoutConfigValue))
+			{
+				selectedLayoutName = layoutName;
+				break;
+			}
 		}
 		
 		return selectedLayoutName;

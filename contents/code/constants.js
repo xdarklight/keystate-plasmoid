@@ -14,10 +14,10 @@ Constants = function()
 	metaPressedObjectName = "Meta";
 	superPressedObjectName = "Super";
 	hyperPressedObjectName = "Hyper";
-	verticalLayoutName = "vertical";
-	horizontalLayoutName = "horizontal";
-	textLayoutName = "text";
-	singleLayoutName = "single";
+	verticalLayoutName = "VerticalLayout";
+	horizontalLayoutName = "HorizontalLayout";
+	textLayoutName = "TextLayout";
+	singleLayoutName = "SingleLayout";
 	dataLockedPropertyName = "Locked";
 	dataPressedPropertyName = "Pressed";
 	indexNotFound = -1;
@@ -133,7 +133,7 @@ Constants = function()
 	  */
 	this.singleLayoutName = function()
 	{
-		return this.singleLayoutName;
+		return singleLayoutName;
 	}
 	
 	/**
