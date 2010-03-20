@@ -6,7 +6,7 @@ Array.prototype.findIndex = function(value)
 	var index = global.constants.indexNotFound();
 	
 	// find the index of the key in the current array
-	for (var i = 0; i < this.length; i++)
+	for (var i in this)
 	{
 		var currentValue = this[i];
 		
