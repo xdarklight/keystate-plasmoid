@@ -4,44 +4,6 @@
 PlasmoidHandler = function()
 {
 	/**
-	  * initializes the whole plasmoid
-	  */
-	this.initialize = function()
-	{
-		// tell everyone we're busy
-		plasmoid.busy = true;
-		
-		// all includes
-		plasmoid.include("layout.js");
-		plasmoid.include("constants.js");
-		plasmoid.include("keyconfiguration.js");
-		plasmoid.include("layoutconfiguration.js");
-		plasmoid.include("configuration.js");
-		plasmoid.include("keyinformationcontainer.js")
-		plasmoid.include("keyinformation.js");
-		plasmoid.include("localization.js");
-		
-		// fill our global.object with information
-		global.configuration = new Configuration();
-		global.constants = new Constants();
-		global.keyInformation= new KeyInformation();
-		global.layout = new Layout();
-		global.localization = new Localization();
-		
-		// read the config file
-		global.configuration.initialize();
-		
-		// initially update the key information list
-		global.keyInformation.updateKeys();
-		
-		// initialize the localization information
-		global.localization.initialize();
-		
-		// register all events of the plasmoid object
-		this.registerPlasmoidEvents();
-	}
-	
-	/**
 	  * registers all events (and related things) with the plasmoid object
 	  */
 	this.registerPlasmoidEvents = function()
@@ -131,4 +93,45 @@ PlasmoidHandler = function()
 			plasmoid.update();
 		}
 	}
+}
+
+/**
+  * initializes the whole plasmoid
+  */
+PlasmoidHandler.initialize = function()
+{
+	// tell everyone we're busy
+	plasmoid.busy = true;
+	
+	// all includes
+	plasmoid.include("layout.js");
+	plasmoid.include("constants.js");
+	plasmoid.include("keyconfiguration.js");
+	plasmoid.include("layoutconfiguration.js");
+	plasmoid.include("configuration.js");
+	plasmoid.include("keyinformationcontainer.js")
+	plasmoid.include("keyinformation.js");
+	plasmoid.include("localization.js");
+	
+	// fill our global.object with information
+	global.configuration = new Configuration();
+	global.constants = new Constants();
+	global.keyInformation= new KeyInformation();
+	global.layout = new Layout();
+	global.localization = new Localization();
+	
+	// read the config file
+	global.configuration.initialize();
+	
+	// initially update the key information list
+	global.keyInformation.updateKeys();
+	
+	// initialize the localization information
+	global.localization.initialize();
+	
+	// create a new plasmoid handler
+	var plasmoidHandler = new PlasmoidHandler();
+	
+	// then register all events of the plasmoid object
+	plasmoidHandler.registerPlasmoidEvents();
 }

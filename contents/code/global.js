@@ -45,9 +45,6 @@ Global.initialize = function()
 	// include the plasmoid handler
 	plasmoid.include("plasmoidhandler.js");
 	
-	// create a plasmoid handler object which does all general stuff
-	plasmoidHandler = new PlasmoidHandler();
-	
-	// initialize the plasmoid handler (and thus the whole plasmoid)
-	plasmoidHandler.initialize();
+	// initialize a plasmoid handler (which initializes the whole plasmoid)
+	PlasmoidHandler.initialize();
 }
