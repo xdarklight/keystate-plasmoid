@@ -4,7 +4,6 @@
 KeyInformation = function()
 {
 	this.keyData = new Array();
-	this.colorInformation = new Array();
 	this.keys = new Array();
 	this.dataPropertyNames = new Array();
 	this.keyCount = 0;
@@ -75,9 +74,6 @@ KeyInformation = function()
 		{
 			this.removeKey(keyName);
 		}
-		
-		// update the key color
-		this.updateColor(keyName, keyColor);
 	}
 	
 	/**
@@ -166,7 +162,7 @@ KeyInformation = function()
 	  */
 	this.getColor = function(keyName)
 	{
-		var color = this.colorInformation[keyName];
+		var color = global.configuration.keyConfiguration().getKeyColor(keyName);
 		var status = this.getStatus(keyName);
 		
 		return this.resolveColor(status, color);
@@ -222,14 +218,6 @@ KeyInformation = function()
 	{
 		// keep the data in our internal array
 		this.keyData[keyName] = data;
-	}
-	
-	/**
-	  * updates the color of the key with the given name
-	  */
-	this.updateColor = function(keyName, keyColor)
-	{
-		this.colorInformation[keyName] = keyColor;
 	}
 	
 	/**
