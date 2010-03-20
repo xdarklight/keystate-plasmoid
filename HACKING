@@ -8,6 +8,8 @@ A: It's not that hard, but it requires some work - see 'HOWTO: add new keys'.
 Q: Where does the plasmoid get it's data from?
 A: It gets it's data from the 'keystatus' DataEngine (which is shipped with KDE)
 
+Q: How can I add more layouts?
+A: see the 'HOWTO' section of this file: 'HOWTO: add new layouts'
 
 ##############
 --- HOWTOs ---
@@ -21,3 +23,15 @@ HOWTO: add new keys
    * call this.addKey() for the new key in this.initialize()
 -the correct constants to 'constants.js' (a constant for the DataSource - which is the name of the object in the 'keystatus' DataEngine)
 -add localization information for the key to 'localization.js'
+
+
+HOWTO: add new layouts
+-add a constant to 'constants.js' for the name of the layout
+-handle the layout in the switch-case statement in 'layout.js'
+-add code to the 'layoutconfiguration.js' which parses the config:
+   * add a internal contant to that file
+   * add parsing in the initialize() method
+   * add the layout to the if/elseif statement in getSelectedLayoutName()
+-add an entry to the main.xml KConfigXT file
+-add a RadioButton in the config UI
+-implement the layout itself
