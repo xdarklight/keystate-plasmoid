@@ -18,15 +18,6 @@ Constants = function()
 	horizontalLayoutName = "horizontal";
 	textLayoutName = "text";
 	singleLayoutName = "single";
-	numLockedText = "Num";
-	capsLockedText = "Caps";
-	shiftPressedText = "Shift";
-	controlPressedText = "Ctrl";
-	altPressedText = "Alt";
-	altgrPressedText = "AltGr";
-	metaPressedText = "Meta";
-	superPressedText = "Super";
-	hyperPressedText = "Hyper";
 	dataLockedPropertyName = "Locked";
 	dataPressedPropertyName = "Pressed";
 	indexNotFound = -1;
@@ -143,78 +134,6 @@ Constants = function()
 	this.singleLayoutName = function()
 	{
 		return this.singleLayoutName;
-	}
-	
-	/**
-	  * returns the text for the num lock status
-	  */
-	this.numLockedText = function()
-	{
-		return numLockedText;
-	}
-	
-	/**
-	  * returns the text for the caps lock status
-	  */
-	this.capsLockedText = function()
-	{
-		return capsLockedText;
-	}
-	
-	/**
-	  * returns the text for the shift pressed status
-	  */
-	this.shiftPressedText = function()
-	{
-		return shiftPressedText;
-	}
-	
-	/**
-	  * returns the text for the control pressed status
-	  */
-	this.controlPressedText = function()
-	{
-		return controlPressedText;
-	}
-	
-	/**
-	  * returns the text for the alt pressed status
-	  */
-	this.altPressedText = function()
-	{
-		return altPressedText;
-	}
-	
-	/**
-	  * returns the text for the alt gr pressed status
-	  */
-	this.altgrPressedText = function()
-	{
-		return altPressedText;
-	}
-	
-	/**
-	  * returns the text for the meta pressed status
-	  */
-	this.metaPressedText = function()
-	{
-		return metaPressedText;
-	}
-	
-	/**
-	  * returns the text for the super pressed status
-	  */
-	this.superPressedText = function()
-	{
-		return superPressedText;
-	}
-	
-	/**
-	  * returns the text for the hyper pressed status
-	  */
-	this.hyperPressedText = function()
-	{
-		return hyperPressedText;
 	}
 	
 	/**

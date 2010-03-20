@@ -155,56 +155,6 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * returns the localized text for the given key name
-	  */
-	this.getText = function(keyName)
-	{
-		var text = "";
-		
-		switch (keyName)
-		{
-			case globals.constants.numLockObjectName():
-				// Num Lock
-				text = i18n(globals.constants.numLockedText());
-				break;
-			case globals.constants.capsLockObjectName():
-				/// Caps Lock
-				text = i18n(globals.constants.capsLockedText());
-				break;
-			case globals.constants.shiftPressedObjectName():
-				// Shift pressed
-				text = i18n(globals.constants.shiftPressedText());
-				break;
-			case globals.constants.controlPressedObjectName():
-				// CTRL pressed
-				text = i18n(globals.constants.controlPressedText());
-				break;
-			case globals.constants.altPressedObjectName():
-				// ALT pressed
-				text = i18n(globals.constants.altPressedText());
-				break;
-			case globals.constants.altgrPressedObjectName():
-				// AltGr pressed
-				text = i18n(globals.constants.altgrPressedText());
-				break;
-			case globals.constants.metaPressedObjectName():
-				// meta pressed
-				text = i18n(globals.constants.metaPressedText());
-				break;
-			case globals.constants.superPressedObjectName():
-				// super pressed
-				text = i18n(globals.constants.superPressedText());
-				break;
-			case globals.constants.hyperPressedObjectName():
-				// hyper pressed
-				text = i18n(globals.constants.hyperPressedText());
-				break;
-		}
-		
-		return text;
-	}
-	
-	/**
 	  * gets the status of the key with the given name
 	  */
 	this.getStatus = function(keyName)
@@ -269,7 +219,7 @@ KeyInformation = function()
 		var status = this.getStatus(name);
 		var dataPropertyName = this.getDataPropertyName(name);
 		var color = this.getColor(name);
-		var text = this.getText(name);
+		var text = globals.localization.getText(name);
 		var data = this.getData(name);
 		
 		return new KeyInformationContainer(name, status, dataPropertyName, color, text, data);

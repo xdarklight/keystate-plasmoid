@@ -19,8 +19,5 @@ HOWTO: add new keys
 -add the corresponding key configuration to 'keyconfiguration.js' script:
    * add a constant for the key
    * call this.addKey() for the new key in this.initialize()
--the correct constants to 'constants.js'
- this includes:
-   * a constants for the DataSource (name of the object in the 'keystatus' DataEngine)
-   * the english translation of the key
--you need to add the key to the switch/case statement in 'keyinformation.js' (in the getText function)
+-the correct constants to 'constants.js' (a constant for the DataSource - which is the name of the object in the 'keystatus' DataEngine)
+-add localization information for the key to 'localization.js'

@@ -18,18 +18,23 @@ PlasmoidHandler = function()
 		plasmoid.include("configuration.js");
 		plasmoid.include("keyinformationcontainer.js")
 		plasmoid.include("keyinformation.js");
+		plasmoid.include("localization.js");
 		
 		// fill our globals object with information
 		globals.configuration = new Configuration();
 		globals.constants = new Constants();
 		globals.keyInformation= new KeyInformation();
 		globals.layout = new Layout();
+		globals.localization = new Localization();
 		
 		// read the config file
 		globals.configuration.initialize();
 		
 		// initially update the key information list
 		globals.keyInformation.updateKeys();
+		
+		// initialize the localization information
+		globals.localization.initialize();
 		
 		// register all events of the plasmoid object
 		this.registerPlasmoidEvents();
