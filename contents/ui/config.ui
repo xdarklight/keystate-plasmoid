@@ -158,6 +158,9 @@
          <property name="toolTip">
           <string>The spacing between the status information of two keys</string>
          </property>
+         <property name="whatsThis">
+          <string>This configures the spacing between two key indicators. For example if you use the 'Text'-Layout this is the spacing between two lines of text.</string>
+         </property>
         </widget>
        </item>
        <item row="1" column="1">
@@ -177,6 +180,9 @@
         <widget class="KIntSpinBox" name="kcfg_ImagePadding">
          <property name="toolTip">
           <string>The space which is left free on top and on bottom</string>
+         </property>
+         <property name="whatsThis">
+          <string>This configures the space between the top and bottom borders and the content. For example if you use the Text layout this specifies the spacing (in pixels) between the top border and the first line of text.</string>
          </property>
         </widget>
        </item>
