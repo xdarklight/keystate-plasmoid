@@ -22,9 +22,9 @@ Localization = function()
 	this.initialize = function()
 	{
 		// loop through all key names
-		for (var i in globals.keyObjectNames)
+		for (var i in globals.keyNames)
 		{
-			var keyName = globals.keyObjectNames[i];
+			var keyName = globals.keyNames[i];
 			var text = "";
 			
 			// determine the (english) text for the key

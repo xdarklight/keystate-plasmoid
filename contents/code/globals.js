@@ -5,6 +5,11 @@
 Globals = function()
 {
 	/**
+	  * points to an array of key object names
+	  */
+	this.keyNames = new Array();
+	
+	/**
 	  * points to the plasmoid's configuration
 	  */
 	this.configuration = null;
@@ -13,11 +18,6 @@ Globals = function()
 	  * points to the constants object
 	  */
 	this.constants = null;
-	
-	/**
-	  * points to an array of key object names
-	  */
-	this.keyObjectNames = new Array();
 	
 	/**
 	  * points to the plasmoid's layout handling object

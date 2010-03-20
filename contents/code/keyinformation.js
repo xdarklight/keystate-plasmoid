@@ -14,9 +14,9 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
-		for (var i in globals.keyObjectNames)
+		for (var i in globals.keyNames)
 		{
-			var objectName = globals.keyObjectNames[i];
+			var objectName = globals.keyNames[i];
 			
 			// update the key with the object name
 			this.updateKey(objectName);

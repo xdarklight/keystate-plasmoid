@@ -62,7 +62,7 @@ KeyConfiguration = function()
 		// the current object name to it
 		if (!this.globalKeyObjectNamesInitialized)
 		{
-			globals.keyObjectNames[globals.keyObjectNames.length] = objectName;
+			globals.keyNames[globals.keyNames.length] = objectName;
 		}
 		
 		this.objectNameConfigMapping[objectName] = configName;

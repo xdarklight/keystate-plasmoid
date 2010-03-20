@@ -53,9 +53,9 @@ PlasmoidHandler = function()
 		plasmoid.dataUpdated = this.dataUpdated;
 		
 		// register all keys to the dataengine
-		for (var i in globals.keyObjectNames)
+		for (var i in globals.keyNames)
 		{
-			var objectName = globals.keyObjectNames[i];
+			var objectName = globals.keyNames[i];
 			
 			// register the object name to the dataengine
 			dataEngine(globals.constants.engineName()).connectSource(objectName, plasmoid);
