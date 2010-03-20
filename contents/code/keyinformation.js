@@ -215,14 +215,8 @@ KeyInformation = function()
 			name = this.getName(object);
 		}
 		
-		// get all information
-		var status = this.getStatus(name);
-		var dataPropertyName = this.getDataPropertyName(name);
-		var color = this.getColor(name);
-		var text = globals.localization.getText(name);
-		var data = this.getData(name);
-		
-		return new KeyInformationContainer(name, status, dataPropertyName, color, text, data);
+		// create (and return) a new instance of the container
+		return KeyInformationContainer.createContainer(name);
 	}
 	
 	/**
