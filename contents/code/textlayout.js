@@ -10,12 +10,12 @@ TextLayout = function()
 	  */
 	this.paint = function(painter)
 	{
-		var font = globals.configuration.font();
+		var font = globals.configuration.layoutConfiguration().getFont();
 		var fontSize = font.pointSize;
 		
 		// make the yPos be the font size in pixels (this will make the text start
 		// at the first position of the y-axis)
-		var yPos = fontSize + globals.configuration.imagePadding();
+		var yPos = fontSize + globals.configuration.layoutConfiguration().getImagePadding();
 		var xPos = 0;
 		
 		// FIXME this is a workaround for some oddity in plamsa/javascript ;)
@@ -38,7 +38,7 @@ TextLayout = function()
 			painter.drawText(xPos, yPos, keyContainer.text);
 			
 			// for the second text: add the spacing
-			yPos += globals.configuration.imageSpacing();
+			yPos += globals.configuration.layoutConfiguration().getImageSpacing();
 			
 			// add the font size (so there's enough space for the text to display
 			yPos += fontSize;

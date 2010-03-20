@@ -12,7 +12,7 @@ VerticalLayout = function()
 		var imageWidth = plasmoid.size.width / globals.keyInformation.count();
 		
 		// minus the spacing (between the two rectangles)
-		imageWidth -= globals.configuration.imageSpacing();
+		imageWidth -= globals.configuration.layoutConfiguration().getImageSpacing();
 		
 		return imageWidth;
 	}
@@ -25,7 +25,7 @@ VerticalLayout = function()
 		var imageHeight = plasmoid.size.height;
 		
 		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * globals.configuration.imagePadding();
+		imageHeight -= 2 * globals.configuration.layoutConfiguration().getImagePadding();
 		
 		return imageHeight;
 	}
@@ -41,7 +41,7 @@ VerticalLayout = function()
 		var yPos = 0;
 		
 		// start with a padded value
-		yPos += globals.configuration.imagePadding();
+		yPos += globals.configuration.layoutConfiguration().getImagePadding();
 		
 		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
@@ -52,7 +52,7 @@ VerticalLayout = function()
 		
 			// calculate the new positions
 			// yPos did not change
-			xPos += globals.configuration.imageSpacing() + this.imageWidth();
+			xPos += globals.configuration.layoutConfiguration().getImageSpacing() + this.imageWidth();
 		}
 	}
 }

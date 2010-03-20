@@ -21,7 +21,7 @@ SingleLayout = function()
 		var imageHeight = plasmoid.size.height;
 		
 		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * globals.configuration.imagePadding();
+		imageHeight -= 2 * globals.configuration.layoutConfiguration().getImagePadding();
 		
 		return imageHeight;
 	}
@@ -37,7 +37,7 @@ SingleLayout = function()
 		var yPos = 0;
 		
 		// start at 0 + padding
-		yPos = globals.configuration.imagePadding();
+		yPos = globals.configuration.layoutConfiguration().getImagePadding();
 		
 		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{

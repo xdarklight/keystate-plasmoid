@@ -18,13 +18,13 @@ HorizontalLayout = function()
 	this.imageHeight = function()
 	{
 		// the height the height of the plasmoid minus twice the image padding (top and bottom)
-		var imageHeight = (plasmoid.size.height - 2 * globals.configuration.imagePadding());
+		var imageHeight = (plasmoid.size.height - 2 * globals.configuration.layoutConfiguration().getImagePadding());
 		
 		// divide the height through the key count (so we get the height per key)
 		imageHeight /= globals.keyInformation.count();
 		
 		// minus spacing (between the two rectangles)
-		imageHeight -= globals.configuration.imageSpacing();
+		imageHeight -= globals.configuration.layoutConfiguration().getImageSpacing();
 		
 		return imageHeight;
 	}
@@ -40,7 +40,7 @@ HorizontalLayout = function()
 		var yPos = 0;
 		
 		// start at 0 + padding
-		yPos = globals.configuration.imagePadding();
+		yPos = globals.configuration.layoutConfiguration().getImagePadding();
 		
 		for (var i = 0; i < globals.keyInformation.count(); i++)
 		{
@@ -50,7 +50,7 @@ HorizontalLayout = function()
 			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyContainer.color);
 			
 			// add the spacing
-			yPos += globals.configuration.imageSpacing() + this.imageHeight();
+			yPos += globals.configuration.layoutConfiguration().getImageSpacing() + this.imageHeight();
 		}
 	}
 }

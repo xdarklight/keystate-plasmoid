@@ -4,19 +4,18 @@
   */
 Layout = function()
 {
+	this.layout = null;
+	
 	/**
-	  * paints the icon to the screen
-	  *
-	  * @param painter the painter used to paint the icon
-	  * @param numLocked decides if the num key is locked or not
-	  * @param capsLocked decides if the caps key is locked or not
+	  * creates an instance of the selected layout
 	  */
-	this.paintIcon = function(painter)
+	this.instantiateSelectedLayout = function()
 	{
 		var layout = null;
+		var layoutName = globals.configuration.layoutConfiguration().getSelectedLayoutName();
 		
-		// handle the current layout
-		switch (globals.configuration.layoutName())
+		// handle the layout selection
+		switch (layoutName)
 		{
 			case globals.constants.horizontalLayoutName():
 				// include the layout code
@@ -53,7 +52,20 @@ Layout = function()
 				break;
 		}
 		
+		// store the instance of the layout internally
+		this.layout = layout;
+	}
+	
+	/**
+	  * paints the icon to the screen
+	  *
+	  * @param painter the painter used to paint the icon
+	  * @param numLocked decides if the num key is locked or not
+	  * @param capsLocked decides if the caps key is locked or not
+	  */
+	this.paintIcon = function(painter)
+	{
 		// paint the layout
-		layout.paint(painter);
+		this.layout.paint(painter);
 	}
 }
