@@ -67,7 +67,7 @@ KeyConfiguration = function()
 		
 		this.objectNameConfigMapping[objectName] = configName;
 		
-		globals.keyInformation.updateValueObjectName(objectName, valueObjectName);
+		globals.keyInformation.updateDataPropertyName(objectName, valueObjectName);
 	}
 	
 	/**
@@ -76,15 +76,15 @@ KeyConfiguration = function()
 	this.initialize = function()
 	{
 		// initialize all keys
-		this.addKey(globals.constants.numLockObjectName(), numLockConfigName, globals.constants.objectValueLockedName());
-		this.addKey(globals.constants.capsLockObjectName(), capsLockConfigName, globals.constants.objectValueLockedName());
-		this.addKey(globals.constants.shiftPressedObjectName(), shiftPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.controlPressedObjectName(), controlPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.altPressedObjectName(), altPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.altgrPressedObjectName(), altgrPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.metaPressedObjectName(), metaPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.superPressedObjectName(), superPressedConfigName, globals.constants.objectValuePressedName());
-		this.addKey(globals.constants.hyperPressedObjectName(), hyperPressedConfigName, globals.constants.objectValuePressedName());
+		this.addKey(globals.constants.numLockObjectName(), numLockConfigName, globals.constants.dataLockedPropertyName());
+		this.addKey(globals.constants.capsLockObjectName(), capsLockConfigName, globals.constants.dataLockedPropertyName());
+		this.addKey(globals.constants.shiftPressedObjectName(), shiftPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.controlPressedObjectName(), controlPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.altPressedObjectName(), altPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.altgrPressedObjectName(), altgrPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.metaPressedObjectName(), metaPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.superPressedObjectName(), superPressedConfigName, globals.constants.dataPressedPropertyName());
+		this.addKey(globals.constants.hyperPressedObjectName(), hyperPressedConfigName, globals.constants.dataPressedPropertyName());
 		
 		// set a flag that the global key object names array is now initialized
 		this.globalKeyObjectNamesInitialized = true;

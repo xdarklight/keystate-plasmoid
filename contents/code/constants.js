@@ -27,8 +27,8 @@ Constants = function()
 	metaPressedText = "Meta";
 	superPressedText = "Super";
 	hyperPressedText = "Hyper";
-	objectValueLockedName = "Locked";
-	objectValuePressedName = "Pressed";
+	dataLockedPropertyName = "Locked";
+	dataPressedPropertyName = "Pressed";
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
@@ -226,19 +226,21 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the object name which holds the value of the 'Locked' status
+	  * returns the name of the property of the 'Locked' status in
+	  * the data object which contains the key information
 	  */
-	this.objectValueLockedName = function()
+	this.dataLockedPropertyName = function()
 	{
-		return objectValueLockedName;
+		return dataLockedPropertyName;
 	}
 	
 	/**
-	  * returns the object name which holds the value of the 'Pressed' status
+	  * returns the name of the property of the 'Pressed' status in
+	  * the data object which contains the key information
 	  */
-	this.objectValuePressedName = function()
+	this.dataPressedPropertyName = function()
 	{
-		return objectValuePressedName;
+		return dataPressedPropertyName;
 	}
 	
 	/**

@@ -119,12 +119,12 @@ PlasmoidHandler = function()
 		var currentStatus = keyContainer.status;
 		
 		// check which modifier was changed
-		switch (keyContainer.valueObjectName)
+		switch (keyContainer.dataPropertyName)
 		{
-			case globals.constants.objectValueLockedName():
+			case globals.constants.dataLockedPropertyName():
 				currentStatus = currentModifierIsLocked;
 				break;
-			case globals.constants.objectValuePressedName():
+			case globals.constants.dataPressedPropertyName():
 				currentStatus = currentModifierIsPressed;
 				break;
 		}

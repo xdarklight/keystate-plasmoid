@@ -6,7 +6,7 @@ KeyInformation = function()
 	this.statusInformation = new Array();
 	this.colorInformation = new Array();
 	this.keys = new Array();
-	this.keyValueMapping = new Array();
+	this.dataPropertyNames = new Array();
 	this.keyCount = 0;
 	
 	/**
@@ -217,11 +217,11 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * gets the value object name (the property of the 'data' object in the dataUpdated event)
+	  * gets the property name of the data object in which the information about the key is stored
 	  */
-	this.getValueObjectName = function(keyName)
+	this.getDataPropertyName = function(keyName)
 	{
-		return this.keyValueMapping[keyName];
+		return this.dataPropertyNames[keyName];
 	}
 	
 	/**
@@ -241,11 +241,11 @@ KeyInformation = function()
 		
 		// get all information
 		var status = this.getStatus(name);
-		var valueObjectName = this.getValueObjectName(name);
+		var dataPropertyName = this.getDataPropertyName(name);
 		var color = this.getColor(name);
 		var text = this.getText(name);
 		
-		return new KeyInformationContainer(name, status, valueObjectName, color, text);
+		return new KeyInformationContainer(name, status, dataPropertyName, color, text);
 	}
 	
 	/**
@@ -266,10 +266,10 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * updates the value object name (the property of the 'data' object in the dataUpdated event)
+	  * updates the property name of the data object in which the information about the key is stored
 	  */
-	this.updateValueObjectName = function(keyName, valueObjectName)
+	this.updateDataPropertyName = function(keyName, valueObjectName)
 	{
-		this.keyValueMapping[keyName] = valueObjectName;
+		this.dataPropertyNames[keyName] = valueObjectName;
 	}
 }
