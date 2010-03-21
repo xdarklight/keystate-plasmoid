@@ -8,12 +8,18 @@ LayoutConfiguration = function()
 	this.imageSpacing = 1;
 	this.topAndBottomPadding = 2;
 	this.font = new QFont("Sans Serif", 7);
+	this.preferredSizeEnabled = true;
+	this.preferredWidth = 24;
+	this.preferredHeight = 24;
 	
 	// internal constants
 	uninitializedFontFamily = "FONT_FALLBACK";
 	imageSpacingConfigName = "ImageSpacing";
 	imagePaddingConfigName = "ImagePadding";
 	fontConfigName = "Font";
+	preferredSizeEnabledConfigName = "PreferredSizeEnabled";
+	preferredWidthConfigName = "PreferredWidth";
+	preferredWidthConfigName = "PreferredHeight";
 	
 	/**
 	  * initializes the layout configuration
@@ -24,6 +30,9 @@ LayoutConfiguration = function()
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
+		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
+		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
+		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -42,9 +51,15 @@ LayoutConfiguration = function()
 		this.imageSpacing = parseInt(imageSpacingConfigValue);
 		this.imagePadding = parseInt(imagePaddingConfigValue);
 		this.font = fontConfigValue;
+		this.preferredSizeEnabled = Boolean(preferredSizeEnabledConfigValue);
+		this.preferredWidth = parseInt(preferredWidthConfigValue);
+		this.preferredHeight = parseInt(preferredHeightConfigValue);
 		
 		// create an instance of the selected layout
 		global.layout.instantiateSelectedLayout();
+		
+		// update the preferred size of the plasmoid
+		global.layout.updatePreferredSize();
 	}
 	
 	/**
@@ -112,4 +127,27 @@ LayoutConfiguration = function()
 		return this.font;
 	}
 	
+	/**
+	  * returns whether the user prefers a size or not
+	  */
+	this.getPreferredSizeEnabled = function()
+	{
+		return this.preferredSizeEnabled;
+	}
+	
+	/**
+	  * returns the preferred width of the plasmoid
+	  */
+	this.getPreferredWidth = function()
+	{
+		return this.preferredWidth;
+	}
+	
+	/**
+	  * returns the preferred height of the plasmoid
+	  */
+	this.getPreferredHeight = function()
+	{
+		return this.preferredHeight;
+	}
 }

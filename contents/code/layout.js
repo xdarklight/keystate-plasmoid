@@ -57,6 +57,23 @@ Layout = function()
 	}
 	
 	/**
+	  * updates the preferred size of the plasmoid
+	  */
+	this.updatePreferredSize = function()
+	{
+		// check if the user wants us to have a perferred size
+		if (global.configuration.layoutConfiguration().getPreferredSizeEnabled())
+		{
+			var width = global.configuration.layoutConfiguration().getPreferredWidth();
+			var height = global.configuration.layoutConfiguration().getPreferredHeight();
+			
+			// set the preferred size
+			plasmoid.setPreferredSize(width, height);
+			plasmoid.resize(width, height);
+		}
+	}
+	
+	/**
 	  * paints the icon to the screen
 	  *
 	  * @param painter the painter used to paint the icon

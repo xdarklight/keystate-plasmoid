@@ -1,9 +1,6 @@
 // tell everyone we're busy
 plasmoid.busy = true;
 
-// by default we want to be quite small
-plasmoid.setPreferredSize(24, 24);
-
 // mandatory includes
 plasmoid.include("global.js");
 
