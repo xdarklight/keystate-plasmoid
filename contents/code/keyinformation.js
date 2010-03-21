@@ -160,7 +160,8 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * updates the property name of the data object in which the information about the key is stored
+	  * updates the property name of the data object in which the 
+	  * information about the key is stored
 	  */
 	this.updateDataPropertyName = function(keyName, valueObjectName)
 	{

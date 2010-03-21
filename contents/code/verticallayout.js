@@ -49,12 +49,15 @@ VerticalLayout = function()
 		{
 			var keyContainer = global.keyInformation.getContainer(i);
 			
+			var width = this.imageWidth();
+			var height = this.imageHeight();
+			
 			// paint the icon
-			painter.fillRect(xPos, yPos, this.imageWidth(), this.imageHeight(), keyContainer.color);
+			painter.fillRect(xPos, yPos, width, height, keyContainer.color);
 		
 			// calculate the new positions
 			// yPos did not change
-			xPos += global.configuration.layoutConfiguration().getImageSpacing() + this.imageWidth();
+			xPos += global.configuration.layoutConfiguration().getImageSpacing() + width;
 		}
 	}
 }
