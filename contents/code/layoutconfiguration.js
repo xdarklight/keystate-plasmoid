@@ -41,7 +41,7 @@ LayoutConfiguration = function()
 		if (fontConfigValue.family == uninitializedFontFamily)
 		{
 			// write the default font settings to the config file
-			plasmoid.writeConfig(fontConfigName, font);
+			plasmoid.writeConfig(fontConfigName, this.font);
 			
 			// re-read the font from the config file
 			fontConfigValue = plasmoid.readConfig(fontConfigName);
