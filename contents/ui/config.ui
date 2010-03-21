@@ -124,159 +124,171 @@
        <x>0</x>
        <y>140</y>
        <width>311</width>
-       <height>211</height>
+       <height>221</height>
       </rect>
      </property>
      <property name="title">
-      <string>Size</string>
+      <string>Layout</string>
      </property>
-     <widget class="QWidget" name="formLayoutWidget_2">
+     <widget class="QCheckBox" name="kcfg_AdvancedLayoutSettings">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>30</y>
-        <width>293</width>
-        <height>177</height>
+        <width>291</width>
+        <height>23</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="2" column="0">
-        <widget class="QLabel" name="ImageSpacing_Label">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Spacing:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="KIntSpinBox" name="kcfg_ImageSpacing">
-         <property name="toolTip">
-          <string>The spacing between the status information of two keys</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the spacing between two key indicators. For example if you use the 'Text'-Layout this is the spacing between two lines of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="label_2">
-         <property name="minimumSize">
-          <size>
-           <width>97</width>
-           <height>27</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="KIntSpinBox" name="kcfg_ImagePadding">
-         <property name="toolTip">
-          <string>The space which is left free on top and on bottom</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the space between the top and bottom borders and the content. For example if you use the Text layout this specifies the spacing (in pixels) between the top border and the first line of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="label">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Padding:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="KIntSpinBox" name="kcfg_PreferredWidth">
-         <property name="maximum">
-          <number>2000</number>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="KIntSpinBox" name="kcfg_PreferredHeight">
-         <property name="maximum">
-          <number>2000</number>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Width</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Height</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="3">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0" colspan="4">
-        <widget class="QCheckBox" name="kcfg_PreferredSizeEnabled">
-         <property name="text">
-          <string>Prefer a size</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="4">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Advanced Layout Settings:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="4">
-        <widget class="QCheckBox" name="kcfg_AdvancedLayoutSettings">
-         <property name="text">
-          <string>Use advanced layout settings</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="text">
+       <string>Use advanced layout settings</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupbox_AdvancedLayout">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>311</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Advanced Layout Settings</string>
+      </property>
+      <widget class="QWidget" name="formLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>293</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="ImageSpacing_Label">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Spacing:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="KIntSpinBox" name="kcfg_ImageSpacing">
+          <property name="toolTip">
+           <string>The spacing between the status information of two keys</string>
+          </property>
+          <property name="whatsThis">
+           <string>This configures the spacing between two key indicators. For example if you use the 'Text'-Layout this is the spacing between two lines of text.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_2">
+          <property name="minimumSize">
+           <size>
+            <width>97</width>
+            <height>27</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Pixel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="KIntSpinBox" name="kcfg_ImagePadding">
+          <property name="toolTip">
+           <string>The space which is left free on top and on bottom</string>
+          </property>
+          <property name="whatsThis">
+           <string>This configures the space between the top and bottom borders and the content. For example if you use the Text layout this specifies the spacing (in pixels) between the top border and the first line of text.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Pixel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Padding:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="KIntSpinBox" name="kcfg_PreferredWidth">
+          <property name="maximum">
+           <number>2000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="KIntSpinBox" name="kcfg_PreferredHeight">
+          <property name="maximum">
+           <number>2000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Width</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Height</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Pixel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Pixel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <widget class="QCheckBox" name="kcfg_PreferredSizeEnabled">
+          <property name="text">
+           <string>Prefer a size</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>360</y>
+       <y>370</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -791,34 +803,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>kcfg_PreferredSizeEnabled</sender>
+   <sender>kcfg_AdvancedLayoutSettings</sender>
    <signal>toggled(bool)</signal>
-   <receiver>kcfg_PreferredWidth</receiver>
+   <receiver>groupbox_AdvancedLayout</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>159</x>
-     <y>282</y>
+     <y>229</y>
     </hint>
     <hint type="destinationlabel">
-     <x>44</x>
-     <y>332</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_PreferredSizeEnabled</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_PreferredHeight</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
      <x>159</x>
-     <y>282</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>209</x>
-     <y>332</y>
+     <y>318</y>
     </hint>
    </hints>
   </connection>
