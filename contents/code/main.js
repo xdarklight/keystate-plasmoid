@@ -1,20 +1,17 @@
 // tell everyone we're busy
 plasmoid.busy = true;
 
-// mandatory includes
-plasmoid.include("global.js");
-
 /**
   * initialize the plasmoid
   */
+this.initialize = function()
 {
-	global = new Global();
-	
 	// prototypes for existing classes
 	plasmoid.include("array.js");
 	plasmoid.include("object.js");
 	
 	// all includes
+	plasmoid.include("global.js");
 	plasmoid.include("plasmoidhandler.js");
 	plasmoid.include("layout.js");
 	plasmoid.include("constants.js");
@@ -24,6 +21,9 @@ plasmoid.include("global.js");
 	plasmoid.include("keyinformationcontainer.js")
 	plasmoid.include("keyinformation.js");
 	plasmoid.include("localization.js");
+	
+	// create our Global object
+	global = new Global();
 	
 	// fill our global object with information
 	global.configuration = new Configuration();
@@ -35,3 +35,5 @@ plasmoid.include("global.js");
 	// initialize thes plasmoid handler (which initializes the whole plasmoid)
 	PlasmoidHandler.initialize();
 }
+
+this.initialize();
