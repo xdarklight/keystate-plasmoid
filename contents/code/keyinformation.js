@@ -23,40 +23,6 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * adds a key information object with the given name to the list
-	  */
-	this.addKeyInformation = function(keyName)
-	{
-		// only add the key information if the key does not exist yet
-		if (this.keys.findIndex(keyName) == global.constants.indexNotFound())
-		{
-			// add the object to the list
-			this.keys[this.keyCount] = keyName;
-			
-			// increment our counter
-			this.keyCount++;
-		}
-	}
-	
-	/**
-	  * removes key information object with the given name from the list
-	  */
-	this.removeKey = function(keyName)
-	{
-		var index = this.keys.findIndex(keyName);
-		
-		// remove the key information from our array if it was found
-		if (index > global.constants.indexNotFound())
-		{
-			// remove one element at the given index from the array
-			this.keys.splice(index, 1);
-			
-			// then fix our key count
-			this.keyCount--;
-		}
-	}
-	
-	/**
 	  * adds or removes key information depending on
 	  * if it the key is enabled or not
 	  */
@@ -67,12 +33,15 @@ KeyInformation = function()
 		
 		if (isEnabled)
 		{
-			this.addKeyInformation(keyName);
+			this.keys.addValue(keyName);
 		}
 		else
 		{
-			this.removeKey(keyName);
+			this.keys.removeValue(keyName);
 		}
+		
+		// make sure our internal key count is correct
+		this.keyCount = this.keys.length;
 	}
 	
 	/**
