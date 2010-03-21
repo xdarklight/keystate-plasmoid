@@ -175,7 +175,7 @@ KeyInformation = function()
 		var name = object;
 		
 		// check if the object is numeric
-		if (!/\D/.test(object))
+		if (object.isNumeric())
 		{
 			// the given object is numeric -> we got an index
 			name = this.getName(object);

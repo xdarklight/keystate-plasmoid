@@ -44,6 +44,7 @@ Global.initialize = function()
 	
 	// prototypes for existing classes
 	plasmoid.include("array.js");
+	plasmoid.include("object.js");
 	
 	// all includes
 	plasmoid.include("plasmoidhandler.js");
