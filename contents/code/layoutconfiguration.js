@@ -20,19 +20,15 @@ LayoutConfiguration = function()
 	preferredSizeEnabledConfigName = "PreferredSizeEnabled";
 	preferredWidthConfigName = "PreferredWidth";
 	preferredWidthConfigName = "PreferredHeight";
+	advancedLayoutSettingsConfigName = "AdvancedLayoutSettings";
 	
 	/**
 	  * initializes the layout configuration
 	  */
 	this.initialize = function()
 	{
-		// config values
-		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
-		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
-		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
-		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
-		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
+		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -47,19 +43,60 @@ LayoutConfiguration = function()
 			fontConfigValue = plasmoid.readConfig(fontConfigName);
 		}
 		
-		// save our settings internally
-		this.imageSpacing = parseInt(imageSpacingConfigValue);
-		this.imagePadding = parseInt(imagePaddingConfigValue);
 		this.font = fontConfigValue;
-		this.preferredSizeEnabled = Boolean(preferredSizeEnabledConfigValue);
-		this.preferredWidth = parseInt(preferredWidthConfigValue);
-		this.preferredHeight = parseInt(preferredHeightConfigValue);
+		
+		if (Boolean(advancedLayoutSettingsConfigValue))
+		{
+			this.applyAdvancedLayoutSettings();
+		}
+		else
+		{
+			this.applySimpleLayoutSettings();
+		}
 		
 		// create an instance of the selected layout
 		global.layout.instantiateSelectedLayout();
 		
 		// update the preferred size of the plasmoid
 		global.layout.updatePreferredSize();
+	}
+	
+	/**
+	  * applies some default settings (which aim to look good anywhere)
+	  */
+	this.applySimpleLayoutSettings = function()
+	{
+		// we don't want any specific size size settings
+		this.preferredSizeEnabled = false;
+		
+		// the average of the width and the height
+		var averageSize = (plasmoid.size.height + plasmoid.size.width) / 2;
+		
+		// calculate the spacing: 5% of the average of the height and the width
+		this.imageSpacing = parseInt(averageSize / 100 * 5);
+		
+		// calculate the padding: 10% of the average of the height and the width
+		this.imagePadding = parseInt(averageSize / 100 * 10);
+	}
+	
+	/**
+	  * parses the advanced settings from the config file
+	  */
+	this.applyAdvancedLayoutSettings = function()
+	{
+		// config values
+		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
+		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
+		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
+		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
+		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
+		
+		// save our settings internally
+		this.imageSpacing = parseInt(imageSpacingConfigValue);
+		this.imagePadding = parseInt(imagePaddingConfigValue);
+		this.preferredSizeEnabled = Boolean(preferredSizeEnabledConfigValue);
+		this.preferredWidth = parseInt(preferredWidthConfigValue);
+		this.preferredHeight = parseInt(preferredHeightConfigValue);
 	}
 	
 	/**

@@ -6,6 +6,9 @@
 	<kcfgfile name="keystatusplasmoidrc"/>
 	
 	<group name="keystatusplasmoid">
+		<entry name="AdvancedLayoutSettings" type="Bool">
+			<default>false</default>
+		</entry>
 		<entry name="NumLockColor" type="Color">
 			<default>green</default>
 		</entry>
