@@ -9,6 +9,7 @@ this.initialize = function()
 	// prototypes for existing classes
 	plasmoid.include("array.js");
 	plasmoid.include("object.js");
+	plasmoid.include("number.js");
 	
 	// all includes
 	plasmoid.include("global.js");
