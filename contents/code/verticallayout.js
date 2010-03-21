@@ -8,8 +8,10 @@ VerticalLayout = function()
 	  */
 	this.imageWidth = function()
 	{
-		// use half of the width
-		var imageWidth = plasmoid.size.width / global.keyInformation.count();
+		var imageWidth = plasmoid.size.width;
+	
+		// divide through the number of keys
+		imageWidth /= global.keyInformation.count();
 		
 		// minus the spacing (between the two rectangles)
 		imageWidth -= global.configuration.layoutConfiguration().getImageSpacing();
