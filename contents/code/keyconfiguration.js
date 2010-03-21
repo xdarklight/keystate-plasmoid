@@ -8,8 +8,6 @@ KeyConfiguration = function()
 	this.colorSettings = new Array();
 	this.shownKeySettings = new Array();
 	
-	this.globalKeyObjectNamesInitialized = false;
-	
 	// internal constants
 	numLockConfigName = "NumLock";
 	capsLockConfigName = "CapsLock";
@@ -58,11 +56,11 @@ KeyConfiguration = function()
 	  */
 	this.addKey = function(objectName, configName, valueObjectName)
 	{
-		// if the global key object names array is not initialized we'll add 
-		// the current object name to it
-		if (!this.globalKeyObjectNamesInitialized)
+		// check if the key with the given objectName is already in the global key array
+		if (global.keyNames.findIndex(objectName) == global.constants.indexNotFound())
 		{
-			global.keyNames[global.keyNames.length] = objectName;
+			// if not: add it
+			global.keyNames.addValue(objectName);
 		}
 		
 		this.objectNameConfigMapping[objectName] = configName;
@@ -85,9 +83,6 @@ KeyConfiguration = function()
 		this.addKey(global.constants.metaPressedObjectName(), metaPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.superPressedObjectName(), superPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.hyperPressedObjectName(), hyperPressedConfigName, global.constants.dataPressedPropertyName());
-		
-		// set a flag that the global key object names array is now initialized
-		this.globalKeyObjectNamesInitialized = true;
 		
 		// read and parse the config file
 		this.readParseConfiguration();
