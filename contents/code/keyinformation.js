@@ -6,7 +6,6 @@ KeyInformation = function()
 	this.keyData = new Array();
 	this.keys = new Array();
 	this.dataPropertyNames = new Array();
-	this.keyCount = 0;
 	
 	/**
 	  * updates the list of key information objects
@@ -39,9 +38,6 @@ KeyInformation = function()
 		{
 			this.keys.removeValue(keyName);
 		}
-		
-		// make sure our internal key count is correct
-		this.keyCount = this.keys.length;
 	}
 	
 	/**
@@ -86,7 +82,7 @@ KeyInformation = function()
 	  */
 	this.count = function()
 	{
-		return this.keyCount;
+		return this.keys.length;
 	}
 	
 	/**
