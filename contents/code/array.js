@@ -32,9 +32,6 @@ Array.prototype.addValue = function(value)
 	{
 		// add the object to the list
 		this[this.length] = value;
-		
-		// we're bigger now
-		this.length++;
 	}
 }
 
@@ -50,8 +47,5 @@ Array.prototype.removeValue = function(value)
 	{
 		// remove our element at the given index from the array
 		this.splice(index, 1);
-		
-		// we're smaller now
-		this.length--;
 	}
 }
