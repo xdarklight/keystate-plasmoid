@@ -32,3 +32,16 @@ HOWTO: add new layouts
 -add an entry to the main.xml KConfigXT file
 -add a RadioButton in the config UI
 -implement the layout itself
+
+##############
+--- CSTYLE ---
+##############
+
+-try to keep lines shorter than 100 characters
+-use tabs for indentation
+-filenames of files which contain code should be lowercase
+-if you need to extend existing classes (with prototypes) create a new code
+ file with the name of the original classand extend the class there
+-method names follow the following scheme: first character is lowercase,
+ after that the first character of each new word is uppercase
+-use getters/setters where possible
