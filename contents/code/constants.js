@@ -4,7 +4,6 @@
 Constants = function()
 {
 	// constants
-	engineName = "keystate";
 	numLockObjectName = "Num Lock";
 	capsLockObjectName = "Caps Lock";
 	shiftPressedObjectName = "Shift";
@@ -23,14 +22,6 @@ Constants = function()
 	indexNotFound = -1;
 	
 	fullyTransparentColor = new QColor(0, 0, 0, 0);
-	
-	/**
-	  * returns the name of the data engine
-	  */
-	this.engineName = function()
-	{
-		return engineName;
-	}
 	
 	/**
 	  * returns the value of the num lock object name

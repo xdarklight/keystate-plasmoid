@@ -42,9 +42,27 @@ Global.initialize = function()
 {
 	global = new Global();
 	
-	// include the plasmoid handler
-	plasmoid.include("plasmoidhandler.js");
+	// prototypes for existing classes
+	plasmoid.include("array.js");
 	
-	// initialize a plasmoid handler (which initializes the whole plasmoid)
+	// all includes
+	plasmoid.include("plasmoidhandler.js");
+	plasmoid.include("layout.js");
+	plasmoid.include("constants.js");
+	plasmoid.include("keyconfiguration.js");
+	plasmoid.include("layoutconfiguration.js");
+	plasmoid.include("configuration.js");
+	plasmoid.include("keyinformationcontainer.js")
+	plasmoid.include("keyinformation.js");
+	plasmoid.include("localization.js");
+	
+	// fill our global object with information
+	global.configuration = new Configuration();
+	global.constants = new Constants();
+	global.keyInformation= new KeyInformation();
+	global.layout = new Layout();
+	global.localization = new Localization();
+	
+	// initialize thes plasmoid handler (which initializes the whole plasmoid)
 	PlasmoidHandler.initialize();
 }

@@ -3,6 +3,9 @@
   */
 PlasmoidHandler = function()
 {
+	// internal constants
+	dataEngineName = "keystate";
+	
 	/**
 	  * registers all events (and related things) with the plasmoid object
 	  */
@@ -21,7 +24,7 @@ PlasmoidHandler = function()
 			var objectName = global.keyNames[i];
 			
 			// register the object name to the dataengine
-			dataEngine(global.constants.engineName()).connectSource(objectName, plasmoid);
+			dataEngine(dataEngineName).connectSource(objectName, plasmoid);
 		}
 	}
 	
@@ -100,29 +103,6 @@ PlasmoidHandler = function()
   */
 PlasmoidHandler.initialize = function()
 {
-	// tell everyone we're busy
-	plasmoid.busy = true;
-	
-	// prototypes for existing classes
-	plasmoid.include("array.js");
-	
-	// all includes
-	plasmoid.include("layout.js");
-	plasmoid.include("constants.js");
-	plasmoid.include("keyconfiguration.js");
-	plasmoid.include("layoutconfiguration.js");
-	plasmoid.include("configuration.js");
-	plasmoid.include("keyinformationcontainer.js")
-	plasmoid.include("keyinformation.js");
-	plasmoid.include("localization.js");
-	
-	// fill our global.object with information
-	global.configuration = new Configuration();
-	global.constants = new Constants();
-	global.keyInformation= new KeyInformation();
-	global.layout = new Layout();
-	global.localization = new Localization();
-	
 	// read the config file
 	global.configuration.initialize();
 	
