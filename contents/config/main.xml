@@ -85,7 +85,7 @@
 			<default>false</default>
 		</entry>
 		<entry name="PreferredSizeEnabled" type="Bool">
-			<default>true</default>
+			<default>false</default>
 		</entry>
 		<entry name="PreferredWidth" type="Int">
 			<default>24</default>
