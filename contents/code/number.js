@@ -6,3 +6,11 @@ Number.prototype.isNumeric = function()
 	// a number is always numeric
 	return true;
 }
+
+/**
+  * converts a number to an integer
+  */
+Number.prototype.toInt = function()
+{
+	return parseInt(this);
+}

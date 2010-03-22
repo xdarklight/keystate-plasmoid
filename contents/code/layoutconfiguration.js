@@ -45,7 +45,7 @@ LayoutConfiguration = function()
 		
 		this.font = fontConfigValue;
 		
-		if (Boolean(advancedLayoutSettingsConfigValue))
+		if (advancedLayoutSettingsConfigValue)
 		{
 			this.applyAdvancedLayoutSettings();
 		}
@@ -92,11 +92,11 @@ LayoutConfiguration = function()
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// save our settings internally
-		this.imageSpacing = parseInt(imageSpacingConfigValue);
-		this.imagePadding = parseInt(imagePaddingConfigValue);
-		this.preferredSizeEnabled = Boolean(preferredSizeEnabledConfigValue);
-		this.preferredWidth = parseInt(preferredWidthConfigValue);
-		this.preferredHeight = parseInt(preferredHeightConfigValue);
+		this.imageSpacing = imageSpacingConfigValue.toInt();
+		this.imagePadding = imagePaddingConfigValue.toInt();
+		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
+		this.preferredWidth = preferredWidthConfigValue.toInt();
+		this.preferredHeight = preferredHeightConfigValue.toInt();
 	}
 	
 	/**
@@ -122,7 +122,7 @@ LayoutConfiguration = function()
 			var layoutConfigValue = plasmoid.readConfig(layoutName);
 			
 			// check if the layout is enabled
-			if (Boolean(layoutConfigValue))
+			if (layoutConfigValue)
 			{
 				selectedLayoutName = layoutName;
 				break;

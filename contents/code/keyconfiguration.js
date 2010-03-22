@@ -37,12 +37,8 @@ KeyConfiguration = function()
 			var shownKeyConfigurationName = configurationShownKeyPrefix + baseConfigName;
 			
 			// read the config values
-			var colorConfigValue = plasmoid.readConfig(colorConfigurationName);
-			var showKeyConfigValue = plasmoid.readConfig(shownKeyConfigurationName);
-			
-			// then parse the values
-			var color = new QColor(colorConfigValue);
-			var showKey = Boolean(showKeyConfigValue);
+			var color = plasmoid.readConfig(colorConfigurationName);
+			var showKey = plasmoid.readConfig(shownKeyConfigurationName);
 			
 			// store the values
 			this.colorSettings[objectName] = color;
