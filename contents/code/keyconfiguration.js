@@ -97,6 +97,6 @@ KeyConfiguration = function()
 	  */
 	this.getKeyColor = function(objectName)
 	{
-		return this.colorSettings[objectName];
+		return QColor(this.colorSettings[objectName]);
 	}
 }
