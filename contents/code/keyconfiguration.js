@@ -41,7 +41,7 @@ KeyConfiguration = function()
 			var showKey = plasmoid.readConfig(shownKeyConfigurationName);
 			
 			// store the values
-			this.colorSettings[objectName] = color;
+			this.colorSettings[objectName] = QColor(color);
 			this.shownKeySettings[objectName] = showKey;
 		}
 	}
@@ -97,6 +97,6 @@ KeyConfiguration = function()
 	  */
 	this.getKeyColor = function(objectName)
 	{
-		return QColor(this.colorSettings[objectName]);
+		return this.colorSettings[objectName];
 	}
 }
