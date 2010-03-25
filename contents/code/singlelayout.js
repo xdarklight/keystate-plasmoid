@@ -3,31 +3,26 @@
   */
 SingleLayout = function()
 {
-	/**
-	  * returns the calculated width of the image
-	  */
-	this.imageWidth = function()
-	{
-		var imageWidth = plasmoid.size.width;
-		
-		return imageWidth;
-	}
+	// say we're walking vertically
+	this.walkHorizontal = false;
 	
 	/**
-	  * returns the calculated height of the image
+	  * returns the calculated size (in case of the SingleLayout the height)
+	  * this overrides getCalculatedSize from RectangleLayout
 	  */
-	this.imageHeight = function()
+	this.getCalculatedSize = function(originalSize)
 	{
-		var imageHeight = plasmoid.size.height;
+		var size = originalSize;
 		
-		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * global.configuration.layoutConfiguration().getImagePadding();
+		// minus twice the image padding (top/bottom or left/right)
+		size -= 2 * global.configuration.layoutConfiguration().getImagePadding();
 		
-		return imageHeight;
+		return size;
 	}
 	
 	/**
 	  * paints the image with the given painter to the screen
+	  * this overrides paint from RectangleLayout
 	  *
 	  * @param painter the painter used to paint the image
 	  */
@@ -36,18 +31,21 @@ SingleLayout = function()
 		var xPos = 0;
 		var yPos = 0;
 		
-		// start at 0 + padding
-		yPos = global.configuration.layoutConfiguration().getImagePadding();
+		// we're walking on the y-axis: start at the padded value
+		yPos += global.configuration.layoutConfiguration().getImagePadding();
 		
 		for (var i = 0; i < global.keyInformation.count(); i++)
 		{
 			var keyContainer = global.keyInformation.getContainer(i);
 			
-			var width = this.imageWidth();
-			var height = this.imageHeight();
+			var width = this.getWidth();
+			var height = this.getHeight();
 			
 			// paint the icon
 			painter.fillRect(xPos, yPos, width, height, keyContainer.color);
 		}
 	}
 }
+
+// inherit the rectangle layout
+SingleLayout.prototype = new RectangleLayout();

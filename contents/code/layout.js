@@ -19,6 +19,7 @@ Layout = function()
 		{
 			case global.constants.horizontalLayoutName():
 				// include the layout code
+				plasmoid.include("rectanglelayout.js");
 				plasmoid.include("horizontallayout.js");
 				
 				// get the layout
@@ -27,6 +28,7 @@ Layout = function()
 				break;
 			case global.constants.verticalLayoutName():
 				// include the layout code
+				plasmoid.include("rectanglelayout.js");
 				plasmoid.include("verticallayout.js");
 				
 				// get the layout
@@ -44,6 +46,7 @@ Layout = function()
 			
 			case global.constants.singleLayoutName():
 				// include the layout code
+				plasmoid.include("rectanglelayout.js");
 				plasmoid.include("singlelayout.js");
 				
 				// get the layout
