@@ -9,12 +9,19 @@ VerticalLayout = function()
 	this.imageWidth = function()
 	{
 		var imageWidth = plasmoid.size.width;
-	
-		// divide through the number of keys
-		imageWidth /= global.keyInformation.count();
+		
+		// calculate how often we have to subtract the spacing
+		// we need to subtract spacing as soon as we have more than one rectangle
+		var spacingCount = global.keyInformation.count() - 1;
+		
+		// minus twice the image padding (left and right)
+		imageWidth -= 2 * global.configuration.layoutConfiguration().getImagePadding();
 		
 		// minus the spacing (between the two rectangles)
-		imageWidth -= global.configuration.layoutConfiguration().getImageSpacing();
+		imageWidth -= global.configuration.layoutConfiguration().getImageSpacing() * spacingCount;
+		
+		// divide through the number of keys
+		imageWidth /= global.keyInformation.count();
 		
 		return imageWidth;
 	}
@@ -24,12 +31,7 @@ VerticalLayout = function()
 	  */
 	this.imageHeight = function()
 	{
-		var imageHeight = plasmoid.size.height;
-		
-		// minus twice the padding (top and bottom)
-		imageHeight -= 2 * global.configuration.layoutConfiguration().getImagePadding();
-		
-		return imageHeight;
+		return plasmoid.size.height;
 	}
 	
 	/**
@@ -43,7 +45,7 @@ VerticalLayout = function()
 		var yPos = 0;
 		
 		// start with a padded value
-		yPos += global.configuration.layoutConfiguration().getImagePadding();
+		xPos += global.configuration.layoutConfiguration().getImagePadding();
 		
 		for (var i = 0; i < global.keyInformation.count(); i++)
 		{
