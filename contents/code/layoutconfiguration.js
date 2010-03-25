@@ -28,7 +28,6 @@ LayoutConfiguration = function()
 	this.initialize = function()
 	{
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
-		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
 		
 		// TODO: workaround for the font problem:
 		// we cannot specify a default font in the kcfg xml file
@@ -45,6 +44,24 @@ LayoutConfiguration = function()
 		
 		this.font = fontConfigValue;
 		
+		// update the layout settings
+		this.updateLayoutSettings();
+		
+		// create an instance of the selected layout
+		global.layout.instantiateSelectedLayout();
+		
+		// update the preferred size of the plasmoid
+		global.layout.updatePreferredSize();
+	}
+	
+	/**
+	  * updates the layout settings (depending on whether the user has chosen the 
+	  * advanced or the simple layout)
+	  */
+	this.updateLayoutSettings = function()
+	{
+		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
+		
 		if (advancedLayoutSettingsConfigValue)
 		{
 			this.applyAdvancedLayoutSettings();
@@ -53,12 +70,6 @@ LayoutConfiguration = function()
 		{
 			this.applySimpleLayoutSettings();
 		}
-		
-		// create an instance of the selected layout
-		global.layout.instantiateSelectedLayout();
-		
-		// update the preferred size of the plasmoid
-		global.layout.updatePreferredSize();
 	}
 	
 	/**

@@ -48,6 +48,10 @@ PlasmoidHandler = function()
 	  */
 	this.sizeChanged = function()
 	{
+		// update the layout configuration (so in case the plasmoid is in 'simple configuration'
+		// mode the sizes will be re-calculated correctly
+		global.configuration.layoutConfiguration().updateLayoutSettings();
+		
 		// the plasmoid's size changed -> update the icon
 		plasmoid.update();
 	}
