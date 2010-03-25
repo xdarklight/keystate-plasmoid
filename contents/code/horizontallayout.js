@@ -19,14 +19,18 @@ HorizontalLayout = function()
 	{
 		var imageHeight = plasmoid.size.height;
 		
+		// calculate how often we have to subtract the spacing
+		// we need to subtract spacing as soon as we have more than one rectangle
+		var spacingCount = global.keyInformation.count() - 1;
+		
 		// minus twice the image padding (top and bottom)
 		imageHeight -= 2 * global.configuration.layoutConfiguration().getImagePadding();
 		
+		// minus spacing (between the rectangles)
+		imageHeight -= global.configuration.layoutConfiguration().getImageSpacing() * spacingCount;
+		
 		// divide the height through the key count (so we get the height per key)
 		imageHeight /= global.keyInformation.count();
-		
-		// minus spacing (between the two rectangles)
-		imageHeight -= global.configuration.layoutConfiguration().getImageSpacing();
 		
 		return imageHeight;
 	}
