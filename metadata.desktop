@@ -1,7 +1,8 @@
 [Desktop Entry]
-Name=Key Status Plasmoid
-Comment=A widget which indicates the status of the NUM- and CAPS-Lock modifiers
+Name=Key State
+Comment=Displays the state of some keys (for example 'Caps Lock' and/or 'Meta pressed')
 
+Icon=input-keyboard
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 
@@ -9,10 +10,10 @@ X-Plasma-API=javascript
 X-Plasma-MainScript=code/main.js
 X-Plasma-DefaultSize=48,48
  
-X-KDE-PluginInfo-Author=xdarklight
+X-KDE-PluginInfo-Author=Martin Blumenstingl
 X-KDE-PluginInfo-Email=darklight.xdarklight@googlemail.com
-X-KDE-PluginInfo-Name=keystatusplasmoid
+X-KDE-PluginInfo-Name=keystateplasmoid
 X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-Depends=
-X-KDE-PluginInfo-License=GPL2
+X-KDE-PluginInfo-License=GPLv2
 X-KDE-PluginInfo-EnabledByDefault=false
