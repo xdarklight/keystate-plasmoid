@@ -11,6 +11,8 @@ TODO: split even more drawing code from the layouts.
 Currently a "horizontal" and a "vertical" mode would have to be implemented for each layout.
 Of course this is bad.
 Thus: move the horizontal/vertical layouting code out of the specific layouts (into a generic class).
+(NOTE: do we have to care about right-to-left here?
+DEV info: maybe we could use QPainter.rotate()?)
 
 TODO: create a symbol layout (Junior-Job?).
 Suggested symbols (by Dotan Cohen):
