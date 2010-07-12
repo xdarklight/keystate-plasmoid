@@ -1,0 +1,24 @@
+Weird error message when starting the plasmoid first?
+-> TODO: check if it's reproducible.
+
+TODO: move the "Alt" key to the very end of the key list.
+(the flow of the keys on the keyboard is like: shift, control, super, alt, altgr).
+
+TODO: fix the code which tries to guess a perfect size for the plasmoid.
+(I need help there - if one has a smart solution please tell me :))
+
+TODO: split even more drawing code from the layouts.
+Currently a "horizontal" and a "vertical" mode would have to be implemented for each layout.
+Of course this is bad.
+Thus: move the horizontal/vertical layouting code out of the specific layouts (into a generic class).
+
+TODO: create a symbol layout (Junior-Job?).
+Suggested symbols (by Dotan Cohen):
+Shift: ↥
+Ctrl: ^
+Super: ⚐
+Alt: _
+
+Goals for the first stable version:
+-world domination :)
+-get this plasmoid included in KDE
