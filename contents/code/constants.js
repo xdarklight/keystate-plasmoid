@@ -15,7 +15,6 @@ Constants = function()
 	hyperPressedObjectName = "Hyper";
 	rectangleLayoutName = "RectangleLayout";
 	textLayoutName = "TextLayout";
-	singleLayoutName = "SingleLayout";
 	symbolLayoutName = "SymbolLayout";
 	horizontalOrientationName = "HorizontalOrientation";
 	verticalOrientationName = "VerticalOrientation";
@@ -111,14 +110,6 @@ Constants = function()
 	this.textLayoutName = function()
 	{
 		return textLayoutName;
-	}
-	
-	/**
-	  * returns the name of the single layout
-	  */
-	this.singleLayoutName = function()
-	{
-		return singleLayoutName;
 	}
 	
 	/**

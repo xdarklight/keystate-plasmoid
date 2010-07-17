@@ -123,7 +123,6 @@ LayoutConfiguration = function()
 		var availableLayouts = new Array(
 			global.constants.rectangleLayoutName(),
 			global.constants.textLayoutName(),
-			global.constants.singleLayoutName(),
 			global.constants.symbolLayoutName());
 		
 		// default to horizontal layout

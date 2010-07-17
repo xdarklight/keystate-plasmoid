@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>325</width>
-    <height>380</height>
+    <height>360</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>325</width>
-    <height>380</height>
+    <height>360</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,13 +28,13 @@
      <x>0</x>
      <y>20</y>
      <width>320</width>
-     <height>350</height>
+     <height>330</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>320</width>
-     <height>350</height>
+     <height>330</height>
     </size>
    </property>
    <property name="toolTip">
@@ -53,7 +53,7 @@
        <x>0</x>
        <y>0</y>
        <width>311</width>
-       <height>141</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="title">
@@ -65,7 +65,7 @@
         <x>10</x>
         <y>30</y>
         <width>291</width>
-        <height>101</height>
+        <height>81</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -79,16 +79,6 @@
          </property>
          <property name="checked">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="kcfg_SingleLayout">
-         <property name="toolTip">
-          <string>A single layout which displays only the status of the key whose status has been changed last (usually used for Control/Alt/Shift etc. pressed status)</string>
-         </property>
-         <property name="text">
-          <string>Single</string>
          </property>
         </widget>
        </item>
@@ -129,7 +119,7 @@ AltGr Pressed: _</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>230</y>
+       <y>210</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -179,7 +169,7 @@ AltGr Pressed: _</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>150</y>
+       <y>130</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -561,7 +551,7 @@ AltGr Pressed: _</string>
         <x>0</x>
         <y>60</y>
         <width>311</width>
-        <height>161</height>
+        <height>171</height>
        </rect>
       </property>
       <property name="title">

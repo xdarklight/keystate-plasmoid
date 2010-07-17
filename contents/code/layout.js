@@ -38,16 +38,6 @@ Layout = function()
 				
 				break;
 				
-			case global.constants.singleLayoutName():
-				// include the layout code
-				plasmoid.include("rectanglelayout.js");
-				plasmoid.include("singlelayout.js");
-				
-				// get the layout
-				layout = new SingleLayout();
-				
-				break;
-				
 			case global.constants.symbolLayoutName():
 				// include the layout code
 				plasmoid.include("textbaselayout.js");
