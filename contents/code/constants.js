@@ -17,6 +17,7 @@ Constants = function()
 	horizontalLayoutName = "HorizontalLayout";
 	textLayoutName = "TextLayout";
 	singleLayoutName = "SingleLayout";
+	symbolLayoutName = "SymbolLayout";
 	dataLockedPropertyName = "Locked";
 	dataPressedPropertyName = "Pressed";
 	indexNotFound = -1;
@@ -125,6 +126,14 @@ Constants = function()
 	this.singleLayoutName = function()
 	{
 		return singleLayoutName;
+	}
+	
+	/**
+	  * returns the name of the symbol layout
+	  */
+	this.symbolLayoutName = function()
+	{
+		return symbolLayoutName;
 	}
 	
 	/**

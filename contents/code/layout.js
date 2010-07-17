@@ -43,7 +43,7 @@ Layout = function()
 				layout = new TextLayout();
 				
 				break;
-			
+				
 			case global.constants.singleLayoutName():
 				// include the layout code
 				plasmoid.include("rectanglelayout.js");
@@ -51,6 +51,15 @@ Layout = function()
 				
 				// get the layout
 				layout = new SingleLayout();
+				
+				break;
+				
+			case global.constants.symbolLayoutName():
+				// include the layout code
+				plasmoid.include("symbollayout.js");
+				
+				// initialize the layout
+				layout = new SymbolLayout();
 				
 				break;
 		}

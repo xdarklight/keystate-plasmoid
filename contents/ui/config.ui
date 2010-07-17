@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>325</width>
-    <height>500</height>
+    <height>525</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,7 +28,7 @@
      <x>0</x>
      <y>20</y>
      <width>320</width>
-     <height>471</height>
+     <height>501</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -53,7 +53,7 @@
        <x>0</x>
        <y>0</y>
        <width>311</width>
-       <height>131</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="title">
@@ -65,7 +65,7 @@
         <x>10</x>
         <y>30</y>
         <width>291</width>
-        <height>98</height>
+        <height>123</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -115,6 +115,26 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_SymbolLayout">
+         <property name="toolTip">
+          <string>A symbol layout which displays a symbol for each key.
+
+Num Lock: #
+Caps Lock: ⬇
+Shift Pressed: ⇧
+CTRL Pressed: ^
+Meta Pressed: ⚐
+Super Pressed: ⚐
+Hyper Pressed: ⚐
+ALT Pressed: ⎇
+AltGr Pressed: _</string>
+         </property>
+         <property name="text">
+          <string>Symbol</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -122,9 +142,9 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>140</y>
+       <y>160</y>
        <width>311</width>
-       <height>221</height>
+       <height>231</height>
       </rect>
      </property>
      <property name="title">
@@ -306,7 +326,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>370</y>
+       <y>390</y>
        <width>311</width>
        <height>71</height>
       </rect>

@@ -45,6 +45,9 @@
 		<entry name="SingleLayout" type="Bool">
 			<default>false</default>
 		</entry>
+		<entry name="SymbolLayout" type="Bool">
+			<default>false</default>
+		</entry>
 		<entry name="HorizontalLayout" type="Bool">
 			<default>true</default>
 		</entry>

@@ -11,13 +11,6 @@ Thus: move the horizontal/vertical layouting code out of the specific layouts (i
 (NOTE: do we have to care about right-to-left here?
 DEV info: maybe we could use QPainter.rotate()?)
 
-TODO: create a symbol layout (Junior-Job?).
-Suggested symbols (by Dotan Cohen):
-Shift: ↥
-Ctrl: ^
-Super: ⚐
-Alt: _
-
 Goals for the first stable version:
 -world domination :)
 -get this plasmoid included in KDE

@@ -120,7 +120,8 @@ LayoutConfiguration = function()
 			global.constants.horizontalLayoutName(),
 			global.constants.verticalLayoutName(),
 			global.constants.textLayoutName(),
-			global.constants.singleLayoutName());
+			global.constants.singleLayoutName(),
+			global.constants.symbolLayoutName());
 		
 		// default to horizontal layout
 		var selectedLayoutName = global.constants.horizontalLayoutName();
