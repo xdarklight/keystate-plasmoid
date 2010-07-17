@@ -12,6 +12,10 @@ KeyInformation = function()
 	  */
 	this.updateKeys = function()
 	{
+		// clear all keys - this way we make sure that the
+		// order of the keys is always the same
+		this.keys = new Array();
+		
 		for (var i in global.keyNames)
 		{
 			var objectName = global.keyNames[i];
