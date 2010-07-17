@@ -56,7 +56,12 @@ RectangleLayout = function()
 		return imageHeight;
 	}
 	
-	this.initialize = function()
+	/**
+	  * initializes the rectangle layout
+	  *
+	  * @param painter the painter with which the code will draw
+	  */
+	this.initialize = function(painter)
 	{
 		// we've implemented rotating on our own
 		this.canRotate = false;

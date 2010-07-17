@@ -27,7 +27,7 @@ BaseLayout = function()
 	this.paint = function(painter)
 	{
 		// initialize the layout
-		this.initializeLayout();
+		this.initializeLayout(painter);
 		
 		// paint the keys
 		this.paintKeys(painter);
@@ -35,14 +35,13 @@ BaseLayout = function()
 	
 	/**
 	  * initializes the layout
+	  *
+	  * @param painter the painter with which the code will draw
 	  */
-	this.initializeLayout = function()
+	this.initializeLayout = function(painter)
 	{
 		// setup the internal variables
 		this.setup();
-		
-		// initialize the layout (if necessary)
-		this.initialize();
 		
 		// start at a padded position
 		if (this.orientation == global.constants.horizontalOrientation())
@@ -55,6 +54,9 @@ BaseLayout = function()
 			// we're walking on the y-axis: start at the padded value
 			this.yPosition += this.padding;
 		}
+		
+		// initialize the layout (if necessary)
+		this.initialize(painter);
 		
 		// append the spacing to the walking size
 		this.walkSize += this.spacing;

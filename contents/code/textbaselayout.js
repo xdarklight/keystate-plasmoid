@@ -5,24 +5,6 @@
 TextBaseLayout = function()
 {
 	/**
-	  * sets the walking size and the start position for the painter
-	  */
-	this.initialize = function()
-	{
-		// set the walking size
-		this.walkSize = this.fontSize;
-		
-		// are we drawing horizontal?
-		if (this.orientation == global.constants.horizontalOrientation())
-		{
-			// set the start-position for the painter to the center of the plamoid
-			// (otherwise it's at the very top, where we don't want it to be
-			// as it would draw into non-visible area)
-			this.yPosition = plasmoid.size.height / 2;
-		}
-	}
-	
-	/**
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
@@ -35,6 +17,10 @@ TextBaseLayout = function()
 		
 		// draw the text for the given key
 		painter.drawText(this.xPosition, this.yPosition, text);
+		
+		// update the walking size
+		// we're walking the lenght of the text plus 1 character (= a blank)
+		this.walkSize = this.fontSize * (text.length + 1);
 	}
 }
 
