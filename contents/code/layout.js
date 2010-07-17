@@ -14,29 +14,23 @@ Layout = function()
 		var layout = null;
 		var layoutName = global.configuration.layoutConfiguration().getSelectedLayoutName();
 		
+		// include the base layout
+		plasmoid.include("baselayout.js");
+		
 		// handle the layout selection
 		switch (layoutName)
 		{
-			case global.constants.horizontalLayoutName():
+			case global.constants.rectangleLayoutName():
 				// include the layout code
 				plasmoid.include("rectanglelayout.js");
-				plasmoid.include("horizontallayout.js");
 				
 				// get the layout
-				layout = new HorizontalLayout();
-				
-				break;
-			case global.constants.verticalLayoutName():
-				// include the layout code
-				plasmoid.include("rectanglelayout.js");
-				plasmoid.include("verticallayout.js");
-				
-				// get the layout
-				layout = new VerticalLayout();
+				layout = new RectangleLayout();
 				
 				break;
 			case global.constants.textLayoutName():
 				// include the layout code
+				plasmoid.include("textbaselayout.js");
 				plasmoid.include("textlayout.js");
 				
 				// get the layout
@@ -56,6 +50,7 @@ Layout = function()
 				
 			case global.constants.symbolLayoutName():
 				// include the layout code
+				plasmoid.include("textbaselayout.js");
 				plasmoid.include("symbollayout.js");
 				
 				// initialize the layout

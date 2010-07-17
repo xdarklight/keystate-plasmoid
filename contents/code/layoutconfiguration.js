@@ -11,6 +11,7 @@ LayoutConfiguration = function()
 	this.preferredSizeEnabled = true;
 	this.preferredWidth = 24;
 	this.preferredHeight = 24;
+	this.orientation = null;
 	
 	// internal constants
 	uninitializedFontFamily = "FONT_FALLBACK";
@@ -70,6 +71,9 @@ LayoutConfiguration = function()
 		{
 			this.applySimpleLayoutSettings();
 		}
+		
+		// update the orientation settings
+		this.updateOrientation();
 	}
 	
 	/**
@@ -117,14 +121,13 @@ LayoutConfiguration = function()
 	{
 		// build an array with all available layout names in it
 		var availableLayouts = new Array(
-			global.constants.horizontalLayoutName(),
-			global.constants.verticalLayoutName(),
+			global.constants.rectangleLayoutName(),
 			global.constants.textLayoutName(),
 			global.constants.singleLayoutName(),
 			global.constants.symbolLayoutName());
 		
 		// default to horizontal layout
-		var selectedLayoutName = global.constants.horizontalLayoutName();
+		var selectedLayoutName = global.constants.rectangleLayoutName();
 		
 		for (var i = 0; i < availableLayouts.length; i++)
 		{
@@ -142,6 +145,29 @@ LayoutConfiguration = function()
 		}
 		
 		return selectedLayoutName;
+	}
+	
+	this.updateOrientation = function()
+	{
+		var orientationList = new Array(
+			global.constants.horizontalOrientation(),
+			global.constants.verticalOrientation());
+			
+		// go through the list of possible layouts
+		for (var i = 0; i < orientationList.length; i++)
+		{
+			var currentOrientation = orientationList[i];
+			
+			// read the value of the current orientation
+			var orientationConfigValue = plasmoid.readConfig(currentOrientation);
+			
+			// check if the orientation is enabled
+			if (Boolean(orientationConfigValue))
+			{
+				this.orientation = currentOrientation;
+				break;
+			}
+		}
 	}
 	
 	/**
@@ -198,5 +224,13 @@ LayoutConfiguration = function()
 	this.getPreferredHeight = function()
 	{
 		return this.preferredHeight;
+	}
+	
+	/**
+	  * returns the configured orientation
+	  */
+	this.getOrientation = function()
+	{
+		return this.orientation;
 	}
 }

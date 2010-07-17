@@ -53,7 +53,7 @@
        <x>0</x>
        <y>0</y>
        <width>311</width>
-       <height>161</height>
+       <height>141</height>
       </rect>
      </property>
      <property name="title">
@@ -65,33 +65,20 @@
         <x>10</x>
         <y>30</y>
         <width>291</width>
-        <height>123</height>
+        <height>101</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QRadioButton" name="kcfg_HorizontalLayout">
+        <widget class="QRadioButton" name="kcfg_RectangleLayout">
          <property name="toolTip">
           <string>A horizontal layout which displays one key status below another one</string>
          </property>
          <property name="text">
-          <string>Horizontal</string>
+          <string>Rectangle</string>
          </property>
          <property name="checked">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="kcfg_VerticalLayout">
-         <property name="toolTip">
-          <string>A vertical layout which displays the status of a key next to another one</string>
-         </property>
-         <property name="text">
-          <string>Vertical</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -142,7 +129,7 @@ AltGr Pressed: _</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>170</y>
+       <y>230</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -182,6 +169,45 @@ AltGr Pressed: _</string>
            <italic>false</italic>
            <bold>false</bold>
           </font>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>150</y>
+       <width>311</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Orientation</string>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="kcfg_HorizontalOrientation">
+         <property name="text">
+          <string>Horizontal</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_VerticalOrientation">
+         <property name="text">
+          <string>Vertical</string>
          </property>
         </widget>
        </item>

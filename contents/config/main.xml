@@ -36,9 +36,6 @@
 		<entry name="HyperPressedColor" type="Color">
 			<default>#887422</default>
 		</entry>
-		<entry name="VerticalLayout" type="Bool">
-			<default>false</default>
-		</entry>
 		<entry name="TextLayout" type="Bool">
 			<default>false</default>
 		</entry>
@@ -48,8 +45,14 @@
 		<entry name="SymbolLayout" type="Bool">
 			<default>false</default>
 		</entry>
-		<entry name="HorizontalLayout" type="Bool">
+		<entry name="RectangleLayout" type="Bool">
 			<default>true</default>
+		</entry>
+		<entry name="HorizontalOrientation" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="VerticalOrientation" type="Bool">
+			<default>false</default>
 		</entry>
 		<entry name="ImageSpacing" type="Int">
 			<default>1</default>

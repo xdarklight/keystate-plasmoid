@@ -31,7 +31,7 @@ HOWTO: add new layouts
 -add the constant (from step #1) to the 'availableLayouts' array in the getSelectedLayoutName() method in 'layoutconfiguration.js'
 -add an entry to the main.xml KConfigXT file
 -add a RadioButton in the config UI
--implement the layout itself
+-implement the layout itself (make sure it inherits BaseLayout)
 
 ##############
 --- CSTYLE ---

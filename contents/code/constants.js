@@ -13,11 +13,12 @@ Constants = function()
 	metaPressedObjectName = "Meta";
 	superPressedObjectName = "Super";
 	hyperPressedObjectName = "Hyper";
-	verticalLayoutName = "VerticalLayout";
-	horizontalLayoutName = "HorizontalLayout";
+	rectangleLayoutName = "RectangleLayout";
 	textLayoutName = "TextLayout";
 	singleLayoutName = "SingleLayout";
 	symbolLayoutName = "SymbolLayout";
+	horizontalOrientationName = "HorizontalOrientation";
+	verticalOrientationName = "VerticalOrientation";
 	dataLockedPropertyName = "Locked";
 	dataPressedPropertyName = "Pressed";
 	indexNotFound = -1;
@@ -97,11 +98,11 @@ Constants = function()
 	}
 	
 	/**
-	  * returns the name of the vertical layout
+	  * returns the name of the rectangle layout
 	  */
-	this.verticalLayoutName = function()
+	this.rectangleLayoutName = function()
 	{
-		return verticalLayoutName;
+		return rectangleLayoutName;
 	}
 	
 	/**
@@ -110,14 +111,6 @@ Constants = function()
 	this.textLayoutName = function()
 	{
 		return textLayoutName;
-	}
-	
-	/**
-	  * returns the name of the horizontal layout
-	  */
-	this.horizontalLayoutName = function()
-	{
-		return horizontalLayoutName;
 	}
 	
 	/**
@@ -142,6 +135,22 @@ Constants = function()
 	this.fullyTransparentColor = function()
 	{
 		return fullyTransparentColor;
+	}
+	
+	/**
+	  * returns the name of the horizontal orientation
+	  */
+	this.horizontalOrientation = function()
+	{
+		return horizontalOrientationName;
+	}
+	
+	/**
+	  * returns the name of the vertical orientation
+	  */
+	this.verticalOrientation = function()
+	{
+		return verticalOrientationName;
 	}
 	
 	/**

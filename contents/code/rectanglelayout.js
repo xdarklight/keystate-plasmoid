@@ -6,7 +6,7 @@ RectangleLayout = function()
 	/**
 	  * returns the calculated size (width or height)
 	  */
-	this.getCalculatedSize = function(originalSize)
+	this.calculateSize = function(originalSize)
 	{
 		var size = originalSize;
 		
@@ -15,10 +15,10 @@ RectangleLayout = function()
 		var spacingCount = global.keyInformation.count() - 1;
 		
 		// minus twice the image padding (top/bottom or left/right)
-		size -= 2 * global.configuration.layoutConfiguration().getImagePadding();
+		size -= 2 * this.padding;
 		
 		// minus the spacing (between the two rectangles)
-		size -= global.configuration.layoutConfiguration().getImageSpacing() * spacingCount;
+		size -= this.spacing * spacingCount;
 		
 		// divide through the number of keys
 		size /= global.keyInformation.count();
@@ -26,80 +26,64 @@ RectangleLayout = function()
 		return size;
 	}
 	
-	this.getWidth = function()
+	this.calculatedWidth = function()
 	{
 		var imageWidth = plasmoid.size.width;
 		
 		// check if we are walking horizontal
-		if (this.walkHorizontal)
+		if (this.orientation == global.constants.horizontalOrientation())
 		{
 			// if we're walking horizontal we need to calculate the
 			// width of the image
-			imageWidth = this.getCalculatedSize(imageWidth);
+			imageWidth = this.calculateSize(imageWidth);
 		}
 		
 		return imageWidth;
 	}
 	
-	this.getHeight = function()
+	this.calculatedHeight = function()
 	{
 		var imageHeight = plasmoid.size.height;
 		
 		// check if we're walking vertical
-		if (!this.walkHorizontal)
+		if (this.orientation != global.constants.horizontalOrientation())
 		{
 			// if we're walking vertical we need to calculate the
 			// height of the image
-			imageHeight = this.getCalculatedSize(imageHeight);
+			imageHeight = this.calculateSize(imageHeight);
 		}
 		
 		return imageHeight;
+	}
+	
+	this.initialize = function()
+	{
+		// we've implemented rotating on our own
+		this.canRotate = false;
+		
+		// check if we are walking horizontal
+		if (this.orientation == global.constants.horizontalOrientation())
+		{
+			this.walkSize = this.calculatedWidth();
+		}
+		else
+		{
+			this.walkSize = this.calculatedHeight();
+		}
 	}
 	
 	/**
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
+	  * @param keyContainer the current key's container
 	  */
-	this.paint = function(painter)
+	this.drawKey = function(painter, keyContainer)
 	{
-		var xPos = 0;
-		var yPos = 0;
-		
-		var padding = global.configuration.layoutConfiguration().getImagePadding();
-		var spacing = global.configuration.layoutConfiguration().getImageSpacing();
-		
-		// start with a padded value
-		if (this.walkHorizontal)
-		{
-			// we're walking on the x-axis: start at the padded value
-			xPos += padding;
-		}
-		else
-		{
-			// we're walking on the y-axis: start at the padded value
-			yPos += padding;
-		}
-		
-		for (var i = 0; i < global.keyInformation.count(); i++)
-		{
-			var keyContainer = global.keyInformation.getContainer(i);
-			
-			var width = this.getWidth();
-			var height = this.getHeight();
-			
-			// paint the icon
-			painter.fillRect(xPos, yPos, width, height, keyContainer.color);
-			
-			// calculate the new positions
-			if (this.walkHorizontal)
-			{
-				xPos += width + spacing;
-			}
-			else
-			{
-				yPos += height + spacing;
-			}
-		}
+		// paint the icon
+		painter.fillRect(this.xPosition, this.yPosition, this.calculatedWidth(), this.calculatedHeight(), keyContainer.color);
 	}
 }
+
+// inherit BaseLayout
+RectangleLayout.prototype = new BaseLayout();
