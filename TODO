@@ -1,9 +1,6 @@
 Weird error message when starting the plasmoid first?
 -> TODO: check if it's reproducible.
 
-TODO: move the "Alt" key to the very end of the key list.
-(the flow of the keys on the keyboard is like: shift, control, super, alt, altgr).
-
 TODO: fix the code which tries to guess a perfect size for the plasmoid.
 (I need help there - if one has a smart solution please tell me :))
 
