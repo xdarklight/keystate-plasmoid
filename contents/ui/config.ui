@@ -500,47 +500,6 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QCheckBox" name="kcfg_ShowAltPressed">
-        <property name="toolTip">
-         <string>Indicate whether 'Alt' is pressed or not</string>
-        </property>
-        <property name="text">
-         <string>Alt pressed</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="KColorButton" name="kcfg_AltPressedColor">
-        <property name="toolTip">
-         <string>The color for the 'Alt pressed' indicator</string>
-        </property>
-        <property name="color">
-         <color>
-          <red>136</red>
-          <green>116</green>
-          <blue>34</blue>
-         </color>
-        </property>
-        <property name="defaultColor">
-         <color>
-          <red>136</red>
-          <green>116</green>
-          <blue>34</blue>
-         </color>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QCheckBox" name="kcfg_ShowAltGrPressed">
-        <property name="toolTip">
-         <string>Indicate whether 'AltGr' is pressed or not</string>
-        </property>
-        <property name="text">
-         <string>AltGr pressed</string>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="0">
        <widget class="QCheckBox" name="kcfg_ShowMetaPressed">
         <property name="toolTip">
@@ -568,27 +527,6 @@
         </property>
         <property name="text">
          <string>Hyper pressed</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="KColorButton" name="kcfg_AltGrPressedColor">
-        <property name="toolTip">
-         <string>The color for the 'AltGr pressed' indicator</string>
-        </property>
-        <property name="color">
-         <color>
-          <red>136</red>
-          <green>116</green>
-          <blue>34</blue>
-         </color>
-        </property>
-        <property name="defaultColor">
-         <color>
-          <red>136</red>
-          <green>116</green>
-          <blue>34</blue>
-         </color>
         </property>
        </widget>
       </item>
@@ -638,6 +576,68 @@
        <widget class="KColorButton" name="kcfg_HyperPressedColor">
         <property name="toolTip">
          <string>The color for the 'Hyper pressed' indicator</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="KColorButton" name="kcfg_AltPressedColor">
+        <property name="toolTip">
+         <string>The color for the 'Alt pressed' indicator</string>
+        </property>
+        <property name="color">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+        <property name="defaultColor">
+         <color>
+          <red>136</red>
+          <green>116</green>
+          <blue>34</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowAltGrPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'AltGr' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>AltGr pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QCheckBox" name="kcfg_ShowAltPressed">
+        <property name="toolTip">
+         <string>Indicate whether 'Alt' is pressed or not</string>
+        </property>
+        <property name="text">
+         <string>Alt pressed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="1">
+       <widget class="KColorButton" name="kcfg_AltGrPressedColor">
+        <property name="toolTip">
+         <string>The color for the 'AltGr pressed' indicator</string>
         </property>
         <property name="color">
          <color>

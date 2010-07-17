@@ -74,11 +74,11 @@ KeyConfiguration = function()
 		this.addKey(global.constants.capsLockObjectName(), capsLockConfigName, global.constants.dataLockedPropertyName());
 		this.addKey(global.constants.shiftPressedObjectName(), shiftPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.controlPressedObjectName(), controlPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.altPressedObjectName(), altPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.altgrPressedObjectName(), altgrPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.metaPressedObjectName(), metaPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.superPressedObjectName(), superPressedConfigName, global.constants.dataPressedPropertyName());
 		this.addKey(global.constants.hyperPressedObjectName(), hyperPressedConfigName, global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.altPressedObjectName(), altPressedConfigName, global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.altgrPressedObjectName(), altgrPressedConfigName, global.constants.dataPressedPropertyName());
 		
 		// read and parse the config file
 		this.readParseConfiguration();
