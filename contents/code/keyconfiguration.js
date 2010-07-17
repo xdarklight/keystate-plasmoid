@@ -25,7 +25,7 @@ KeyConfiguration = function()
 	/**
 	  * reads and parses the config file
 	  */
-	this.readParseConfiguration = function()
+	this.parseConfiguration = function()
 	{
 		for (var objectName in this.objectNameConfigMapping)
 		{
@@ -81,7 +81,7 @@ KeyConfiguration = function()
 		this.addKey(global.constants.altgrPressedObjectName(), altgrPressedConfigName, global.constants.dataPressedPropertyName());
 		
 		// read and parse the config file
-		this.readParseConfiguration();
+		this.parseConfiguration();
 	}
 	
 	/**
