@@ -26,8 +26,10 @@ TextLayout = function()
 			// bottom to the top and new keys will appear on the right)
 			painter.rotate(270);
 			
-			// move to the bottom position
-			this.yPosition = bottomPosition;
+			// since we're rotating we can't use the default border spacing
+			// move the pointer on the x-axis to the border spacing so we're starting
+			// at the correct position
+			this.xPosition -= this.borderSpacing;
 		}
 	}
 	
