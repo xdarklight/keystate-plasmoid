@@ -7,7 +7,6 @@ KeyInformationContainer = function()
 	this.color;
 	this.status;
 	this.dataPropertyName;
-	this.text;
 	this.data;
 }
 
@@ -23,7 +22,6 @@ KeyInformationContainer.createContainer = function(name)
 	var color = global.keyInformation.getColor(name);
 	var status = global.keyInformation.getStatus(name);
 	var dataPropertyName = global.keyInformation.getDataPropertyName(name);
-	var text = global.localization.getText(name);
 	var data = global.keyInformation.getData(name);
 	
 	// fill the container with data
@@ -31,7 +29,6 @@ KeyInformationContainer.createContainer = function(name)
 	container.color = color;
 	container.status = status;
 	container.dataPropertyName = dataPropertyName;
-	container.text = text;
 	container.data = data;
 	
 	return container;

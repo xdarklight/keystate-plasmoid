@@ -28,9 +28,4 @@ Global = function()
 	  * points to an object with all key information in it
 	  */
 	this.keyInformation = null;
-	
-	/**
-	  * points to an object with all localization information in it
-	  */
-	this.localization = null;
 }

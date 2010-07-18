@@ -113,9 +113,6 @@ PlasmoidHandler.initialize = function()
 	// initially update the key information list
 	global.keyInformation.updateKeys();
 	
-	// initialize the localization information
-	global.localization.initialize();
-	
 	// create a new plasmoid handler
 	var plasmoidHandler = new PlasmoidHandler();
 	

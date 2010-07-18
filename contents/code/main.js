@@ -21,7 +21,6 @@ this.initialize = function()
 	plasmoid.include("configuration.js");
 	plasmoid.include("keyinformationcontainer.js")
 	plasmoid.include("keyinformation.js");
-	plasmoid.include("localization.js");
 	
 	// create our Global object
 	global = new Global();
@@ -31,7 +30,6 @@ this.initialize = function()
 	global.constants = new Constants();
 	global.keyInformation= new KeyInformation();
 	global.layout = new Layout();
-	global.localization = new Localization();
 	
 	// initialize thes plasmoid handler (which initializes the whole plasmoid)
 	PlasmoidHandler.initialize();
