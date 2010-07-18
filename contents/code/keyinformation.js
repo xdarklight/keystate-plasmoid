@@ -21,10 +21,11 @@ KeyInformation = function()
 			var keyName = global.keyNames[i];
 			
 			// get the user's visibility setting for the key
-			var isEnabled = global.configuration.keyConfiguration().isKeyShown(keyName);
+			var isShown = global.configuration.keyConfiguration().keyIsShown(keyName);
 			
-			if (isEnabled)
+			if (isShown)
 			{
+				// add the key to the list of enabled keys
 				this.keys.addValue(keyName);
 			}
 		}
@@ -91,7 +92,7 @@ KeyInformation = function()
 	  */
 	this.getColor = function(keyName)
 	{
-		var color = global.configuration.keyConfiguration().getKeyColor(keyName);
+		var color = global.configuration.keyConfiguration().colorForKey(keyName);
 		var status = this.getStatus(keyName);
 		
 		return this.resolveColor(status, color);

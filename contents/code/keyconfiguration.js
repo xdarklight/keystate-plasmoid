@@ -86,17 +86,21 @@ KeyConfiguration = function()
 	
 	/**
 	  * determines if a key is shown or not
+	  *
+	  * @param keyName the name of the key
 	  */
-	this.isKeyShown = function(objectName)
+	this.keyIsShown = function(keyName)
 	{
-		return Boolean(this.shownKeySettings[objectName]);
+		return Boolean(this.shownKeySettings[keyName]);
 	}
 	
 	/**
 	  * returns the color for the key with the given object name
+	  *
+	  * @param keyName the name of the key
 	  */
-	this.getKeyColor = function(objectName)
+	this.colorForKey = function(keyName)
 	{
-		return this.colorSettings[objectName];
+		return this.colorSettings[keyName];
 	}
 }
