@@ -1,6 +1,12 @@
 Weird error message when starting the plasmoid first?
 -> TODO: check if it's reproducible.
 
+User requests:
+There should be a configurable delay before the key state is shown.
+This way, when typing, the key state plasmoid will not flash every time the
+user hits e.g. the shift key.
+In English writing, this happens at least once per sentence!
+
 Goals for the first stable version:
 -world domination :)
 -get this plasmoid included in KDE
