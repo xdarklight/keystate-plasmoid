@@ -86,13 +86,17 @@ LayoutConfiguration = function()
 		// the average of the width and the height
 		var averageSize = (plasmoid.size.height + plasmoid.size.width) / 2;
 		
-		// calculate the spacing: 5% of the average of the height and the width
+		// calculate the image spacing (the spacing between two key items)
 		// the lower limit is 3px
-		this.imageSpacing = Number.qBound(3, parseInt(averageSize / 100 * 5));
+		// the best settings should be 25% of the the height which is available per key
+		// the upper limit is 15% of the average size
+		this.imageSpacing = Number.qBound(3, averageSize / global.keyInformation.count() / 4, averageSize / 100 * 15);
 		
-		// calculate the border spacing: 7.5% of the average of the height and the width
-		// the lower limit is 5px
-		this.borderSpacing = Number.qMax(5, parseInt(averageSize / 100 * 7.5));
+		// calculate the border spacing
+		// the lower limit is 10px
+		// the best settings should be 50% of the the height which is available per key
+		// the upper limit is 20% of the average size
+		this.borderSpacing = Number.qBound(10, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
 	}
 	
 	/**
