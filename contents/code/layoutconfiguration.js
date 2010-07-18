@@ -60,6 +60,9 @@ LayoutConfiguration = function()
 	  */
 	this.updateLayoutSettings = function()
 	{
+		// update the orientation settings
+		this.updateOrientation();
+		
 		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
 		
 		if (advancedLayoutSettingsConfigValue)
@@ -70,9 +73,6 @@ LayoutConfiguration = function()
 		{
 			this.applySimpleLayoutSettings();
 		}
-		
-		// update the orientation settings
-		this.updateOrientation();
 	}
 	
 	/**
