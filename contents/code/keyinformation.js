@@ -18,29 +18,15 @@ KeyInformation = function()
 		
 		for (var i in global.keyNames)
 		{
-			var objectName = global.keyNames[i];
+			var keyName = global.keyNames[i];
 			
-			// update the key with the object name
-			this.updateKey(objectName);
-		}
-	}
-	
-	/**
-	  * adds or removes key information depending on
-	  * if it the key is enabled or not
-	  */
-	this.updateKey = function(keyName)
-	{
-		// get the user's settings for the key
-		var isEnabled = global.configuration.keyConfiguration().isKeyShown(keyName);
-		
-		if (isEnabled)
-		{
-			this.keys.addValue(keyName);
-		}
-		else
-		{
-			this.keys.removeValue(keyName);
+			// get the user's visibility setting for the key
+			var isEnabled = global.configuration.keyConfiguration().isKeyShown(keyName);
+			
+			if (isEnabled)
+			{
+				this.keys.addValue(keyName);
+			}
 		}
 	}
 	
