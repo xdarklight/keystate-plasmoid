@@ -87,10 +87,12 @@ LayoutConfiguration = function()
 		var averageSize = (plasmoid.size.height + plasmoid.size.width) / 2;
 		
 		// calculate the spacing: 5% of the average of the height and the width
-		this.imageSpacing = parseInt(averageSize / 100 * 5);
+		// the lower limit is 3px
+		this.imageSpacing = Number.qBound(3, parseInt(averageSize / 100 * 5));
 		
-		// calculate the border spacing: 10% of the average of the height and the width
-		this.borderSpacing = parseInt(averageSize / 100 * 10);
+		// calculate the border spacing: 7.5% of the average of the height and the width
+		// the lower limit is 5px
+		this.borderSpacing = Number.qMax(5, parseInt(averageSize / 100 * 7.5));
 	}
 	
 	/**
