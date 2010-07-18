@@ -64,6 +64,9 @@ LayoutConfiguration = function()
 		this.updateOrientation();
 		
 		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
+		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
+		
+		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
 		
 		if (advancedLayoutSettingsConfigValue)
 		{
@@ -80,9 +83,6 @@ LayoutConfiguration = function()
 	  */
 	this.applySimpleLayoutSettings = function()
 	{
-		// we don't want any specific size size settings
-		this.preferredSizeEnabled = false;
-		
 		// the average of the width and the height
 		var averageSize = (plasmoid.size.height + plasmoid.size.width) / 2;
 		
@@ -103,14 +103,12 @@ LayoutConfiguration = function()
 		// config values
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
-		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
 		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// save our settings internally
 		this.imageSpacing = imageSpacingConfigValue.toInt();
 		this.borderSpacing = borderSpacingConfigValue.toInt();
-		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
 		this.preferredWidth = preferredWidthConfigValue.toInt();
 		this.preferredHeight = preferredHeightConfigValue.toInt();
 	}
