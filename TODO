@@ -1,9 +1,6 @@
 Weird error message when starting the plasmoid first?
 -> TODO: check if it's reproducible.
 
-TODO: fix the code which tries to guess a perfect size for the plasmoid.
-(I need help there - if one has a smart solution please tell me :))
-
 Goals for the first stable version:
 -world domination :)
 -get this plasmoid included in KDE
