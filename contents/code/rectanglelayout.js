@@ -28,32 +28,30 @@ RectangleLayout = function()
 	
 	this.calculatedWidth = function()
 	{
-		var imageWidth = plasmoid.size.width;
+		var width = plasmoid.size.width;
 		
 		// check if we are walking horizontal
 		if (this.orientation == global.constants.horizontalOrientation())
 		{
-			// if we're walking horizontal we need to calculate the
-			// width of the image
-			imageWidth = this.calculateSize(imageWidth);
+			// if we're walking horizontal we need to calculate the width
+			width = this.calculateSize(width);
 		}
 		
-		return imageWidth;
+		return width;
 	}
 	
 	this.calculatedHeight = function()
 	{
-		var imageHeight = plasmoid.size.height;
+		var height = plasmoid.size.height;
 		
 		// check if we're walking vertical
 		if (this.orientation != global.constants.horizontalOrientation())
 		{
-			// if we're walking vertical we need to calculate the
-			// height of the image
-			imageHeight = this.calculateSize(imageHeight);
+			// if we're walking vertical we need to calculate the height
+			height = this.calculateSize(height);
 		}
 		
-		return imageHeight;
+		return height;
 	}
 	
 	/**
