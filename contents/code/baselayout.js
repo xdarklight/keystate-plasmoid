@@ -8,7 +8,7 @@ BaseLayout = function()
 	this.xPosition = 0;
 	this.yPosition = 0;
 	this.spacing = 0;
-	this.padding = 0;
+	this.borderSpacing = 0;
 	this.font = null;
 	this.fontSize = 0;
 	this.orientation = null;
@@ -47,12 +47,12 @@ BaseLayout = function()
 		if (this.orientation == global.constants.horizontalOrientation())
 		{
 			// we're walking on the x-axis: start at the padded value
-			this.xPosition += this.padding;
+			this.xPosition += this.borderSpacing;
 		}
 		else
 		{
 			// we're walking on the y-axis: start at the padded value
-			this.yPosition += this.padding;
+			this.yPosition += this.borderSpacing;
 		}
 		
 		// initialize the layout (if necessary)
@@ -74,7 +74,7 @@ BaseLayout = function()
 		// update our internal variables with the values from the configuration
 		this.font = global.configuration.layoutConfiguration().getFont();
 		this.fontSize = this.font.pointSize;
-		this.padding = global.configuration.layoutConfiguration().getImagePadding();
+		this.borderSpacing = global.configuration.layoutConfiguration().getBorderSpacing();
 		this.spacing = global.configuration.layoutConfiguration().getImageSpacing();
 		this.orientation = global.configuration.layoutConfiguration().getOrientation();
 	}

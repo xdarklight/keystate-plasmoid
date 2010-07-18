@@ -6,7 +6,6 @@ LayoutConfiguration = function()
 {
 	this.selectedLayout = null;
 	this.imageSpacing = 1;
-	this.topAndBottomPadding = 2;
 	this.font = new QFont("Sans Serif", 7);
 	this.preferredSizeEnabled = true;
 	this.preferredWidth = 24;
@@ -16,7 +15,7 @@ LayoutConfiguration = function()
 	// internal constants
 	uninitializedFontFamily = "FONT_FALLBACK";
 	imageSpacingConfigName = "ImageSpacing";
-	imagePaddingConfigName = "ImagePadding";
+	borderSpacingConfigName = "BorderSpacing";
 	fontConfigName = "Font";
 	preferredSizeEnabledConfigName = "PreferredSizeEnabled";
 	preferredWidthConfigName = "PreferredWidth";
@@ -90,8 +89,8 @@ LayoutConfiguration = function()
 		// calculate the spacing: 5% of the average of the height and the width
 		this.imageSpacing = parseInt(averageSize / 100 * 5);
 		
-		// calculate the padding: 10% of the average of the height and the width
-		this.imagePadding = parseInt(averageSize / 100 * 10);
+		// calculate the border spacing: 10% of the average of the height and the width
+		this.borderSpacing = parseInt(averageSize / 100 * 10);
 	}
 	
 	/**
@@ -101,14 +100,14 @@ LayoutConfiguration = function()
 	{
 		// config values
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
-		var imagePaddingConfigValue = plasmoid.readConfig(imagePaddingConfigName);
+		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
 		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
 		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// save our settings internally
 		this.imageSpacing = imageSpacingConfigValue.toInt();
-		this.imagePadding = imagePaddingConfigValue.toInt();
+		this.borderSpacing = borderSpacingConfigValue.toInt();
 		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
 		this.preferredWidth = preferredWidthConfigValue.toInt();
 		this.preferredHeight = preferredHeightConfigValue.toInt();
@@ -186,11 +185,11 @@ LayoutConfiguration = function()
 	}
 	
 	/**
-	  * returns the (top and bottom) borderspacing
+	  * returns the (top and bottom) border-spacing
 	  */
-	this.getImagePadding = function()
+	this.getBorderSpacing = function()
 	{
-		return this.imagePadding;
+		return this.borderSpacing;
 	}
 	
 	/**

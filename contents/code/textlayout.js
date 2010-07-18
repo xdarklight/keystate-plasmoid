@@ -19,7 +19,7 @@ TextLayout = function()
 			
 			// move to the current x position and to the bottom position
 			// (please note that we're at the start here, this means the current positions
-			// are basically only the paddings)
+			// is basically only the border spacing)
 			painter.translate(this.xPosition, bottomPosition);
 			
 			// rotate by 270 degrees (this will make the text readable from

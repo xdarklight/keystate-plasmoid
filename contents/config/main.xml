@@ -54,7 +54,7 @@
 		<entry name="ImageSpacing" type="Int">
 			<default>1</default>
 		</entry>
-		<entry name="ImagePadding" type="Int">
+		<entry name="BorderSpacing" type="Int">
 			<default>2</default>
 		</entry>
 		<entry name="Font" type="Font">

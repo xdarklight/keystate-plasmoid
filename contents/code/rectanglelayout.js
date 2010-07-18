@@ -14,8 +14,8 @@ RectangleLayout = function()
 		// we need to subtract spacing as soon as we have more than one rectangle
 		var spacingCount = global.keyInformation.count() - 1;
 		
-		// minus twice the image padding (top/bottom or left/right)
-		size -= 2 * this.padding;
+		// minus twice the border spacing (top/bottom or left/right)
+		size -= 2 * this.borderSpacing;
 		
 		// minus the spacing (between the two rectangles)
 		size -= this.spacing * spacingCount;
