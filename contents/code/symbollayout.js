@@ -57,8 +57,8 @@ SymbolLayout = function()
 			case global.constants.metaPressedObjectName():
 			case global.constants.superPressedObjectName():
 			case global.constants.hyperPressedObjectName():
-				// meta, super or hyper pressed: ⚐
-				symbol = 9872;
+				// meta, super or hyper pressed: ⚑
+				symbol = 9873;
 				break;
 		}
 		
