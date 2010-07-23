@@ -97,10 +97,10 @@ LayoutConfiguration = function()
 		this.imageSpacing = Number.qBound(3, averageSize / global.keyInformation.count() / 4, averageSize / 100 * 15);
 		
 		// calculate the border spacing
-		// the lower limit is 13px
+		// the lower limit is 12px
 		// the best settings should be 50% of the the height which is available per key
 		// the upper limit is 20% of the average size
-		this.borderSpacing = Number.qBound(13, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
+		this.borderSpacing = Number.qBound(12, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
 	}
 	
 	/**
