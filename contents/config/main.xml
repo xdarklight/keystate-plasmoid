@@ -91,10 +91,10 @@
 			<default>false</default>
 		</entry>
 		<entry name="PreferredWidth" type="Int">
-			<default>24</default>
+			<default>32</default>
 		</entry>
 		<entry name="PreferredHeight" type="Int">
-			<default>24</default>
+			<default>32</default>
 		</entry>
 	</group>
 </kcfg>

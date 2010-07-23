@@ -8,8 +8,8 @@ LayoutConfiguration = function()
 	this.imageSpacing = 1;
 	this.font = new QFont("Sans Serif", 7);
 	this.preferredSizeEnabled = true;
-	this.preferredWidth = 24;
-	this.preferredHeight = 24;
+	this.preferredWidth = 32;
+	this.preferredHeight = 32;
 	this.orientation = null;
 	
 	// internal constants
