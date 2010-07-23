@@ -3,16 +3,13 @@
   */
 PlasmoidHandler = function()
 {
-	// internal constants
-	dataEngineName = "keystate";
-	
 	/**
 	  * registers all events (and related things) with the plasmoid object
 	  */
 	this.registerPlasmoidEvents = function()
 	{
-		// tell the global plasmoid object that it should send
-		// all of it's events to us
+		// tell the global plasmoid object that it should route
+		// all events to the PlasmoidHandler
 		plasmoid.configChanged = this.configChanged;
 		plasmoid.sizeChanged = this.sizeChanged;
 		plasmoid.paintInterface = this.paintInterface;
@@ -23,8 +20,8 @@ PlasmoidHandler = function()
 		{
 			var objectName = global.keyNames[i];
 			
-			// register the object name to the dataengine
-			dataEngine(dataEngineName).connectSource(objectName, plasmoid);
+			// register the object name to the keystate DataEngine
+			dataEngine("keystate").connectSource(objectName, plasmoid);
 		}
 	}
 	
@@ -72,7 +69,6 @@ PlasmoidHandler = function()
 		// we're done
 		plasmoid.busy = false;
 	}
-
 	
 	/**
 	  * called when the DataEngines are updated
@@ -107,6 +103,15 @@ PlasmoidHandler = function()
   */
 PlasmoidHandler.initialize = function()
 {
+	// create our Global object
+	global = new Global();
+	
+	// fill our global object with information
+	global.configuration = new Configuration();
+	global.constants = new Constants();
+	global.keyInformation= new KeyInformation();
+	global.layout = new Layout();
+	
 	// read the config file
 	global.configuration.initialize();
 	
