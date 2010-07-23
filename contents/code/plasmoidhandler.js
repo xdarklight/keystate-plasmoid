@@ -118,4 +118,7 @@ PlasmoidHandler.initialize = function()
 	
 	// then register all events of the plasmoid object
 	plasmoidHandler.registerPlasmoidEvents();
+	
+	// our plasmoid should not have a background
+	plasmoid.backgroundHints = NoBackground;
 }
