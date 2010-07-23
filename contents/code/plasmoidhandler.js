@@ -78,14 +78,11 @@ PlasmoidHandler = function()
 	  */
 	this.dataUpdated = function(name, data)
 	{
-		// get all information for the current key
-		var keyContainer = global.keyInformation.getContainer(name);
-		
 		// get the status from the data array
 		var newStatus = global.keyInformation.resolveStatus(name, data);
 		
 		// get the current status of the key
-		var currentStatus = keyContainer.status;
+		var currentStatus = global.keyInformation.getStatus(name);
 		
 		// only update if the data changed
 		if (currentStatus != newStatus)

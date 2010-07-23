@@ -1,6 +1,6 @@
 /**
   * the base layout - all layouts should inherit this.
-  * NOTE: there's the abstract method drawKey(painter, keyContainer) which you have to implement!
+  * NOTE: there's the abstract method drawKey(painter, keyName) which you have to implement!
   */
 BaseLayout = function()
 {
@@ -77,10 +77,10 @@ BaseLayout = function()
 		
 		for (var i = 0; i < global.keyInformation.count(); i++)
 		{
-			var keyContainer = global.keyInformation.getContainer(i);
+			var keyName = global.keyInformation.getName(i);
 			
 			// tell our pen which color it has
-			pen.color = global.keyInformation.getColor(keyContainer.name);
+			pen.color = global.keyInformation.getColor(keyName);
 			
 			// tell the painter to use our pen
 			painter.pen = pen;
@@ -89,7 +89,7 @@ BaseLayout = function()
 			painter.font = this.layoutConfiguration.font();
 			
 			// draw the current key
-			this.drawKey(painter, keyContainer);
+			this.drawKey(painter, keyName);
 			
 			// walk (update the positions on the x/y axis)
 			this.walk();

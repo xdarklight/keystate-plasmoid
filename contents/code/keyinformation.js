@@ -123,25 +123,6 @@ KeyInformation = function()
 	}
 	
 	/**
-	  * gets the KeyInformationContainer for the given object (which can be
-	  * either the key's index or the key's name/object name)
-	  */
-	this.getContainer = function(object)
-	{
-		var name = object;
-		
-		// check if the object is numeric
-		if (object.isNumeric())
-		{
-			// the given object is numeric -> we got an index
-			name = this.getName(object);
-		}
-		
-		// create (and return) a new instance of the container
-		return KeyInformationContainer.createContainer(name);
-	}
-	
-	/**
 	  * updates the data of the key with the given name
 	  */
 	this.updateData = function(keyName, data)

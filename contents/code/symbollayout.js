@@ -22,13 +22,15 @@ SymbolLayout = function()
 	
 	/**
 	  * returns a symbol representation for the given key
+	  *
+	  * @param keyName the name of the current key
 	  */
-	this.getText = function(keyContainer)
+	this.getText = function(keyName)
 	{
 		var symbol = 077; // ? will be the default value
 		
 		// determine the (english) text for the key
-		switch (keyContainer.name)
+		switch (keyName)
 		{
 			case global.constants.numLockObjectName():
 				// Num Lock: #

@@ -76,9 +76,9 @@ RectangleLayout = function()
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
-	  * @param keyContainer the current key's container
+	  * @param keyName the name of the current key
 	  */
-	this.drawKey = function(painter, keyContainer)
+	this.drawKey = function(painter, keyName)
 	{
 		// paint the icon
 		painter.fillRect(this.xPosition, this.yPosition, this.calculatedWidth(), this.calculatedHeight(), painter.pen.color);

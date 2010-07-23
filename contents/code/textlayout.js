@@ -35,13 +35,15 @@ TextLayout = function()
 	
 	/**
 	  * returns a text representation of the given key
+	  *
+	  * @param keyName the name of the current key
 	  */
-	this.getText = function(keyContainer)
+	this.getText = function(keyName)
 	{
-		var text = i18nc("displayed in case no translation was found for the current key", "UNKNOWN (%1)", keyContainer.name);
+		var text = i18nc("displayed in case no translation was found for the current key", "UNKNOWN (%1)", keyName);
 		
 		// determine the localized text for the key
-		switch (keyContainer.name)
+		switch (keyName)
 		{
 			case global.constants.numLockObjectName():
 				// Num Lock

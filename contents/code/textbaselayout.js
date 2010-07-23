@@ -1,6 +1,6 @@
 /**
   * a base layout for drawing text
-  * NOTE: this uses the abstract method getText(keyContainer) which you have to implement
+  * NOTE: this uses the abstract method getText(keyName) which you have to implement
   */
 TextBaseLayout = function()
 {
@@ -8,12 +8,12 @@ TextBaseLayout = function()
 	  * paints the image with the given painter to the screen
 	  *
 	  * @param painter the painter used to paint the image
-	  * @param keyContainer the current key's container
+	  * @param keyName the name of the current key
 	  */
-	this.drawKey = function(painter, keyContainer)
+	this.drawKey = function(painter, keyName)
 	{
 		// get the text for the given key
-		var text = this.getText(keyContainer);
+		var text = this.getText(keyName);
 		
 		// draw the text for the given key
 		painter.drawText(this.xPosition, this.yPosition, text);
