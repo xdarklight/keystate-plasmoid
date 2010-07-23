@@ -8,14 +8,6 @@ Number.prototype.isNumeric = function()
 }
 
 /**
-  * converts a number to an integer
-  */
-Number.prototype.toInt = function()
-{
-	return parseInt(this);
-}
-
-/**
   * Returns the minimum of value1 and value2.
   */
 Number.qMin = function(value1, value2)

@@ -77,8 +77,8 @@ LayoutConfiguration = function()
 		
 		// parse the configuration values and store them internally
 		preferredSizeEnabled = preferredSizeEnabledConfigValue;
-		preferredWidth = preferredWidthConfigValue.toInt();
-		preferredHeight = preferredHeightConfigValue.toInt();
+		preferredWidth = preferredWidthConfigValue;
+		preferredHeight = preferredHeightConfigValue;
 		
 		// are we using the simple or the advanced layout settings?
 		if (advancedLayoutSettingsConfigValue)
@@ -119,8 +119,8 @@ LayoutConfiguration = function()
 		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
 		
 		// save our settings internally
-		imageSpacing = imageSpacingConfigValue.toInt();
-		borderSpacing = borderSpacingConfigValue.toInt();
+		imageSpacing = imageSpacingConfigValue;
+		borderSpacing = borderSpacingConfigValue;
 	}
 	
 	/**
