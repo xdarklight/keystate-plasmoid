@@ -81,7 +81,7 @@ RectangleLayout = function()
 	this.drawKey = function(painter, keyContainer)
 	{
 		// paint the icon
-		painter.fillRect(this.xPosition, this.yPosition, this.calculatedWidth(), this.calculatedHeight(), keyContainer.color);
+		painter.fillRect(this.xPosition, this.yPosition, this.calculatedWidth(), this.calculatedHeight(), painter.pen.color);
 	}
 }
 

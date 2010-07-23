@@ -80,7 +80,7 @@ BaseLayout = function()
 			var keyContainer = global.keyInformation.getContainer(i);
 			
 			// tell our pen which color it has
-			pen.color = keyContainer.color;
+			pen.color = global.keyInformation.getColor(keyContainer.name);
 			
 			// tell the painter to use our pen
 			painter.pen = pen;

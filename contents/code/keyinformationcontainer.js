@@ -4,7 +4,6 @@
 KeyInformationContainer = function()
 {
 	this.name;
-	this.color;
 	this.status;
 	this.dataPropertyName;
 	this.data;
@@ -19,14 +18,12 @@ KeyInformationContainer.createContainer = function(name)
 	var container = new KeyInformationContainer();
 	
 	// get all information
-	var color = global.keyInformation.getColor(name);
 	var status = global.keyInformation.getStatus(name);
 	var dataPropertyName = global.keyInformation.getDataPropertyName(name);
 	var data = global.keyInformation.getData(name);
 	
 	// fill the container with data
 	container.name = name;
-	container.color = color;
 	container.status = status;
 	container.dataPropertyName = dataPropertyName;
 	container.data = data;
