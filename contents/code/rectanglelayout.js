@@ -15,10 +15,10 @@ RectangleLayout = function()
 		var spacingCount = global.keyInformation.count() - 1;
 		
 		// minus twice the border spacing (top/bottom or left/right)
-		size -= 2 * this.borderSpacing;
+		size -= 2 * this.layoutConfiguration.borderSpacing();
 		
 		// minus the spacing (between the two rectangles)
-		size -= this.spacing * spacingCount;
+		size -= this.layoutConfiguration.imageSpacing() * spacingCount;
 		
 		// divide through the number of keys
 		size /= global.keyInformation.count();
@@ -31,7 +31,7 @@ RectangleLayout = function()
 		var width = plasmoid.size.width;
 		
 		// check if we are walking horizontal
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// if we're walking horizontal we need to calculate the width
 			width = this.calculateSize(width);
@@ -45,7 +45,7 @@ RectangleLayout = function()
 		var height = plasmoid.size.height;
 		
 		// check if we're walking vertical
-		if (this.orientation != global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() != global.constants.horizontalOrientation())
 		{
 			// if we're walking vertical we need to calculate the height
 			height = this.calculateSize(height);
@@ -62,7 +62,7 @@ RectangleLayout = function()
 	this.initialize = function(painter)
 	{
 		// check if we are walking horizontal
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			this.walkSize = this.calculatedWidth();
 		}

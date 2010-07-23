@@ -11,7 +11,7 @@ TextLayout = function()
 	this.initialize = function(painter)
 	{
 		// check if our orientation mode is horizontal
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// get the y coordinate at the very bottom minus the spacing (the current
 			// yPosition is the spacing)
@@ -29,7 +29,7 @@ TextLayout = function()
 			// since we're rotating we can't use the default border spacing
 			// move the pointer on the x-axis to the border spacing so we're starting
 			// at the correct position
-			this.xPosition -= this.borderSpacing;
+			this.xPosition -= this.layoutConfiguration.borderSpacing();
 		}
 	}
 	
@@ -94,7 +94,7 @@ TextLayout = function()
 		// our walking size is either 1.5 times the font size
 		// (1 character height plus half a character's height spacing)
 		// or the configured item spacing - depending on which value is higher
-		this.walkSize = Number.qMax(1.5 * this.fontSize, this.spacing);
+		this.walkSize = Number.qMax(1.5 * this.fontSize, this.layoutConfiguration.imageSpacing());
 		
 		// we're always walking on the y axis in this layout (as we're rotating
 		// in horizontal mode)

@@ -4,14 +4,13 @@
   */
 BaseLayout = function()
 {
-	// convenience variables (so one doesn't have to get them from the globals object every time)
+	// convenience variables
+	this.layoutConfiguration = null;
+	this.fontSize = null;
+	
+	// current coordinates for the painter
 	this.xPosition = 0;
 	this.yPosition = 0;
-	this.spacing = 0;
-	this.borderSpacing = 0;
-	this.font = null;
-	this.fontSize = 0;
-	this.orientation = null;
 	
 	// the number of pixels the drawing code will walk after a key has been painted
 	this.walkSize = 0;
@@ -37,43 +36,34 @@ BaseLayout = function()
 	  */
 	this.initializeLayout = function(painter)
 	{
-		// setup the internal variables
-		this.setup();
+		// reset the painter positions
+		this.xPosition = 0;
+		this.yPosition = 0;
+		
+		// create a convenience variable so we don't need to enter the long
+		// name for the layout configuration all time
+		this.layoutConfiguration = global.configuration.layoutConfiguration();
+		
+		// update the fontSize
+		this.fontSize = this.layoutConfiguration.font().pointSize;
 		
 		// start at a padded position
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// we're walking on the x-axis: start at the padded value
-			this.xPosition += this.borderSpacing;
+			this.xPosition += this.layoutConfiguration.borderSpacing();
 		}
 		else
 		{
 			// we're walking on the y-axis: start at the padded value
-			this.yPosition += this.borderSpacing;
+			this.yPosition += this.layoutConfiguration.borderSpacing();
 		}
 		
 		// initialize the layout (if necessary)
 		this.initialize(painter);
 		
 		// append the spacing to the walking size
-		this.walkSize += this.spacing;
-	}
-	
-	/**
-	  * sets up all internal variables (including the convenience variables)
-	  */
-	this.setup = function()
-	{
-		this.xPosition = 0;
-		this.yPosition = 0;
-		this.walkSize = 0;
-		
-		// update our internal variables with the values from the configuration
-		this.font = global.configuration.layoutConfiguration().font();
-		this.fontSize = this.font.pointSize;
-		this.borderSpacing = global.configuration.layoutConfiguration().borderSpacing();
-		this.spacing = global.configuration.layoutConfiguration().imageSpacing();
-		this.orientation = global.configuration.layoutConfiguration().orientation();
+		this.walkSize += this.layoutConfiguration.imageSpacing();
 	}
 	
 	/**
@@ -96,7 +86,7 @@ BaseLayout = function()
 			painter.pen = pen;
 			
 			// set our font
-			painter.font = this.font;
+			painter.font = this.layoutConfiguration.font();
 			
 			// draw the current key
 			this.drawKey(painter, keyContainer);
@@ -113,7 +103,7 @@ BaseLayout = function()
 	this.walk = function()
 	{
 		// change the positions on the correct axis
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// we're walking on the x-axis: move on the x-axis
 			this.xPosition += this.walkSize;
@@ -143,7 +133,7 @@ BaseLayout = function()
 		var size = null;
 		
 		// are we horizontal or vertical?
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (global.configuration.layoutConfiguration().orientation() == global.constants.horizontalOrientation())
 		{
 			// we're horizontal - use the width as base value
 			size = plasmoid.size.width;

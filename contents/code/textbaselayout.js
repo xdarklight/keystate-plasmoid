@@ -21,7 +21,7 @@ TextBaseLayout = function()
 		// update the walking size
 		// we're either walking the lenght of the text plus 1 character (= a blank) 
 		// or the configured item spacing - depending on which value is higher
-		this.walkSize = Number.qMax(this.fontSize * (text.length + 1), this.spacing);
+		this.walkSize = Number.qMax(this.fontSize * (text.length + 1), this.layoutConfiguration.imageSpacing());
 	}
 	
 	/**

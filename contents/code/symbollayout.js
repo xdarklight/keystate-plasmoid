@@ -11,7 +11,7 @@ SymbolLayout = function()
 	this.initialize = function(painter)
 	{
 		// are we drawing horizontal?
-		if (this.orientation == global.constants.horizontalOrientation())
+		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// set the start-position for the painter to the center of the plamoid
 			// (otherwise it's at the very top, where we don't want it to be
