@@ -34,18 +34,3 @@ Array.prototype.addValue = function(value)
 		this[this.length] = value;
 	}
 }
-
-/**
-  * removes the element with the given value from the array
-  */
-Array.prototype.removeValue = function(value)
-{
-	var index = this.findIndex(value);
-	
-	// remove the value from our array only if it was found
-	if (index > global.constants.indexNotFound())
-	{
-		// remove our element at the given index from the array
-		this.splice(index, 1);
-	}
-}
