@@ -136,4 +136,56 @@ BaseLayout = function()
 	{
 		// base implementation does nothing
 	}
+	
+	/**
+	  * calculates the average size may be available for an item
+	  * (ignoring any borders, spacing and other values)
+	  */
+	this.calculateAverageSize = function()
+	{
+		var size = null;
+		
+		// are we horizontal or vertical?
+		if (this.orientation == global.constants.horizontalOrientation())
+		{
+			// we're horizontal - use the width as base value
+			size = plasmoid.size.width;
+		}
+		else
+		{
+			// we're vertical - use the height as base value
+			size = plasmoid.size.height;
+		}
+		
+		// the average size an item may take
+		return size / global.keyInformation.count();
+	}
+	
+	/**
+	  * try to guess a border spacing which looks fine on all systems/configurations
+	  */
+	this.guessBestBorderSpacing = function()
+	{
+		var averageSize = this.calculateAverageSize();
+		
+		// calculate the border spacing (the spacing between the border and the first/last item)
+		// the lower limit is 8px
+		// the best settings should be 50% of the the average item size
+		// the upper limit is 20% of the average item size
+		return Number.qBound(8, averageSize / 2, averageSize / 100 * 20);
+	}
+	
+	/**
+	  * try to guess an image spacing which looks fine on all systems/configurations
+	  */
+	this.guessBestImageSpacing = function()
+	{
+		var averageSize = this.calculateAverageSize();
+		
+		// calculate the image spacing (the spacing between two key items)
+		// the lower limit is 3px
+		// the best settings should be 25% of the average item size
+		// the upper limit is 15% of the average item size
+		return Number.qBound(3, averageSize / 4, averageSize / 100 * 15);
+	}
 }

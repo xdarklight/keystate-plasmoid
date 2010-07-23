@@ -27,6 +27,24 @@ LayoutConfiguration = function()
 	  */
 	this.initialize = function()
 	{
+		// update the font settings
+		this.updateFontSettings();
+		
+		// update the orientation settings
+		this.updateOrientation();
+		
+		// create an instance of the selected layout
+		global.layout.createSelectedLayout();
+		
+		// then update the layout settings
+		this.updateLayoutSettings();
+	}
+	
+	/**
+	  * updates the font settings
+	  */
+	this.updateFontSettings = function()
+	{
 		var fontConfigValue = plasmoid.readConfig(fontConfigName);
 		
 		// TODO: workaround for the font problem:
@@ -43,15 +61,6 @@ LayoutConfiguration = function()
 		}
 		
 		this.font = fontConfigValue;
-		
-		// update the layout settings
-		this.updateLayoutSettings();
-		
-		// create an instance of the selected layout
-		global.layout.instantiateSelectedLayout();
-		
-		// update the preferred size of the plasmoid
-		global.layout.updatePreferredSize();
 	}
 	
 	/**
@@ -60,47 +69,44 @@ LayoutConfiguration = function()
 	  */
 	this.updateLayoutSettings = function()
 	{
-		// update the orientation settings
-		this.updateOrientation();
-		
+		// read the values from the config file
 		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
 		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
 		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
+		// parse the configuration values and store them internally
 		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
 		this.preferredWidth = preferredWidthConfigValue.toInt();
 		this.preferredHeight = preferredHeightConfigValue.toInt();
 		
+		// are we using the simple or the advanced layout settings?
 		if (advancedLayoutSettingsConfigValue)
 		{
 			this.applyAdvancedLayoutSettings();
 		}
 		else
 		{
+			// simple layout settings are layout specific
+			// thus we need a helper method which is able to get
+			// the correct values from the current layout
 			this.applySimpleLayoutSettings();
 		}
+		
+		// update the preferred size of the plasmoid
+		global.layout.updatePreferredSize();
 	}
 	
 	/**
-	  * applies some default settings (which aim to look good anywhere)
+	  * applies some default settings (which aim to look good on all systems with any configuration)
 	  */
 	this.applySimpleLayoutSettings = function()
 	{
-		// the average of the width and the height
-		var averageSize = (plasmoid.size.height + plasmoid.size.width) / 2;
+		// get the (guessed) best image spacing settings from the layout
+		this.imageSpacing = global.layout.layout.guessBestImageSpacing();
 		
-		// calculate the image spacing (the spacing between two key items)
-		// the lower limit is 3px
-		// the best settings should be 25% of the the height which is available per key
-		// the upper limit is 15% of the average size
-		this.imageSpacing = Number.qBound(3, averageSize / global.keyInformation.count() / 4, averageSize / 100 * 15);
-		
-		// calculate the border spacing
-		// the lower limit is 12px
-		// the best settings should be 50% of the the height which is available per key
-		// the upper limit is 20% of the average size
-		this.borderSpacing = Number.qBound(12, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
+		// get the (guessed) best border spacing settings from the layout
+		this.borderSpacing = global.layout.layout.guessBestBorderSpacing();
 	}
 	
 	/**

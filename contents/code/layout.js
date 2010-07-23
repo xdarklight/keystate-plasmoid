@@ -9,7 +9,7 @@ Layout = function()
 	/**
 	  * creates an instance of the selected layout
 	  */
-	this.instantiateSelectedLayout = function()
+	this.createSelectedLayout = function()
 	{
 		var layout = null;
 		var layoutName = global.configuration.layoutConfiguration().getSelectedLayoutName();
