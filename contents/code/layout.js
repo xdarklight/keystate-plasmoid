@@ -24,7 +24,7 @@ Layout = function()
 				// include the layout code
 				plasmoid.include("rectanglelayout.js");
 				
-				// get the layout
+				// initialize the layout
 				layout = new RectangleLayout();
 				
 				break;
@@ -33,7 +33,7 @@ Layout = function()
 				plasmoid.include("textbaselayout.js");
 				plasmoid.include("textlayout.js");
 				
-				// get the layout
+				// initialize the layout
 				layout = new TextLayout();
 				
 				break;
@@ -66,6 +66,8 @@ Layout = function()
 			
 			// set the preferred size
 			plasmoid.setPreferredSize(width, height);
+			
+			// then resize the plasmoid
 			plasmoid.resize(width, height);
 		}
 	}
@@ -74,8 +76,6 @@ Layout = function()
 	  * paints the icon to the screen
 	  *
 	  * @param painter the painter used to paint the icon
-	  * @param numLocked decides if the num key is locked or not
-	  * @param capsLocked decides if the caps key is locked or not
 	  */
 	this.paintIcon = function(painter)
 	{
