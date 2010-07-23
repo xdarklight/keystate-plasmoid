@@ -65,8 +65,12 @@ LayoutConfiguration = function()
 		
 		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
 		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
+		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
+		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
+		this.preferredWidth = preferredWidthConfigValue.toInt();
+		this.preferredHeight = preferredHeightConfigValue.toInt();
 		
 		if (advancedLayoutSettingsConfigValue)
 		{
@@ -93,10 +97,10 @@ LayoutConfiguration = function()
 		this.imageSpacing = Number.qBound(3, averageSize / global.keyInformation.count() / 4, averageSize / 100 * 15);
 		
 		// calculate the border spacing
-		// the lower limit is 10px
+		// the lower limit is 13px
 		// the best settings should be 50% of the the height which is available per key
 		// the upper limit is 20% of the average size
-		this.borderSpacing = Number.qBound(10, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
+		this.borderSpacing = Number.qBound(13, averageSize / global.keyInformation.count() / 2, averageSize / 100 * 20);
 	}
 	
 	/**
@@ -107,14 +111,10 @@ LayoutConfiguration = function()
 		// config values
 		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
 		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
-		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
-		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// save our settings internally
 		this.imageSpacing = imageSpacingConfigValue.toInt();
 		this.borderSpacing = borderSpacingConfigValue.toInt();
-		this.preferredWidth = preferredWidthConfigValue.toInt();
-		this.preferredHeight = preferredHeightConfigValue.toInt();
 	}
 	
 	/**
