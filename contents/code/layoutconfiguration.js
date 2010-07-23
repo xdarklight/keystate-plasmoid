@@ -103,10 +103,10 @@ LayoutConfiguration = function()
 	this.applySimpleLayoutSettings = function()
 	{
 		// get the (guessed) best image spacing settings from the layout
-		imageSpacing = global.layout.layout.guessBestImageSpacing();
+		imageSpacing = global.layout.layout().guessBestImageSpacing();
 		
 		// get the (guessed) best border spacing settings from the layout
-		borderSpacing = global.layout.layout.guessBestBorderSpacing();
+		borderSpacing = global.layout.layout().guessBestBorderSpacing();
 	}
 	
 	/**

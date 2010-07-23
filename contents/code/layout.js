@@ -4,14 +4,13 @@
   */
 Layout = function()
 {
-	this.layout = null;
+	layout = null;
 	
 	/**
 	  * creates an instance of the selected layout
 	  */
 	this.createSelectedLayout = function()
 	{
-		var layout = null;
 		var layoutName = global.configuration.layoutConfiguration().selectedLayoutName();
 		
 		// include the base layout
@@ -48,9 +47,14 @@ Layout = function()
 				
 				break;
 		}
-		
-		// store the instance of the layout internally
-		this.layout = layout;
+	}
+	
+	/**
+	  * returns the instance of the current layout
+	  */
+	this.layout = function()
+	{
+		return layout;
 	}
 	
 	/**
@@ -80,6 +84,6 @@ Layout = function()
 	this.paintIcon = function(painter)
 	{
 		// paint the layout
-		this.layout.paint(painter);
+		layout.paint(painter);
 	}
 }
