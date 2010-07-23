@@ -16,9 +16,6 @@ BaseLayout = function()
 	// the number of pixels the drawing code will walk after a key has been painted
 	this.walkSize = 0;
 	
-	// a boolean flag which indicates if rotating is possible or not.
-	this.canRotate = true;
-	
 	/**
 	  * paints the current layout
 	  *
@@ -130,7 +127,7 @@ BaseLayout = function()
 	
 	/**
 	  * base implementation which can be overwritten to initialize the layout
-	  * walkSize and canRotate should be set by this method
+	  * this should initialize the layout-specific variables, for example walkSize
 	  */
 	this.initialize = function()
 	{

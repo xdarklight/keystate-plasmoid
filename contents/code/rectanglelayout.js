@@ -61,9 +61,6 @@ RectangleLayout = function()
 	  */
 	this.initialize = function(painter)
 	{
-		// we've implemented rotating on our own
-		this.canRotate = false;
-		
 		// check if we are walking horizontal
 		if (this.orientation == global.constants.horizontalOrientation())
 		{
