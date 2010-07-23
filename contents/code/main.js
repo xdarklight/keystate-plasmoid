@@ -4,6 +4,7 @@ plasmoid.busy = true;
 // include the prototypes which extend existing classes
 plasmoid.include("array.js");
 plasmoid.include("number.js");
+plasmoid.include("string.js");
 
 // include everything else
 plasmoid.include("global.js");

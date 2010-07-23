@@ -8,17 +8,6 @@ KeyConfiguration = function()
 	this.colorSettings = new Array();
 	this.shownKeySettings = new Array();
 	
-	// internal constants
-	numLockConfigName = "NumLock";
-	capsLockConfigName = "CapsLock";
-	shiftPressedConfigName = "ShiftPressed";
-	controlPressedConfigName = "ControlPressed";
-	altPressedConfigName = "AltPressed";
-	altgrPressedConfigName = "AltGrPressed";
-	metaPressedConfigName = "MetaPressed";
-	superPressedConfigName = "SuperPressed";
-	hyperPressedConfigName = "HyperPressed";
-	
 	configurationColorSuffix = "Color";
 	configurationShownKeyPrefix = "Show";
 	
@@ -50,7 +39,7 @@ KeyConfiguration = function()
 	  * adds the key to the global key object names array, to the internal
 	  * object name config mapping and to the key value names array
 	  */
-	this.addKey = function(objectName, configName, valueObjectName)
+	this.addKey = function(objectName, propertyName)
 	{
 		// check if the key with the given objectName is already in the global key array
 		if (global.keyNames.findIndex(objectName) == global.constants.indexNotFound())
@@ -59,9 +48,17 @@ KeyConfiguration = function()
 			global.keyNames.addValue(objectName);
 		}
 		
-		this.objectNameConfigMapping[objectName] = configName;
+		// add the name of the config entry to the mapping
+		this.objectNameConfigMapping[objectName] = objectName.removeSpaces();
 		
-		global.keyInformation.updateDataPropertyName(objectName, valueObjectName);
+		// 'Locked' keys have the 'locked' suffix in their name already
+		// for all other properties we have to append the property name
+		if (propertyName != global.constants.dataLockedPropertyName())
+		{
+			this.objectNameConfigMapping[objectName] += propertyName;
+		}
+		
+		global.keyInformation.updateDataPropertyName(objectName, propertyName);
 	}
 	
 	/**
@@ -70,15 +67,15 @@ KeyConfiguration = function()
 	this.initialize = function()
 	{
 		// initialize all keys
-		this.addKey(global.constants.numLockObjectName(), numLockConfigName, global.constants.dataLockedPropertyName());
-		this.addKey(global.constants.capsLockObjectName(), capsLockConfigName, global.constants.dataLockedPropertyName());
-		this.addKey(global.constants.shiftPressedObjectName(), shiftPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.controlPressedObjectName(), controlPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.metaPressedObjectName(), metaPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.superPressedObjectName(), superPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.hyperPressedObjectName(), hyperPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.altPressedObjectName(), altPressedConfigName, global.constants.dataPressedPropertyName());
-		this.addKey(global.constants.altgrPressedObjectName(), altgrPressedConfigName, global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.numLockObjectName(), global.constants.dataLockedPropertyName());
+		this.addKey(global.constants.capsLockObjectName(), global.constants.dataLockedPropertyName());
+		this.addKey(global.constants.shiftPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.controlPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.metaPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.superPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.hyperPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.altPressedObjectName(), global.constants.dataPressedPropertyName());
+		this.addKey(global.constants.altgrPressedObjectName(), global.constants.dataPressedPropertyName());
 		
 		// read and parse the config file
 		this.parseConfiguration();
