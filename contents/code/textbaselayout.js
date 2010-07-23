@@ -23,6 +23,22 @@ TextBaseLayout = function()
 		// or the configured item spacing - depending on which value is higher
 		this.walkSize = Number.qMax(this.fontSize * (text.length + 1), this.spacing);
 	}
+	
+	/**
+	  * try to guess a border spacing which looks fine on all systems/configurations
+	  * this overrides the method from BaseLayout
+	  */
+	this.guessBestBorderSpacing = function()
+	{
+		// get the average size
+		var averageSize = this.calculateAverageSize();
+		
+		// calculate the border spacing (the spacing between the border and the first/last item)
+		// the lower limit is 1.75 times the font size (almost two lines)
+		// the best settings should be 50% of the the average item size
+		// the upper limit is the average item size itself
+		return Number.qBound(this.fontSize * 1.75, averageSize / 2, averageSize);
+	}
 }
 
 // inherit BaseLayout
