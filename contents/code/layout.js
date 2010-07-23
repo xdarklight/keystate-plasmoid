@@ -12,7 +12,7 @@ Layout = function()
 	this.createSelectedLayout = function()
 	{
 		var layout = null;
-		var layoutName = global.configuration.layoutConfiguration().getSelectedLayoutName();
+		var layoutName = global.configuration.layoutConfiguration().selectedLayoutName();
 		
 		// include the base layout
 		plasmoid.include("baselayout.js");
@@ -59,10 +59,10 @@ Layout = function()
 	this.updatePreferredSize = function()
 	{
 		// check if the user wants us to have a perferred size
-		if (global.configuration.layoutConfiguration().getPreferredSizeEnabled())
+		if (global.configuration.layoutConfiguration().preferredSizeEnabled())
 		{
-			var width = global.configuration.layoutConfiguration().getPreferredWidth();
-			var height = global.configuration.layoutConfiguration().getPreferredHeight();
+			var width = global.configuration.layoutConfiguration().preferredWidth();
+			var height = global.configuration.layoutConfiguration().preferredHeight();
 			
 			// set the preferred size
 			plasmoid.setPreferredSize(width, height);

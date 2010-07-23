@@ -4,13 +4,13 @@
   */
 LayoutConfiguration = function()
 {
-	this.selectedLayout = null;
-	this.imageSpacing = 1;
-	this.font = new QFont("Sans Serif", 7);
-	this.preferredSizeEnabled = true;
-	this.preferredWidth = 32;
-	this.preferredHeight = 32;
-	this.orientation = null;
+	selectedLayout = null;
+	imageSpacing = null;
+	font = new QFont("Sans Serif", 7);
+	preferredSizeEnabled = null;
+	preferredWidth = null;
+	preferredHeight = null;
+	orientation = null;
 	
 	// internal constants
 	uninitializedFontFamily = "FONT_FALLBACK";
@@ -54,13 +54,13 @@ LayoutConfiguration = function()
 		if (fontConfigValue.family == uninitializedFontFamily)
 		{
 			// write the default font settings to the config file
-			plasmoid.writeConfig(fontConfigName, this.font);
+			plasmoid.writeConfig(fontConfigName, font);
 			
 			// re-read the font from the config file
 			fontConfigValue = plasmoid.readConfig(fontConfigName);
 		}
 		
-		this.font = fontConfigValue;
+		font = fontConfigValue;
 	}
 	
 	/**
@@ -76,9 +76,9 @@ LayoutConfiguration = function()
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// parse the configuration values and store them internally
-		this.preferredSizeEnabled = preferredSizeEnabledConfigValue;
-		this.preferredWidth = preferredWidthConfigValue.toInt();
-		this.preferredHeight = preferredHeightConfigValue.toInt();
+		preferredSizeEnabled = preferredSizeEnabledConfigValue;
+		preferredWidth = preferredWidthConfigValue.toInt();
+		preferredHeight = preferredHeightConfigValue.toInt();
 		
 		// are we using the simple or the advanced layout settings?
 		if (advancedLayoutSettingsConfigValue)
@@ -103,10 +103,10 @@ LayoutConfiguration = function()
 	this.applySimpleLayoutSettings = function()
 	{
 		// get the (guessed) best image spacing settings from the layout
-		this.imageSpacing = global.layout.layout.guessBestImageSpacing();
+		imageSpacing = global.layout.layout.guessBestImageSpacing();
 		
 		// get the (guessed) best border spacing settings from the layout
-		this.borderSpacing = global.layout.layout.guessBestBorderSpacing();
+		borderSpacing = global.layout.layout.guessBestBorderSpacing();
 	}
 	
 	/**
@@ -119,14 +119,14 @@ LayoutConfiguration = function()
 		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
 		
 		// save our settings internally
-		this.imageSpacing = imageSpacingConfigValue.toInt();
-		this.borderSpacing = borderSpacingConfigValue.toInt();
+		imageSpacing = imageSpacingConfigValue.toInt();
+		borderSpacing = borderSpacingConfigValue.toInt();
 	}
 	
 	/**
 	  * gets the layout name depending on the configuration options
 	  */
-	this.getSelectedLayoutName = function()
+	this.selectedLayoutName = function()
 	{
 		// build an array with all available layout names in it
 		var availableLayouts = new Array(
@@ -172,7 +172,7 @@ LayoutConfiguration = function()
 			// check if the orientation is enabled
 			if (Boolean(orientationConfigValue))
 			{
-				this.orientation = currentOrientation;
+				orientation = currentOrientation;
 				break;
 			}
 		}
@@ -181,64 +181,64 @@ LayoutConfiguration = function()
 	/**
 	  * returns the layout which was selected by the user
 	  */
-	this.getSelectedLayout = function()
+	this.selectedLayout = function()
 	{
-		return this.selectedLayout;
+		return selectedLayout;
 	}
 	
 	/**
 	  * returns the spacing between the two images
 	  */
-	this.getImageSpacing = function()
+	this.imageSpacing = function()
 	{
-		return this.imageSpacing;
+		return imageSpacing;
 	}
 	
 	/**
 	  * returns the (top and bottom) border-spacing
 	  */
-	this.getBorderSpacing = function()
+	this.borderSpacing = function()
 	{
-		return this.borderSpacing;
+		return borderSpacing;
 	}
 	
 	/**
 	  * returns the configured font
 	  */
-	this.getFont = function()
+	this.font = function()
 	{
-		return this.font;
+		return font;
 	}
 	
 	/**
 	  * returns whether the user prefers a size or not
 	  */
-	this.getPreferredSizeEnabled = function()
+	this.preferredSizeEnabled = function()
 	{
-		return this.preferredSizeEnabled;
+		return preferredSizeEnabled;
 	}
 	
 	/**
 	  * returns the preferred width of the plasmoid
 	  */
-	this.getPreferredWidth = function()
+	this.preferredWidth = function()
 	{
-		return this.preferredWidth;
+		return preferredWidth;
 	}
 	
 	/**
 	  * returns the preferred height of the plasmoid
 	  */
-	this.getPreferredHeight = function()
+	this.preferredHeight = function()
 	{
-		return this.preferredHeight;
+		return preferredHeight;
 	}
 	
 	/**
 	  * returns the configured orientation
 	  */
-	this.getOrientation = function()
+	this.orientation = function()
 	{
-		return this.orientation;
+		return orientation;
 	}
 }

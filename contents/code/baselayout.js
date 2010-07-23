@@ -69,11 +69,11 @@ BaseLayout = function()
 		this.walkSize = 0;
 		
 		// update our internal variables with the values from the configuration
-		this.font = global.configuration.layoutConfiguration().getFont();
+		this.font = global.configuration.layoutConfiguration().font();
 		this.fontSize = this.font.pointSize;
-		this.borderSpacing = global.configuration.layoutConfiguration().getBorderSpacing();
-		this.spacing = global.configuration.layoutConfiguration().getImageSpacing();
-		this.orientation = global.configuration.layoutConfiguration().getOrientation();
+		this.borderSpacing = global.configuration.layoutConfiguration().borderSpacing();
+		this.spacing = global.configuration.layoutConfiguration().imageSpacing();
+		this.orientation = global.configuration.layoutConfiguration().orientation();
 	}
 	
 	/**
