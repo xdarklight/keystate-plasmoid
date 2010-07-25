@@ -1,6 +1,10 @@
 Weird error message when starting the plasmoid first?
 -> TODO: check if it's reproducible.
 
+Figure out why "preferring a size" takes up to 80% cpu (on my core2duo)
+=> maybe a plasma bug? doesn't happen in plasmoidviewer (it happens only
+in my panel)
+
 User requests:
 There should be a configurable delay before the key state is shown.
 This way, when typing, the key state plasmoid will not flash every time the
