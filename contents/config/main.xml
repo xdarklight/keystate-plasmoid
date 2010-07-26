@@ -18,7 +18,7 @@
 		<entry name="ShiftPressedColor" type="Color">
 			<default>#887422</default>
 		</entry>
-		<entry name="ControlPressedColor" type="Color">
+		<entry name="CtrlPressedColor" type="Color">
 			<default>#887422</default>
 		</entry>
 		<entry name="AltPressedColor" type="Color">
@@ -66,7 +66,7 @@
 		<entry name="ShowCapsLock" type="Bool">
 			<default>true</default>
 		</entry>
-		<entry name="ShowControlPressed" type="Bool">
+		<entry name="ShowCtrlPressed" type="Bool">
 			<default>false</default>
 		</entry>
 		<entry name="ShowShiftPressed" type="Bool">

@@ -322,7 +322,7 @@ AltGr Pressed: _</string>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QCheckBox" name="kcfg_ShowControlPressed">
+       <widget class="QCheckBox" name="kcfg_ShowCtrlPressed">
         <property name="toolTip">
          <string>Indicate whether 'Control' is pressed or not</string>
         </property>
@@ -332,7 +332,7 @@ AltGr Pressed: _</string>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="KColorButton" name="kcfg_ControlPressedColor">
+       <widget class="KColorButton" name="kcfg_CtrlPressedColor">
         <property name="toolTip">
          <string>The color for the 'Control pressed' indicator</string>
         </property>
@@ -773,9 +773,9 @@ AltGr Pressed: _</string>
    </hints>
   </connection>
   <connection>
-   <sender>kcfg_ShowControlPressed</sender>
+   <sender>kcfg_ShowCtrlPressed</sender>
    <signal>toggled(bool)</signal>
-   <receiver>kcfg_ControlPressedColor</receiver>
+   <receiver>kcfg_CtrlPressedColor</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
