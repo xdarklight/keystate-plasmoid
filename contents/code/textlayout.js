@@ -5,6 +5,7 @@ TextLayout = function()
 {
 	/**
 	  * initializes the symbol layout
+	  * this overrides the method from BaseLayout
 	  *
 	  * @param painter the painter with which the code will draw
 	  */
