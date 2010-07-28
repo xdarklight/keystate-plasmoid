@@ -19,9 +19,9 @@ TextBaseLayout = function()
 		painter.drawText(this.xPosition, this.yPosition, text);
 		
 		// update the walking size
-		// we're either walking the lenght of the text plus 1 character (= a blank) 
+		// we're either walking the lenght of the text
 		// or the configured item spacing - depending on which value is higher
-		this.walkSize = Number.qMax(this.fontSize * (text.length + 1), this.layoutConfiguration.imageSpacing());
+		this.walkSize = Number.qMax(this.fontSize * text.length, this.layoutConfiguration.imageSpacing());
 	}
 	
 	/**
