@@ -20,7 +20,7 @@ TextBaseLayout = function()
 		
 		// update the walking size
 		// calculate the display length (the font size multiplied with the number of characters)
-		// plus the image spacing (no matter if it's guessed or user-configured)
+		// plus the image spacing (as we're not using the code from BaseLayout for this)
 		this.walkSize = (this.fontSize * text.length) + this.layoutConfiguration.imageSpacing();
 	}
 	

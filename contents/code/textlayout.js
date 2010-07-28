@@ -96,7 +96,7 @@ TextLayout = function()
 	{
 		// our walking size is 1.5 times the font size (1 character height plus
 		// half a character's height spacing - this is mandatory so we're not overwriting existing text)
-		// plus the configured item spacing (which is optional in theory, but the user expects this)
+		// plus the configured item spacing (as we're not using the code from BaseLayout for this)
 		this.walkSize = (1.5 * this.fontSize) + this.layoutConfiguration.imageSpacing();
 		
 		// we're always walking on the y axis in this layout (as we're rotating
