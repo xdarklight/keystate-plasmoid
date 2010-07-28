@@ -93,10 +93,10 @@ TextLayout = function()
 	  */
 	this.walk = function()
 	{
-		// our walking size is either 1.5 times the font size
-		// (1 character height plus half a character's height spacing)
-		// or the configured item spacing - depending on which value is higher
-		this.walkSize = Number.qMax(1.5 * this.fontSize, this.layoutConfiguration.imageSpacing());
+		// our walking size is 1.5 times the font size (1 character height plus
+		// half a character's height spacing - this is mandatory so we're not overwriting existing text)
+		// plus the configured item spacing (which is optional in theory, but the user expects this)
+		this.walkSize = (1.5 * this.fontSize) + this.layoutConfiguration.imageSpacing();
 		
 		// we're always walking on the y axis in this layout (as we're rotating
 		// in horizontal mode)
