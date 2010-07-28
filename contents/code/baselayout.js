@@ -39,6 +39,7 @@ BaseLayout = function()
 		// reset the painter positions
 		this.xPosition = 0;
 		this.yPosition = 0;
+		this.walkSize = 0;
 		
 		// create a convenience variable so we don't need to enter the long
 		// name for the layout configuration all time
@@ -47,12 +48,8 @@ BaseLayout = function()
 		// update the fontSize
 		this.fontSize = this.layoutConfiguration.font().pointSize;
 		
-		// set the walking size to the border spacing
-		this.walkSize = this.layoutConfiguration.borderSpacing();
-		
-		// walk one step so we're starting at the correct position (namely after
-		// the border spacing)
-		this.walk();
+		// initialize the border
+		this.initializeBorder();
 		
 		// initialize the layout (if necessary)
 		this.initialize(painter);
@@ -117,6 +114,26 @@ BaseLayout = function()
 	this.initialize = function()
 	{
 		// base implementation does nothing
+	}
+	
+	/** 
+	  * initializes the painter positions so the painter is starting at the inner
+	  * end of the border
+	  */
+	this.initializeBorder = function()
+	{
+		// save the old walking size
+		var oldWalkSize = this.walkSize;
+		
+		// set the walking size to the border spacing
+		this.walkSize = this.layoutConfiguration.borderSpacing();
+		
+		// walk one step so we're starting at the correct position (namely after
+		// the border spacing)
+		this.walk();
+		
+		// restore the walking size
+		this.walkSize = oldWalkSize;
 	}
 	
 	/**
