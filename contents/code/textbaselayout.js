@@ -30,9 +30,14 @@ TextBaseLayout = function()
 	  */
 	this.guessBestImageSpacing = function()
 	{
+		// get the average size
+		var averageSize = this.calculateAverageSize();
+		
 		// calculate the image spacing (the spacing between two key items)
-		// this is 75% times the font size (almost one line)
-		return this.fontSize * 0.75;
+		// the lower limit is 25% of the average item size
+		// the best spacing should be 75% of the font size
+		// the upper limit is 50% of the average item size
+		return Number.qBound(averageSize / 4, this.fontSize * 0.75, averageSize / 2);
 	}
 	
 	/**
