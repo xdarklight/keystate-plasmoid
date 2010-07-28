@@ -47,17 +47,12 @@ BaseLayout = function()
 		// update the fontSize
 		this.fontSize = this.layoutConfiguration.font().pointSize;
 		
-		// start at a padded position
-		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
-		{
-			// we're walking on the x-axis: start at the padded value
-			this.xPosition += this.layoutConfiguration.borderSpacing();
-		}
-		else
-		{
-			// we're walking on the y-axis: start at the padded value
-			this.yPosition += this.layoutConfiguration.borderSpacing();
-		}
+		// set the walking size to the border spacing
+		this.walkSize = this.layoutConfiguration.borderSpacing();
+		
+		// walk one step so we're starting at the correct position (namely after
+		// the border spacing)
+		this.walk();
 		
 		// initialize the layout (if necessary)
 		this.initialize(painter);
