@@ -91,17 +91,33 @@ TextLayout = function()
 	  * changes the position on the x or y axis so the painter
 	  * doesn't overwrite the current items on the next run
 	  * overwrites walk() from BaseLayout
+	  *
+	  * @parameter pixels (optional) forces the layout to walk the given number of pixels
 	  */
-	this.walk = function()
+	this.walk = function(pixels)
 	{
-		// our walking size is 1.5 times the font size (1 character height plus
-		// half a character's height spacing - this is mandatory so we're not overwriting existing text)
-		// plus the configured item spacing (as we're not using the code from BaseLayout for this)
-		this.walkSize = (1.5 * this.fontSize) + this.layoutConfiguration.imageSpacing();
+		var walkingSize = null;
+		
+		// was the pixel parameter given?
+		if (pixels)
+		{
+			// just walk by the given number of pixels
+			walkingSize = pixels;
+		}
+		else
+		{
+			// our walking size is the font size (1 character height;
+			// this is mandatory so we're not overwriting existing text)
+			// plus the configured item spacing (as we're not using the code from BaseLayout for this)
+			this.walkSize = this.fontSize + this.layoutConfiguration.imageSpacing();
+			
+			// our current walking size is simply the global walking size
+			walkingSize = this.walkSize;
+		}
 		
 		// we're always walking on the y axis in this layout (as we're rotating
 		// in horizontal mode)
-		this.yPosition += this.walkSize;
+		this.yPosition += walkingSize;
 	}
 }
 

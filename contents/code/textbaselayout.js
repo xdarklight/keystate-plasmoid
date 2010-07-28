@@ -31,8 +31,8 @@ TextBaseLayout = function()
 	this.guessBestImageSpacing = function()
 	{
 		// calculate the image spacing (the spacing between two key items)
-		// this is 1.33 times the font size (the height of 1 line plus some spacing)
-		return this.fontSize * 1.33;
+		// this is 75% times the font size (almost one line)
+		return this.fontSize * 0.75;
 	}
 	
 	/**

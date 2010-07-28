@@ -47,6 +47,9 @@ Layout = function()
 				
 				break;
 		}
+		
+		// reset all internal variables of the layout
+		layout.resetLayout();
 	}
 	
 	/**

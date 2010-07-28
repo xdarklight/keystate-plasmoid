@@ -30,11 +30,9 @@ BaseLayout = function()
 	}
 	
 	/**
-	  * initializes the layout
-	  *
-	  * @param painter the painter with which the code will draw
+	  * resets all internal variables to their default values
 	  */
-	this.initializeLayout = function(painter)
+	this.resetLayout = function()
 	{
 		// reset the painter positions
 		this.xPosition = 0;
@@ -47,6 +45,17 @@ BaseLayout = function()
 		
 		// update the fontSize
 		this.fontSize = this.layoutConfiguration.font().pointSize;
+	}
+	
+	/**
+	  * initializes the layout
+	  *
+	  * @param painter the painter with which the code will draw
+	  */
+	this.initializeLayout = function(painter)
+	{
+		// reset all internal variables
+		layout.resetLayout();
 		
 		// initialize the border
 		this.initializeBorder();
@@ -91,19 +100,35 @@ BaseLayout = function()
 	/**
 	  * changes the position on the x or y axis so the painter
 	  * doesn't overwrite the current items on the next run
+	  *
+	  * @parameter pixels (optional) forces the layout to walk the given number of pixels
 	  */
-	this.walk = function()
+	this.walk = function(pixels)
 	{
+		var walkingSize = null;
+		
+		// was the pixels parameter given?
+		if (pixels)
+		{
+			// since it was given we're just walking by the given pixels
+			walkingSize = pixels;
+		}
+		else
+		{
+			// since it was not given we're using the global walking size
+			walkingSize = this.walkSize;
+		}
+		
 		// change the positions on the correct axis
 		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
 			// we're walking on the x-axis: move on the x-axis
-			this.xPosition += this.walkSize;
+			this.xPosition += walkingSize;
 		}
 		else
 		{
 			// we're walking on the y-axis: move on the y-axis
-			this.yPosition += this.walkSize;
+			this.yPosition += walkingSize;
 		}
 	}
 	
@@ -122,18 +147,9 @@ BaseLayout = function()
 	  */
 	this.initializeBorder = function()
 	{
-		// save the old walking size
-		var oldWalkSize = this.walkSize;
-		
-		// set the walking size to the border spacing
-		this.walkSize = this.layoutConfiguration.borderSpacing();
-		
 		// walk one step so we're starting at the correct position (namely after
 		// the border spacing)
-		this.walk();
-		
-		// restore the walking size
-		this.walkSize = oldWalkSize;
+		this.walk(this.layoutConfiguration.borderSpacing());
 	}
 	
 	/**

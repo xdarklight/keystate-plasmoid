@@ -33,9 +33,6 @@ LayoutConfiguration = function()
 		// update the orientation settings
 		this.updateOrientation();
 		
-		// create an instance of the selected layout
-		global.layout.createSelectedLayout();
-		
 		// then update the layout settings
 		this.updateLayoutSettings();
 	}
@@ -79,6 +76,9 @@ LayoutConfiguration = function()
 		preferredSizeEnabled = preferredSizeEnabledConfigValue;
 		preferredWidth = preferredWidthConfigValue;
 		preferredHeight = preferredHeightConfigValue;
+		
+		// create an instance of the selected layout
+		global.layout.createSelectedLayout();
 		
 		// are we using the simple or the advanced layout settings?
 		if (advancedLayoutSettingsConfigValue)
