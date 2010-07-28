@@ -25,6 +25,17 @@ TextBaseLayout = function()
 	}
 	
 	/**
+	  * try to guess an image spacing which looks fine on all systems/configurations
+	  * this overrides the method from BaseLayout
+	  */
+	this.guessBestImageSpacing = function()
+	{
+		// calculate the image spacing (the spacing between two key items)
+		// this is 1.33 times the font size (the height of 1 line plus some spacing)
+		return this.fontSize * 1.33;
+	}
+	
+	/**
 	  * try to guess a border spacing which looks fine on all systems/configurations
 	  * this overrides the method from BaseLayout
 	  */
