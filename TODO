@@ -1,14 +1,28 @@
+Most important:
+TODO: remove all plasmoid.busy lines:
+<aseigo> setting the plamoid to be busy when it is painting is both asking for trouble
+(it creates/destroys widgets ... while in a paint event?) it's also unecessary work
+
+The default colors are hardcoded at the moment. As usual: hardcoded values
+cause problems. One is that it's currently not possible use colors from
+the theme.
+SOLUTION: QColor.setThemeColor():
+http://techbase.kde.org/index.php?title=Development/Tutorials/Plasma/JavaScript/API#QColor
+
+TODO: write a "SvgLayout" which basically replaces the "SymbolLayout".
+
+Other:
 Weird error message when starting the plasmoid first?
 -> Can anyone reproduce this? I can't.
 
 Figure out why "preferring a size" takes up to 80% cpu (on my core2duo)
 => maybe a plasma bug? doesn't happen in plasmoidviewer (it happens only
 in my panel)
+NOTE: this setting will be removed (sooner or later...) - thus there's
+no need to fix it.
 
-The default colors are hardcoded at the moment. As usual: hardcoded values
-cause problems. One is that it's currently not possible use colors from
-the theme.
-=> solution: plasma's KConfigXT parser needs the ability to parse
+Nice to have:
+plasma's KConfigXT parser needs the ability to parse
 and execute code from the "default" tag - as shown here:
 http://techbase.kde.org/Development/Tutorials/Using_KConfig_XT#.kcfg_Structure
 (<default code="true">KGlobalSettings::generalFont()</default>)
