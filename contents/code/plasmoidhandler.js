@@ -60,14 +60,8 @@ PlasmoidHandler = function()
 	  */
 	this.paintInterface = function(painter)
 	{
-		// say we're busy
-		plasmoid.busy = true;
-		
 		// paint the icon
 		global.layout.paintIcon(painter);
-		
-		// we're done
-		plasmoid.busy = false;
 	}
 	
 	/**

@@ -1,8 +1,4 @@
 Most important:
-TODO: remove all plasmoid.busy lines:
-<aseigo> setting the plamoid to be busy when it is painting is both asking for trouble
-(it creates/destroys widgets ... while in a paint event?) it's also unecessary work
-
 The default colors are hardcoded at the moment. As usual: hardcoded values
 cause problems. One is that it's currently not possible use colors from
 the theme.

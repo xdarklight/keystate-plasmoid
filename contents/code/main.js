@@ -1,6 +1,3 @@
-// tell everyone we're busy
-plasmoid.busy = true;
-
 // include the prototypes which extend existing classes
 plasmoid.include("array.js");
 plasmoid.include("number.js");
