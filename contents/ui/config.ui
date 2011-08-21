@@ -517,121 +517,6 @@ AltGr Pressed: _</string>
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>Advanced</string>
-    </attribute>
-    <widget class="QGroupBox" name="groupbox_AdvancedLayout">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>311</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>Advanced Layout Settings</string>
-     </property>
-     <widget class="QCheckBox" name="kcfg_AdvancedLayoutSettings">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>291</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>When this option is enabled you can configure advanced layout settings</string>
-      </property>
-      <property name="whatsThis">
-       <string>When enabled you can configure advanced layout settings - for example the preferred size of the plasmoid. By default this is 'Off' - so the plasmoid tries to guess the best settings. In case this does not work for you (or you do not like what the plasmoid guesses) you can still override the settings by enabling this option and using custom settings.</string>
-      </property>
-      <property name="text">
-       <string>Use advanced layout settings</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="formLayoutWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>60</y>
-        <width>293</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="ImageSpacing_Label">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Spacing:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KIntSpinBox" name="kcfg_ImageSpacing">
-         <property name="toolTip">
-          <string>The spacing between the status information of two keys</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the spacing between two key indicators. For example if you use the 'Text'-Layout this is the spacing between two lines of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label_2">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>27</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="KIntSpinBox" name="kcfg_BorderSpacing">
-         <property name="toolTip">
-          <string>The space which is left free on top and on bottom</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the space between the top and bottom borders and the content. For example if you use the Text layout this specifies the spacing (in pixels) between the top border and the first line of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Border Spacing:</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </widget>
   </widget>
  </widget>
  <customwidgets>
@@ -644,11 +529,6 @@ AltGr Pressed: _</string>
    <class>KFontRequester</class>
    <extends>QWidget</extends>
    <header>kfontrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -766,22 +646,6 @@ AltGr Pressed: _</string>
    </hints>
   </connection>
   <connection>
-   <sender>kcfg_ShowSuperPressed</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>kcfg_SuperPressedColor</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>78</x>
-     <y>278</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>230</x>
-     <y>278</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>kcfg_ShowHyperPressed</sender>
    <signal>toggled(bool)</signal>
    <receiver>kcfg_HyperPressedColor</receiver>
@@ -794,6 +658,22 @@ AltGr Pressed: _</string>
     <hint type="destinationlabel">
      <x>230</x>
      <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ShowSuperPressed</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_SuperPressedColor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>278</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>230</x>
+     <y>278</y>
     </hint>
    </hints>
   </connection>

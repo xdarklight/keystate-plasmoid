@@ -14,7 +14,6 @@ LayoutConfiguration = function()
 	imageSpacingConfigName = "ImageSpacing";
 	borderSpacingConfigName = "BorderSpacing";
 	fontConfigName = "Font";
-	advancedLayoutSettingsConfigName = "AdvancedLayoutSettings";
 	
 	/**
 	  * initializes the layout configuration
@@ -55,55 +54,18 @@ LayoutConfiguration = function()
 	}
 	
 	/**
-	  * updates the layout settings (depending on whether the user has chosen the 
-	  * advanced or the simple layout)
+	  * updates the layout settings.
 	  */
 	this.updateLayoutSettings = function()
 	{
-		// read the values from the config file
-		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
-		
 		// create an instance of the selected layout
 		global.layout.createSelectedLayout();
 		
-		// are we using the simple or the advanced layout settings?
-		if (advancedLayoutSettingsConfigValue)
-		{
-			this.applyAdvancedLayoutSettings();
-		}
-		else
-		{
-			// simple layout settings are layout specific
-			// thus we need a helper method which is able to get
-			// the correct values from the current layout
-			this.applySimpleLayoutSettings();
-		}
-	}
-	
-	/**
-	  * applies some default settings (which aim to look good on all systems with any configuration)
-	  */
-	this.applySimpleLayoutSettings = function()
-	{
 		// get the (guessed) best image spacing settings from the layout
 		imageSpacing = global.layout.layout().guessBestImageSpacing();
 		
 		// get the (guessed) best border spacing settings from the layout
 		borderSpacing = global.layout.layout().guessBestBorderSpacing();
-	}
-	
-	/**
-	  * parses the advanced settings from the config file
-	  */
-	this.applyAdvancedLayoutSettings = function()
-	{
-		// config values
-		var imageSpacingConfigValue = plasmoid.readConfig(imageSpacingConfigName);
-		var borderSpacingConfigValue = plasmoid.readConfig(borderSpacingConfigName);
-		
-		// save our settings internally
-		imageSpacing = imageSpacingConfigValue;
-		borderSpacing = borderSpacingConfigValue;
 	}
 	
 	/**
