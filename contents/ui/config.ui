@@ -72,7 +72,7 @@
        <item>
         <widget class="QRadioButton" name="kcfg_RectangleLayout">
          <property name="toolTip">
-          <string>A horizontal layout which displays one key status below another one</string>
+          <string>A simple layout which shows each key as rectangle</string>
          </property>
          <property name="text">
           <string>Rectangle</string>
@@ -114,6 +114,9 @@ AltGr Pressed: _</string>
        </item>
        <item>
         <widget class="QRadioButton" name="kcfg_SvgLayout">
+         <property name="toolTip">
+          <string>A layout which uses the icons from your Plasma theme to represent the keys.</string>
+         </property>
          <property name="text">
           <string>SVG</string>
          </property>
