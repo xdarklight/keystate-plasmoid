@@ -8,7 +8,6 @@ X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=javascript
 X-Plasma-MainScript=code/main.js
-X-Plasma-DefaultSize=32,32
  
 X-KDE-PluginInfo-Author=Martin Blumenstingl
 X-KDE-PluginInfo-Email=darklight.xdarklight@googlemail.com
