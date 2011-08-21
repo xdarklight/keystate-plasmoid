@@ -5,8 +5,6 @@ the theme.
 SOLUTION: QColor.setThemeColor():
 http://techbase.kde.org/index.php?title=Development/Tutorials/Plasma/JavaScript/API#QColor
 
-TODO: write a "SvgLayout" which basically replaces the "SymbolLayout".
-
 Other:
 Weird error message when starting the plasmoid first?
 -> Can anyone reproduce this? I can't.
