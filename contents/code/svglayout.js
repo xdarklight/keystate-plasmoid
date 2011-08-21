@@ -98,8 +98,6 @@ SvgLayout = function()
 	  */
 	this.getElementName = function(keyName)
 	{
-		var svgName = "unknown"; // ? will be the default value
-		
 		// determine the (english) text for the key
 		switch (keyName)
 		{
