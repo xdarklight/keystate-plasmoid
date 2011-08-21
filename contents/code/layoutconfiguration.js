@@ -11,8 +11,6 @@ LayoutConfiguration = function()
 	
 	// internal constants
 	uninitializedFontFamily = "FONT_FALLBACK";
-	imageSpacingConfigName = "ImageSpacing";
-	borderSpacingConfigName = "BorderSpacing";
 	fontConfigName = "Font";
 	
 	/**
