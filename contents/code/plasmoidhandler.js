@@ -76,7 +76,7 @@ PlasmoidHandler = function()
 		var newStatus = global.keyInformation.resolveStatus(name, data);
 		
 		// get the current status of the key
-		var currentStatus = global.keyInformation.getStatus(name);
+		var currentStatus = global.keyInformation.isPressed(name);
 		
 		// only update if the data changed
 		if (currentStatus != newStatus)

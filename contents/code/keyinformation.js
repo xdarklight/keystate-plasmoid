@@ -21,7 +21,7 @@ KeyInformation = function()
 			var keyName = global.keyNames[i];
 			
 			// get the user's visibility setting for the key
-			var isShown = global.configuration.keyConfiguration().keyIsShown(keyName);
+			var isShown = global.configuration.keyConfiguration().isKeyShown(keyName);
 			
 			if (isShown)
 			{
@@ -79,7 +79,7 @@ KeyInformation = function()
 	/**
 	  * gets the status of the key with the given name
 	  */
-	this.getStatus = function(keyName)
+	this.isPressed = function(keyName)
 	{
 		var status = this.resolveStatus(keyName, this.getData(keyName));
 		
@@ -93,9 +93,9 @@ KeyInformation = function()
 	this.getColor = function(keyName)
 	{
 		var color = global.configuration.keyConfiguration().colorForKey(keyName);
-		var status = this.getStatus(keyName);
+		var pressed = this.isPressed(keyName);
 		
-		return this.resolveColor(status, color);
+		return this.resolveColor(pressed, color);
 	}
 	
 	/**

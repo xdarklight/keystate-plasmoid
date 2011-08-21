@@ -81,7 +81,7 @@ KeyConfiguration = function()
 	  *
 	  * @param keyName the name of the key
 	  */
-	this.keyIsShown = function(keyName)
+	this.isKeyShown = function(keyName)
 	{
 		return (this.shownKeySettings[keyName] === true);
 	}
