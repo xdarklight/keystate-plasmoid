@@ -31,7 +31,7 @@ KeyConfiguration = function()
 			
 			// store the values
 			this.colorSettings[objectName] = QColor(color);
-			this.shownKeySettings[objectName] = showKey;
+			this.shownKeySettings[objectName] = Boolean(showKey);
 		}
 	}
 	
@@ -41,12 +41,7 @@ KeyConfiguration = function()
 	  */
 	this.addKey = function(objectName, propertyName)
 	{
-		// check if the key with the given objectName is already in the global key array
-		if (global.keyNames.findIndex(objectName) == global.constants.indexNotFound())
-		{
-			// if not: add it
-			global.keyNames.addValue(objectName);
-		}
+		Array.addValue(global.keyNames, objectName);
 		
 		// add the name of the config entry to the mapping
 		this.objectNameConfigMapping[objectName] = objectName.removeSpaces();

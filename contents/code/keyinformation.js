@@ -26,7 +26,7 @@ KeyInformation = function()
 			if (isShown)
 			{
 				// add the key to the list of enabled keys
-				this.keys.addValue(keyName);
+				Array.addValue(this.keys, keyName);
 			}
 		}
 	}
