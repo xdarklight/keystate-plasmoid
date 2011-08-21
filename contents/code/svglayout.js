@@ -80,11 +80,15 @@ SvgLayout = function()
 	  */
 	this.drawKey = function(painter, keyName)
 	{
-		// Get the name of the element in the SVG.
-		var elementName = this.getElementName(keyName);
-		
-		this.svg.resize(this.calculatedWidth(), this.calculatedHeight());
-		this.svg.paint(painter, this.xPosition, this.yPosition, elementName);
+		// Only draw the key if it's pressed.
+		if (global.keyInformation.isPressed(keyName))
+		{
+			// Get the name of the element in the SVG.
+			var elementName = this.getElementName(keyName);
+			
+			this.svg.resize(this.calculatedWidth(), this.calculatedHeight());
+			this.svg.paint(painter, this.xPosition, this.yPosition, elementName);
+		}
 	}
 	
 	/**
