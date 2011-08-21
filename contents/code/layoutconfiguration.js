@@ -73,7 +73,7 @@ LayoutConfiguration = function()
 		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
 		
 		// parse the configuration values and store them internally
-		preferredSizeEnabled = preferredSizeEnabledConfigValue;
+		preferredSizeEnabled = (preferredSizeEnabledConfigValue == true);
 		preferredWidth = preferredWidthConfigValue;
 		preferredHeight = preferredHeightConfigValue;
 		
@@ -171,7 +171,7 @@ LayoutConfiguration = function()
 			var orientationConfigValue = plasmoid.readConfig(currentOrientation);
 			
 			// check if the orientation is enabled
-			if (Boolean(orientationConfigValue))
+			if (orientationConfigValue == true)
 			{
 				orientation = currentOrientation;
 				break;
