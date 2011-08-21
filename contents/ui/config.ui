@@ -53,7 +53,7 @@
        <x>0</x>
        <y>0</y>
        <width>311</width>
-       <height>121</height>
+       <height>131</height>
       </rect>
      </property>
      <property name="title">
@@ -65,7 +65,7 @@
         <x>10</x>
         <y>30</y>
         <width>291</width>
-        <height>81</height>
+        <height>98</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -112,6 +112,13 @@ AltGr Pressed: _</string>
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QRadioButton" name="kcfg_SvgLayout">
+         <property name="text">
+          <string>SVG</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -119,7 +126,7 @@ AltGr Pressed: _</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>210</y>
+       <y>220</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -169,7 +176,7 @@ AltGr Pressed: _</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>130</y>
+       <y>140</y>
        <width>311</width>
        <height>71</height>
       </rect>

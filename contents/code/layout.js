@@ -46,6 +46,15 @@ Layout = function()
 				layout = new SymbolLayout();
 				
 				break;
+				
+			case global.constants.svgLayoutName():
+				// include the layout code
+				plasmoid.include("svglayout.js");
+				
+				// initialize the layout
+				layout = new SvgLayout();
+				
+				break;
 		}
 		
 		// reset all internal variables of the layout

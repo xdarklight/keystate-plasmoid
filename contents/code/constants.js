@@ -16,6 +16,7 @@ Constants = function()
 	rectangleLayoutName = "RectangleLayout";
 	textLayoutName = "TextLayout";
 	symbolLayoutName = "SymbolLayout";
+	svgLayoutName = "SvgLayout";
 	horizontalOrientationName = "HorizontalOrientation";
 	verticalOrientationName = "VerticalOrientation";
 	dataLockedPropertyName = "Locked";
@@ -118,6 +119,14 @@ Constants = function()
 	this.symbolLayoutName = function()
 	{
 		return symbolLayoutName;
+	}
+	
+	/**
+	  * returns the name of the SVG layout
+	  */
+	this.svgLayoutName = function()
+	{
+		return svgLayoutName;
 	}
 	
 	/**

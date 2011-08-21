@@ -132,10 +132,11 @@ LayoutConfiguration = function()
 		var availableLayouts = new Array(
 			global.constants.rectangleLayoutName(),
 			global.constants.textLayoutName(),
-			global.constants.symbolLayoutName());
+			global.constants.symbolLayoutName(),
+			global.constants.svgLayoutName());
 		
-		// default to horizontal layout
-		var selectedLayoutName = global.constants.rectangleLayoutName();
+		// Default to the SVG layout.
+		var selectedLayoutName = global.constants.svgLayoutName();
 		
 		for (var i = 0; i < availableLayouts.length; i++)
 		{
@@ -145,7 +146,7 @@ LayoutConfiguration = function()
 			var layoutConfigValue = plasmoid.readConfig(layoutName);
 			
 			// check if the layout is enabled
-			if (layoutConfigValue)
+			if (layoutConfigValue == true)
 			{
 				selectedLayoutName = layoutName;
 				break;
