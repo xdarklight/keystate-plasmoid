@@ -57,11 +57,11 @@ KeyInformation = function()
 	  */
 	this.resolveStatus = function(keyName, data)
 	{
-		var property = this.getDataPropertyName(keyName);
-		
 		// only try to access the data array if it's really initialized
 		if (data)
 		{
+			var property = this.getDataPropertyName(keyName);
+			
 			// return the value from the data array with the 
 			// property as index
 			return data[property];
@@ -83,8 +83,8 @@ KeyInformation = function()
 	{
 		var status = this.resolveStatus(keyName, this.getData(keyName));
 		
-		// conver to boolean to make sure 'undefined' is covered
-		return Boolean(status);
+		// Make sure we don't (accidentally) return 'undefined'.
+		return status == true;
 	}
 	
 	/**

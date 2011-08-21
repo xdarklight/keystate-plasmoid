@@ -31,7 +31,7 @@ KeyConfiguration = function()
 			
 			// store the values
 			this.colorSettings[objectName] = QColor(color);
-			this.shownKeySettings[objectName] = Boolean(showKey);
+			this.shownKeySettings[objectName] = (showKey == true);
 		}
 	}
 	
@@ -83,7 +83,7 @@ KeyConfiguration = function()
 	  */
 	this.keyIsShown = function(keyName)
 	{
-		return Boolean(this.shownKeySettings[keyName]);
+		return (this.shownKeySettings[keyName] === true);
 	}
 	
 	/**
