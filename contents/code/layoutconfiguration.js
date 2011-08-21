@@ -7,9 +7,6 @@ LayoutConfiguration = function()
 	selectedLayout = null;
 	imageSpacing = null;
 	font = new QFont("Sans Serif", 7);
-	preferredSizeEnabled = null;
-	preferredWidth = null;
-	preferredHeight = null;
 	orientation = null;
 	
 	// internal constants
@@ -17,9 +14,6 @@ LayoutConfiguration = function()
 	imageSpacingConfigName = "ImageSpacing";
 	borderSpacingConfigName = "BorderSpacing";
 	fontConfigName = "Font";
-	preferredSizeEnabledConfigName = "PreferredSizeEnabled";
-	preferredWidthConfigName = "PreferredWidth";
-	preferredWidthConfigName = "PreferredHeight";
 	advancedLayoutSettingsConfigName = "AdvancedLayoutSettings";
 	
 	/**
@@ -68,14 +62,6 @@ LayoutConfiguration = function()
 	{
 		// read the values from the config file
 		var advancedLayoutSettingsConfigValue = plasmoid.readConfig(advancedLayoutSettingsConfigName);
-		var preferredSizeEnabledConfigValue = plasmoid.readConfig(preferredSizeEnabledConfigName);
-		var preferredWidthConfigValue = plasmoid.readConfig(preferredWidthConfigName);
-		var preferredHeightConfigValue = plasmoid.readConfig(preferredWidthConfigName);
-		
-		// parse the configuration values and store them internally
-		preferredSizeEnabled = (preferredSizeEnabledConfigValue == true);
-		preferredWidth = preferredWidthConfigValue;
-		preferredHeight = preferredHeightConfigValue;
 		
 		// create an instance of the selected layout
 		global.layout.createSelectedLayout();
@@ -92,9 +78,6 @@ LayoutConfiguration = function()
 			// the correct values from the current layout
 			this.applySimpleLayoutSettings();
 		}
-		
-		// update the preferred size of the plasmoid
-		global.layout.updatePreferredSize();
 	}
 	
 	/**
@@ -209,30 +192,6 @@ LayoutConfiguration = function()
 	this.font = function()
 	{
 		return font;
-	}
-	
-	/**
-	  * returns whether the user prefers a size or not
-	  */
-	this.preferredSizeEnabled = function()
-	{
-		return preferredSizeEnabled;
-	}
-	
-	/**
-	  * returns the preferred width of the plasmoid
-	  */
-	this.preferredWidth = function()
-	{
-		return preferredWidth;
-	}
-	
-	/**
-	  * returns the preferred height of the plasmoid
-	  */
-	this.preferredHeight = function()
-	{
-		return preferredHeight;
 	}
 	
 	/**

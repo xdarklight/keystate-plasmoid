@@ -631,124 +631,14 @@ AltGr Pressed: _</string>
       </layout>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>160</y>
-       <width>301</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>Size</string>
-     </property>
-     <widget class="QCheckBox" name="kcfg_PreferredSizeEnabled">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>291</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>Prefer a size for the plasmoid</string>
-      </property>
-      <property name="whatsThis">
-       <string>When this option is enabled the plasmoid tries to fit the configured size. If the plasmoid can't use the configured width or heigth it tries to use the best available width or height.</string>
-      </property>
-      <property name="text">
-       <string>Prefer a size</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="formLayoutWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>60</y>
-        <width>281</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QLabel" name="ImageSpacing_Label_2">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Width:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KIntSpinBox" name="kcfg_PreferredWidth">
-         <property name="toolTip">
-          <string>The spacing between the status information of two keys</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the spacing between two key indicators. For example if you use the 'Text'-Layout this is the spacing between two lines of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>27</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="KIntSpinBox" name="kcfg_PreferredHeight">
-         <property name="toolTip">
-          <string>The space which is left free on top and on bottom</string>
-         </property>
-         <property name="whatsThis">
-          <string>This configures the space between the top and bottom borders and the content. For example if you use the Text layout this specifies the spacing (in pixels) between the top border and the first line of text.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Pixel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_6">
-         <property name="minimumSize">
-          <size>
-           <width>60</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Height:</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
    </widget>
   </widget>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
+   <class>KColorButton</class>
+   <extends>QPushButton</extends>
+   <header>kcolorbutton.h</header>
   </customwidget>
   <customwidget>
    <class>KFontRequester</class>
@@ -756,9 +646,9 @@ AltGr Pressed: _</string>
    <header>kfontrequester.h</header>
   </customwidget>
   <customwidget>
-   <class>KColorButton</class>
-   <extends>QPushButton</extends>
-   <header>kcolorbutton.h</header>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
