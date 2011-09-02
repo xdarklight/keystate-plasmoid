@@ -4,24 +4,6 @@
 SymbolLayout = function()
 {
 	/**
-	  * initializes the symbol layout
-	  * this overrides the method from BaseLayout
-	  *
-	  * @param painter the painter with which the code will draw
-	  */
-	this.initialize = function(painter)
-	{
-		// are we drawing horizontal?
-		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
-		{
-			// set the start-position for the painter to the center of the plamoid
-			// (otherwise it's at the very top, where we don't want it to be
-			// as it would draw into non-visible area)
-			this.yPosition = plasmoid.size.height / 2;
-		}
-	}
-	
-	/**
 	  * returns a symbol representation for the given key
 	  *
 	  * @param keyName the name of the current key

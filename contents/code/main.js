@@ -13,5 +13,8 @@ plasmoid.include("layoutconfiguration.js");
 plasmoid.include("configuration.js");
 plasmoid.include("keyinformation.js");
 
+// FIXME: This is not very clean, but i haven't found a better solution yet.
+layout = new LinearLayout(plasmoid);
+
 // initialize thes plasmoid handler (which initializes the whole plasmoid)
 PlasmoidHandler.initialize();
