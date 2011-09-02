@@ -5,6 +5,9 @@ the theme.
 SOLUTION: QColor.setThemeColor():
 http://techbase.kde.org/Development/Tutorials/Plasma/JavaScript/API-Painting#QColor
 
+Important:
+Use paintInterface(): http://techbase.kde.org/Development/Tutorials/Plasma/JavaScript/API-PlasmoidObject#Painting_and_Layout
+
 Other:
 Weird error message when starting the plasmoid first?
 -> Can anyone reproduce this? I can't.
