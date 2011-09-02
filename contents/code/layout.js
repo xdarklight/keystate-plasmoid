@@ -4,7 +4,7 @@
   */
 Layout = function()
 {
-	layout = null;
+	currentLayout = null;
 	
 	/**
 	  * creates an instance of the selected layout
@@ -24,7 +24,7 @@ Layout = function()
 				plasmoid.include("rectanglelayout.js");
 				
 				// initialize the layout
-				layout = new RectangleLayout();
+				currentLayout = new RectangleLayout();
 				
 				break;
 			case global.constants.textLayoutName():
@@ -33,7 +33,7 @@ Layout = function()
 				plasmoid.include("textlayout.js");
 				
 				// initialize the layout
-				layout = new TextLayout();
+				currentLayout = new TextLayout();
 				
 				break;
 				
@@ -43,7 +43,7 @@ Layout = function()
 				plasmoid.include("symbollayout.js");
 				
 				// initialize the layout
-				layout = new SymbolLayout();
+				currentLayout = new SymbolLayout();
 				
 				break;
 				
@@ -52,21 +52,21 @@ Layout = function()
 				plasmoid.include("svglayout.js");
 				
 				// initialize the layout
-				layout = new SvgLayout();
+				currentLayout = new SvgLayout();
 				
 				break;
 		}
 		
 		// reset all internal variables of the layout
-		layout.resetLayout();
+		currentLayout.resetLayout();
 	}
 	
 	/**
 	  * returns the instance of the current layout
 	  */
-	this.layout = function()
+	this.currentLayout = function()
 	{
-		return layout;
+		return currentLayout;
 	}
 	
 	/**
@@ -77,6 +77,6 @@ Layout = function()
 	this.paintIcon = function(painter)
 	{
 		// paint the layout
-		layout.paint(painter);
+		currentLayout.paint(painter);
 	}
 }

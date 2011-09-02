@@ -60,10 +60,10 @@ LayoutConfiguration = function()
 		global.layout.createSelectedLayout();
 		
 		// get the (guessed) best image spacing settings from the layout
-		imageSpacing = global.layout.layout().guessBestImageSpacing();
+		imageSpacing = global.layout.currentLayout().guessBestImageSpacing();
 		
 		// get the (guessed) best border spacing settings from the layout
-		borderSpacing = global.layout.layout().guessBestBorderSpacing();
+		borderSpacing = global.layout.currentLayout().guessBestBorderSpacing();
 	}
 	
 	/**

@@ -55,7 +55,7 @@ BaseLayout = function()
 	this.initializeLayout = function(painter)
 	{
 		// reset all internal variables
-		layout.resetLayout();
+		global.layout.currentLayout().resetLayout();
 		
 		// initialize the border
 		this.initializeBorder();
