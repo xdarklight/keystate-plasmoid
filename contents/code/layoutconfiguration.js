@@ -98,8 +98,6 @@ LayoutConfiguration = function()
 				break;
 			}
 		}
-		
-		print(selectedLayoutName);
 	}
 	
 	this.updateOrientation = function()
