@@ -103,7 +103,7 @@ LayoutConfiguration = function()
 		var orientationList = new Array(
 			global.constants.horizontalOrientation(),
 			global.constants.verticalOrientation());
-			
+		
 		// go through the list of possible layouts
 		for (var i = 0; i < orientationList.length; i++)
 		{

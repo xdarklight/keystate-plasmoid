@@ -109,10 +109,6 @@ PlasmoidHandler.initialize = function()
 	// initially update the key information list
 	global.keyInformation.updateKeys();
 	
-	// NOTE: this has to be done AFTER initializing the key list
-	// initialize the whole configuration
-	global.configuration.initialize();
-	
 	// create a new plasmoid handler
 	var plasmoidHandler = new PlasmoidHandler();
 	
