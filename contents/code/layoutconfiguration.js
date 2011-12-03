@@ -4,7 +4,6 @@
   */
 LayoutConfiguration = function()
 {
-	selectedLayout = null;
 	imageSpacing = null;
 	font = new QFont("Sans Serif", 7);
 	orientation = null;
@@ -120,14 +119,6 @@ LayoutConfiguration = function()
 				break;
 			}
 		}
-	}
-	
-	/**
-	  * returns the layout which was selected by the user
-	  */
-	this.selectedLayout = function()
-	{
-		return selectedLayout;
 	}
 	
 	/**
