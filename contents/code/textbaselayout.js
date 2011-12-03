@@ -4,6 +4,8 @@
   */
 TextBaseLayout = function()
 {
+	items = new Array();
+	
 	/**
 	  * initializes the symbol layout
 	  * this overrides the method from BaseLayout
@@ -12,13 +14,18 @@ TextBaseLayout = function()
 	  */
 	this.initialize = function(painter)
 	{
-		// FIXME: This does not work yet! Somehow not all items are removed.
-		for (var j = 0; j < layout.count; ++j)
+		for (var j = 0; j < items.length; ++j)
 		{
-			layout.removeAt(parseInt(j));
+			var item = items[j];
+			
+			layout.removeItem(item);
+			
+			// HACK
+			item.text = "";
 		}
 		
-		print("after clear(): " + layout.count);
+		// Reset our history array.
+		items = new Array();
 		
 		// Is our layout supposed to be horizontal or vertical?
 		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
@@ -44,14 +51,13 @@ TextBaseLayout = function()
 		{
 			// Create a new label which uses the text from the abstract getText() method.
 			// Then apply the color from the painter to the label's text.
-			var label = new Label();
+			var label = new Label(plasmoid);
 			label.text = "<font color='" + painter.pen.color + "'>" + this.getText(keyName) + "</font>";
 			
 			// Add the label to our global layout.
 			layout.addItem(label);
 			
-			// FIXME: remove...
-			print(layout.count);
+			items[items.length] = label;
 		}
 		
 		plasmoid.update();
