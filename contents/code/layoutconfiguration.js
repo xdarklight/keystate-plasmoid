@@ -78,7 +78,7 @@ LayoutConfiguration = function()
 			global.constants.svgLayoutName());
 		
 		// Default to the SVG layout.
-		var selectedLayoutName = global.constants.svgLayoutName();
+		var selectedLayout = global.constants.svgLayoutName();
 		
 		for (var i = 0; i < availableLayouts.length; i++)
 		{
@@ -90,12 +90,12 @@ LayoutConfiguration = function()
 			// check if the layout is enabled
 			if (layoutConfigValue == true)
 			{
-				selectedLayoutName = layoutName;
+				selectedLayout = layoutName;
 				break;
 			}
 		}
 		
-		return selectedLayoutName;
+		return selectedLayout;
 	}
 	
 	this.updateOrientation = function()
