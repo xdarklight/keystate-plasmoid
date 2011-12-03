@@ -4,6 +4,7 @@
   */
 LayoutConfiguration = function()
 {
+	selectedLayoutName = null;
 	imageSpacing = null;
 	font = new QFont("Sans Serif", 7);
 	orientation = null;
@@ -22,6 +23,9 @@ LayoutConfiguration = function()
 		
 		// update the orientation settings
 		this.updateOrientation();
+		
+		// Update the selected layout.
+		this.updateSelectedLayout();
 		
 		// then update the layout settings
 		this.updateLayoutSettings();
@@ -66,9 +70,9 @@ LayoutConfiguration = function()
 	}
 	
 	/**
-	  * gets the layout name depending on the configuration options
+	  * updates the layout name depending on the configuration options
 	  */
-	this.selectedLayoutName = function()
+	this.updateSelectedLayout = function()
 	{
 		// build an array with all available layout names in it
 		var availableLayouts = new Array(
@@ -78,7 +82,7 @@ LayoutConfiguration = function()
 			global.constants.svgLayoutName());
 		
 		// Default to the SVG layout.
-		var selectedLayout = global.constants.svgLayoutName();
+		selectedLayoutName = global.constants.svgLayoutName();
 		
 		for (var i = 0; i < availableLayouts.length; i++)
 		{
@@ -90,12 +94,12 @@ LayoutConfiguration = function()
 			// check if the layout is enabled
 			if (layoutConfigValue == true)
 			{
-				selectedLayout = layoutName;
+				selectedLayoutName = layoutName;
 				break;
 			}
 		}
 		
-		return selectedLayout;
+		print(selectedLayoutName);
 	}
 	
 	this.updateOrientation = function()
@@ -103,7 +107,7 @@ LayoutConfiguration = function()
 		var orientationList = new Array(
 			global.constants.horizontalOrientation(),
 			global.constants.verticalOrientation());
-		
+			
 		// go through the list of possible layouts
 		for (var i = 0; i < orientationList.length; i++)
 		{
@@ -119,6 +123,11 @@ LayoutConfiguration = function()
 				break;
 			}
 		}
+	}
+	
+	this.selectedLayoutName = function()
+	{
+		return selectedLayoutName;
 	}
 	
 	/**
