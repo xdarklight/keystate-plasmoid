@@ -64,7 +64,7 @@ BaseLayout = function()
 		this.initialize(painter);
 		
 		// append the spacing to the walking size
-		this.walkSize += this.layoutConfiguration.imageSpacing();
+		this.walkSize += this.guessBestImageSpacing();
 	}
 	
 	/**
@@ -149,7 +149,7 @@ BaseLayout = function()
 	{
 		// walk one step so we're starting at the correct position (namely after
 		// the border spacing)
-		this.walk(this.layoutConfiguration.borderSpacing());
+		this.walk(this.guessBestBorderSpacing());
 	}
 	
 	/**

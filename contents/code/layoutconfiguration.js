@@ -5,7 +5,6 @@
 LayoutConfiguration = function()
 {
 	selectedLayoutName = null;
-	imageSpacing = null;
 	font = new QFont("Sans Serif", 7);
 	orientation = null;
 	
@@ -27,8 +26,8 @@ LayoutConfiguration = function()
 		// Update the selected layout.
 		this.updateSelectedLayout();
 		
-		// then update the layout settings
-		this.updateLayoutSettings();
+		// create an instance of the selected layout
+		global.layout.createSelectedLayout();
 	}
 	
 	/**
@@ -52,21 +51,6 @@ LayoutConfiguration = function()
 		}
 		
 		font = fontConfigValue;
-	}
-	
-	/**
-	  * updates the layout settings.
-	  */
-	this.updateLayoutSettings = function()
-	{
-		// create an instance of the selected layout
-		global.layout.createSelectedLayout();
-		
-		// get the (guessed) best image spacing settings from the layout
-		imageSpacing = global.layout.currentLayout().guessBestImageSpacing();
-		
-		// get the (guessed) best border spacing settings from the layout
-		borderSpacing = global.layout.currentLayout().guessBestBorderSpacing();
 	}
 	
 	/**
@@ -126,22 +110,6 @@ LayoutConfiguration = function()
 	this.selectedLayoutName = function()
 	{
 		return selectedLayoutName;
-	}
-	
-	/**
-	  * returns the spacing between the two images
-	  */
-	this.imageSpacing = function()
-	{
-		return imageSpacing;
-	}
-	
-	/**
-	  * returns the (top and bottom) border-spacing
-	  */
-	this.borderSpacing = function()
-	{
-		return borderSpacing;
 	}
 	
 	/**

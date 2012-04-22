@@ -15,10 +15,10 @@ RectangleLayout = function()
 		var spacingCount = global.keyInformation.count() - 1;
 		
 		// minus twice the border spacing (top/bottom or left/right)
-		size -= 2 * this.layoutConfiguration.borderSpacing();
+		size -= 2 * this.guessBestBorderSpacing();
 		
 		// minus the spacing (between the two rectangles)
-		size -= this.layoutConfiguration.imageSpacing() * spacingCount;
+		size -= this.guessBestImageSpacing() * spacingCount;
 		
 		// divide through the number of keys
 		size /= global.keyInformation.count();

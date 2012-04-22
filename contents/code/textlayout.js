@@ -30,7 +30,7 @@ TextLayout = function()
 			// since we're rotating we can't use the default border spacing
 			// move the pointer on the x-axis to the border spacing so we're starting
 			// at the correct position
-			this.xPosition -= this.layoutConfiguration.borderSpacing();
+			this.xPosition -= this.guessBestBorderSpacing();
 		}
 	}
 	
@@ -109,7 +109,7 @@ TextLayout = function()
 			// our walking size is the font size (1 character height;
 			// this is mandatory so we're not overwriting existing text)
 			// plus the configured item spacing (as we're not using the code from BaseLayout for this)
-			this.walkSize = this.fontSize + this.layoutConfiguration.imageSpacing();
+			this.walkSize = this.fontSize + this.guessBestImageSpacing();
 			
 			// our current walking size is simply the global walking size
 			walkingSize = this.walkSize;

@@ -51,12 +51,6 @@
 		<entry name="VerticalOrientation" type="Bool">
 			<default>false</default>
 		</entry>
-		<entry name="ImageSpacing" type="Int">
-			<default>1</default>
-		</entry>
-		<entry name="BorderSpacing" type="Int">
-			<default>2</default>
-		</entry>
 		<entry name="Font" type="Font">
 			<default>FONT_FALLBACK</default>
 		</entry>
