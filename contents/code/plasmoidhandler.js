@@ -3,8 +3,6 @@
   */
 PlasmoidHandler = function()
 {
-	isInitialized = false;
-	
 	/**
 	  * registers all events (and related things) with the plasmoid object
 	  */
@@ -38,10 +36,6 @@ PlasmoidHandler = function()
 		// update our key information list
 		global.keyInformation.updateKeys();
 		
-		// We have to set our state to initialized
-		// so painting works.
-		isInitialized = true;
-		
 		// then update the icon
 		plasmoid.update();
 	}
@@ -51,19 +45,11 @@ PlasmoidHandler = function()
 	  */
 	this.sizeChanged = function()
 	{
-		// HACK: We cannot call configChanged here unless
-		// we're initialized. We will only get the default
-		// config values if we do so. Additionally the plasmoid
-		// will remember that we received the config and will
-		// ignore our configChanged call in paintInterface.
-		if (isInitialized)
-		{
-			// Simply call the config changed callback.
-			// This will take care of everything, including
-			// re-initializing the layout and re-painting
-			// (with the new size).
-			plasmoid.configChanged();
-		}
+		// Simply call the config changed callback.
+		// This will take care of everything, including
+		// re-initializing the layout and re-painting
+		// (with the new size).
+		plasmoid.configChanged();
 	}
 
 	/**
@@ -73,19 +59,7 @@ PlasmoidHandler = function()
 	  */
 	this.paintInterface = function(painter)
 	{
-		// HACK: We cannot initialize the config from a random
-		// context. We need to be called by the plasmoid itself,
-		// otherwise the config will return the default values.
-		if (isInitialized)
-		{
-			// We can paint the icon since we're already initialized.
-			global.layout.paintIcon(painter);
-		}
-		else
-		{
-			// First read the config. This will enable the plasmoid.
-			plasmoid.configChanged();
-		}
+		global.layout.paintIcon(painter);
 	}
 	
 	/**
