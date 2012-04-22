@@ -1,3 +1,8 @@
+SVG Layout:
+I need a designer :-).
+The current SVG for the SVG-Layout is just a dummy.
+Please help if you can!
+
 Most important:
 The default colors are hardcoded at the moment. As usual: hardcoded values
 cause problems. One is that it's currently not possible use colors from
