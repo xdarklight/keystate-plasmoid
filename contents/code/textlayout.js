@@ -4,37 +4,6 @@
 TextLayout = function()
 {
 	/**
-	  * initializes the symbol layout
-	  * this overrides the method from BaseLayout
-	  *
-	  * @param painter the painter with which the code will draw
-	  */
-	this.initialize = function(painter)
-	{
-		// check if our orientation mode is horizontal
-		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
-		{
-			// get the y coordinate at the very bottom minus the spacing (the current
-			// yPosition is the spacing)
-			var bottomPosition = plasmoid.size.height - this.yPosition;
-			
-			// move to the current x position and to the bottom position
-			// (please note that we're at the start here, this means the current positions
-			// is basically only the border spacing)
-			painter.translate(this.xPosition, bottomPosition);
-			
-			// rotate by 270 degrees (this will make the text readable from
-			// bottom to the top and new keys will appear on the right)
-			painter.rotate(270);
-			
-			// since we're rotating we can't use the default border spacing
-			// move the pointer on the x-axis to the border spacing so we're starting
-			// at the correct position
-			this.xPosition -= this.guessBestBorderSpacing();
-		}
-	}
-	
-	/**
 	  * returns a text representation of the given key
 	  *
 	  * @param keyName the name of the current key
@@ -85,39 +54,6 @@ TextLayout = function()
 		}
 		
 		return text;
-	}
-	
-	/**
-	  * changes the position on the x or y axis so the painter
-	  * doesn't overwrite the current items on the next run
-	  * overwrites walk() from BaseLayout
-	  *
-	  * @parameter pixels (optional) forces the layout to walk the given number of pixels
-	  */
-	this.walk = function(pixels)
-	{
-		var walkingSize = null;
-		
-		// was the pixel parameter given?
-		if (pixels)
-		{
-			// just walk by the given number of pixels
-			walkingSize = pixels;
-		}
-		else
-		{
-			// our walking size is the font size (1 character height;
-			// this is mandatory so we're not overwriting existing text)
-			// plus the configured item spacing (as we're not using the code from BaseLayout for this)
-			this.walkSize = this.fontSize + this.guessBestImageSpacing();
-			
-			// our current walking size is simply the global walking size
-			walkingSize = this.walkSize;
-		}
-		
-		// we're always walking on the y axis in this layout (as we're rotating
-		// in horizontal mode)
-		this.yPosition += walkingSize;
 	}
 }
 
