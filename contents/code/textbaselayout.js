@@ -15,23 +15,23 @@ TextBaseLayout = function()
 		// check if our orientation mode is horizontal
 		if (this.layoutConfiguration.orientation() == global.constants.horizontalOrientation())
 		{
-			// Get the y coordinate at the very bottom minus the border spacing.
-			// This is where we'll start drawing.
-			var bottomPosition = plasmoid.size.height - this.guessBestBorderSpacing();
+			// Get the y coordinate at the very bottom minus 1 "character"
+			// spacing..
+			var bottomPosition = plasmoid.size.height - this.fontSize;
+			
+			// move to the current x position and to the bottom position
+			// (please note that we're at the start here, this means the current positions
+			// is basically only the border spacing)
+			painter.translate(this.xPosition, bottomPosition);
 			
 			// rotate by 270 degrees (this will make the text readable from
 			// bottom to the top and new keys will appear on the right)
 			painter.rotate(270);
-			
-			// since we're rotating we can't use the default border spacing
-			// move the pointer on the x-axis to the border spacing so we're starting
-			// at the correct position
-			this.xPosition -= this.guessBestBorderSpacing();
 		}
 		else
 		{
 			// Simply add the border spacing.
-			this.xPosition += this.guessBestBorderSpacing();
+			this.xPosition += this.fontSize;
 		}
 	}
 	
