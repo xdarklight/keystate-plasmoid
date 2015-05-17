@@ -3,7 +3,7 @@ import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import "plasmapackage:/code/logic.js" as Logic
 
-Rectangle {
+Item {
 	id: root
 
 	PlasmaCore.DataModel {
