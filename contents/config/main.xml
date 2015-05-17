@@ -34,13 +34,10 @@
 			<default>#887422</default>
 		</entry>
 		<entry name="TextLayout" type="Bool">
-			<default>false</default>
+			<default>true</default>
 		</entry>
 		<entry name="SymbolLayout" type="Bool">
 			<default>false</default>
-		</entry>
-		<entry name="SvgLayout" type="Bool">
-			<default>true</default>
 		</entry>
 		<entry name="RectangleLayout" type="Bool">
 			<default>false</default>
