@@ -6,12 +6,12 @@ An accessibility Plasmoid that shows the status of various key on your keyboard 
 
 Download this git repository, then run:
 ```
-plasmapkg2 -i /path/to/keystate-plasmoid/
+plasmapkg2 -i <path/to/keystate-plasmoid>/package/
 ```
 
 Updating it is very similar: update to the latest git version and run:
 ```
-plasmapkg2 -i /path/to/keystate-plasmoid/
+plasmapkg2 -u <path/to/keystate-plasmoid>/package/
 ```
 
 ### Questions + Answers
