@@ -4,6 +4,7 @@ Component {
 	SimpleItemDelegate {
 		Rectangle {
 			color: plasmoid.configuration[colorConfigKey]
+			anchors.fill: parent
 		}
 	}
 }
