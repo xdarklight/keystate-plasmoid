@@ -27,7 +27,7 @@ plasmapkg2 -u <path/to/keystate-plasmoid>/package/
 **A:** It gets it's data from the 'keystatus' DataEngine (which is shipped with Plasma)
 
 **Q:** Ok, I've installed it but how do I uninstall it?<br>
-**A:** ```plasmapkg2 -u eu.blumenstingl.martin.keystateplasmoid```
+**A:** ```plasmapkg2 -r eu.blumenstingl.martin.keystateplasmoid```
 
 ### Todo's
 
