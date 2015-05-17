@@ -27,12 +27,14 @@ Item {
 
 	Plasmoid.compactRepresentation: KeyState {
 		model: keyListModel
+
 		spacing: 1
 	}
 
 	Plasmoid.fullRepresentation: KeyState {
 		model: keyListModel
-		spacing: 5
+
+		spacing: theme.mSize(plasmoid.configuration["Font"]).width / 2
 	}
 
 	function updateModel() {
