@@ -1,20 +1,21 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=Key State
 Comment=Displays the state of some keys (for example 'Caps Lock' and/or 'Meta pressed')
 Icon=input-keyboard
-
 Type=Service
+
+X-KDE-ParentApp=
 X-KDE-ServiceTypes=Plasma/Applet
-
-X-Plasma-API=declarativeappletscript
-X-Plasma-MainScript=ui/main.qml
-X-Plasma-NotificationArea=true
-
 X-KDE-PluginInfo-Author=Martin Blumenstingl
 X-KDE-PluginInfo-Email=darklight.xdarklight@googlemail.com
 X-KDE-PluginInfo-Name=eu.blumenstingl.martin.keystateplasmoid
 X-KDE-PluginInfo-Version=0.4
-X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-License=GPLv2
 X-KDE-PluginInfo-EnabledByDefault=false
 X-KDE-PluginInfo-Category=Accessibility
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-RemoteLocation=
+X-Plasma-NotificationArea=true
