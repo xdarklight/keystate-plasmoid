@@ -21,8 +21,9 @@ Item {
 
 			Rectangle {
 				color: colorDialog.color
-				width: 100
-				height: 20
+
+				width: 200
+				height: theme.mSize(theme.defaultFont).height
 				
 				border {
 					width: mouseArea.containsMouse ? 3 : 1
