@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick.Controls 1.2 as QtControls
 
 Item {
 	property string displayText;
@@ -7,7 +7,7 @@ Item {
 	width: theme.mSize(textLabel.font).width * displayText.length
 	height: theme.mSize(textLabel.font).height
 
-	PlasmaComponents.Label {
+	QtControls.Label {
 		id: textLabel
 
 		font: plasmoid.configuration["Font"]
