@@ -63,7 +63,15 @@ Item {
 	function updateModel() {
 		keyListModel.clear();
 
+		var keyInfoItems = [];
+
 		Logic.getModel().forEach(function(keyInfo) {
+			keyInfoItems.push(keyInfo);
+		});
+
+		keyInfoItems.sort(function(a, b) {
+			return a.sortIndex - b.sortIndex;
+		}).forEach(function(keyInfo) {
 			keyListModel.append(keyInfo);
 		});
 	}
