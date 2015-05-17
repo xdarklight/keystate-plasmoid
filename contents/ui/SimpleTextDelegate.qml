@@ -10,8 +10,6 @@ SimpleItemDelegate {
 		anchors.centerIn: parent
 		anchors.fill: parent
 
-		visible: rectangleKeyWrapper.visible
-
 		font: plasmoid.configuration["Font"]
 		color: plasmoid.configuration[colorConfigKey]
 

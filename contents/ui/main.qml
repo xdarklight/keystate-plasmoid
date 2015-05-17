@@ -42,6 +42,7 @@ Item {
 
 		anchors.fill: parent
 		anchors.margins: 5
+		spacing: 5
 
 		orientation: plasmoid.configuration["VerticalOrientation"] ? ListView.Vertical : ListView.Horizontal
 
@@ -66,7 +67,9 @@ Item {
 		var keyInfoItems = [];
 
 		Logic.getModel().forEach(function(keyInfo) {
-			keyInfoItems.push(keyInfo);
+			if (keyInfo.isPressed && plasmoid.configuration[keyInfo.visibilityConfigKey]) {
+				keyInfoItems.push(keyInfo);
+			}
 		});
 
 		keyInfoItems.sort(function(a, b) {
