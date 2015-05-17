@@ -4,7 +4,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 Item {
 	property string displayText;
 
-	width: 40
+	width: theme.mSize(textLabel.font).width * displayText.length
 	height: textLabel.height
 
 	PlasmaComponents.Label {
