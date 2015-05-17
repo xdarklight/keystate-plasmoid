@@ -24,7 +24,6 @@ Item {
 		id: mainListView
 
 		anchors.fill: parent
-		anchors.margins: keyState.spacing
 		spacing: keyState.spacing
 
 		orientation: plasmoid.configuration["VerticalOrientation"] ? ListView.Vertical : ListView.Horizontal
