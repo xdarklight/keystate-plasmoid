@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-SimpleRectangleDelegate {
+SimpleItemDelegate {
 	property string displayText;
 
 	id: rectangleKeyWrapper

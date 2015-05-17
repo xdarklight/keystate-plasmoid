@@ -1,6 +1,6 @@
 import QtQuick 2.0
 
-Rectangle {
+Item {
 	visible: isPressed && plasmoid.configuration[visibilityConfigKey]
 
 	width: visible ? 40 : 0
