@@ -21,44 +21,18 @@ Item {
 		keyRoleFilter: "Pressed"
 	}
 
-	KeyNameDelegate {
-		id: keyNameRenderer
-	}
-
-	KeySymbolDelegate {
-		id: keySymbolRenderer
-	}
-
-	ColoredRectangleDelegate {
-		id: coloredRectangleRenderer
-	}
-
 	ListModel {
 		id: keyListModel
 	}
 
-	ListView {
-		id: mainListView
-
-		anchors.fill: parent
-		anchors.margins: 5
-		spacing: 5
-
-		orientation: plasmoid.configuration["VerticalOrientation"] ? ListView.Vertical : ListView.Horizontal
-
+	Plasmoid.compactRepresentation: KeyState {
 		model: keyListModel
-		delegate: {
-			if (plasmoid.configuration["TextLayout"]) {
-				return keyNameRenderer;
-			} else if (plasmoid.configuration["SymbolLayout"]) {
-				return keySymbolRenderer;
-			} else if (plasmoid.configuration["RectangleLayout"]) {
-				return coloredRectangleRenderer;
-			} else {
-				console.log("None of the layouts is selected!");
-				return keyNameRenderer;
-			}
-		}
+		spacing: 1
+	}
+
+	Plasmoid.fullRepresentation: KeyState {
+		model: keyListModel
+		spacing: 5
 	}
 
 	function updateModel() {
