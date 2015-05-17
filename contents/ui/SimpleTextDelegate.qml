@@ -4,8 +4,8 @@ import QtQuick.Controls 1.2 as QtControls
 Item {
 	property string displayText;
 
-	width: theme.mSize(textLabel.font).width * displayText.length
-	height: theme.mSize(textLabel.font).height
+	width: theme.mSize(plasmoid.configuration["Font"]).width * displayText.length
+	height: theme.mSize(plasmoid.configuration["Font"]).height
 
 	QtControls.Label {
 		id: textLabel
