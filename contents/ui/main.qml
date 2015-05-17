@@ -51,7 +51,7 @@ Item {
 				return keyNameRenderer;
 			} else if (plasmoid.configuration["SymbolLayout"]) {
 				return keySymbolRenderer;
-			} else if (plasmoid.configuration["ColoredRectangleDelegate"]) {
+			} else if (plasmoid.configuration["RectangleLayout"]) {
 				return coloredRectangleRenderer;
 			} else {
 				console.log("None of the layouts is selected!");
