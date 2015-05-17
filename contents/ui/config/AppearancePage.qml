@@ -19,8 +19,10 @@ Item {
 
 		QtControls.GroupBox {
 			title: i18n("Layout")
+			flat: true
+			QtLayouts.Layout.fillWidth: true
 
-			Column {
+			QtLayouts.ColumnLayout {
 				QtControls.ExclusiveGroup {
 					id: layoutGroup
 				}
@@ -29,29 +31,28 @@ Item {
 					id: radioButtonRectangleLayout
 					exclusiveGroup: layoutGroup
 					text: i18n("Rectangle")
-					QtLayouts.Layout.alignment: Qt.AlignRight
 				}
 
 				QtControls.RadioButton {
 					id: radioButtonTextLayout
 					exclusiveGroup: layoutGroup
 					text: i18n("Text")
-					QtLayouts.Layout.alignment: Qt.AlignRight
 				}
 
 				QtControls.RadioButton {
 					id: radioButtonSymbolLayout
 					exclusiveGroup: layoutGroup
 					text: i18n("Symbol")
-					QtLayouts.Layout.alignment: Qt.AlignRight
 				}
 			}
 		}
 
 		QtControls.GroupBox {
 			title: i18n("Orientation")
+			flat: true
+			QtLayouts.Layout.fillWidth: true
 
-			Column {
+			QtLayouts.ColumnLayout {
 				QtControls.ExclusiveGroup {
 					id: orientationGroup
 				}
@@ -60,24 +61,26 @@ Item {
 					id: radioButtonHorizontalOrientation
 					exclusiveGroup: orientationGroup
 					text: i18n("Horizontal")
-					QtLayouts.Layout.alignment: Qt.AlignRight
 				}
 
 				QtControls.RadioButton {
 					id: radioButtonVerticalOrientation
 					exclusiveGroup: orientationGroup
 					text: i18n("Vertical")
-					QtLayouts.Layout.alignment: Qt.AlignRight
 				}
 			}
 		}
 
 		QtControls.GroupBox {
 			title: i18n("Font")
+			flat: true
+			QtLayouts.Layout.fillWidth: true
 
-			Column {
+			QtLayouts.ColumnLayout {
 				KeyStateComponents.FontSelector {
 					id: fontSelector
+
+					width: 200
 				}
 			}
 		}

@@ -15,28 +15,28 @@ Item {
 		flat: true
 
 		QtLayouts.RowLayout {
+			anchors.fill: parent
+
 			QtDialogs.FontDialog {
 				id: fontDialog
 			}
 
-			QtControls.TextField {
-				font: fontDialog.font
-				text: "%1 %2".arg(fontDialog.font.family).arg(fontDialog.font.pointSize)
-				readOnly: true
+			Item {
+				width: childrenRect.width
+				height: childrenRect.height
+
+				QtControls.TextField {
+					width: 180
+
+					font: fontDialog.font
+
+					text: "%1 %2".arg(fontDialog.font.family).arg(fontDialog.font.pointSize)
+					readOnly: true
+				}
 			}
 
 			QtControls.Button {
 				text: i18n("Choose...")
-
-				onClicked: {
-					fontDialog.open()
-				}
-			}
-
-			MouseArea {
-				id: mouseArea
-				anchors.fill: parent
-				hoverEnabled: true
 
 				onClicked: {
 					fontDialog.open()
