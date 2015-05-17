@@ -1,10 +1,10 @@
 import QtQuick 2.0
 
 Component {
-	SimpleItemDelegate {
-		Rectangle {
-			color: plasmoid.configuration[colorConfigKey]
-			anchors.fill: parent
-		}
+	Rectangle {
+		width: 40
+		height: 20
+
+		color: plasmoid.configuration[colorConfigKey]
 	}
 }

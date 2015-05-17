@@ -1,14 +1,14 @@
 import QtQuick 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-SimpleItemDelegate {
+Item {
 	property string displayText;
 
-	id: rectangleKeyWrapper
+	width: 40
+	height: textLabel.height
 
 	PlasmaComponents.Label {
-		anchors.centerIn: parent
-		anchors.fill: parent
+		id: textLabel
 
 		font: plasmoid.configuration["Font"]
 		color: plasmoid.configuration[colorConfigKey]
