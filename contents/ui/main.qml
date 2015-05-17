@@ -49,7 +49,7 @@ Rectangle {
 		delegate: {
 			if (plasmoid.configuration["TextLayout"]) {
 				return keyNameRenderer;
-			} else if (plasmoid.configuration["SymbolLayout"] == "true") {
+			} else if (plasmoid.configuration["SymbolLayout"]) {
 				return keySymbolRenderer;
 			} else if (plasmoid.configuration["ColoredRectangleDelegate"]) {
 				return coloredRectangleRenderer;
