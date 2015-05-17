@@ -5,7 +5,7 @@ Item {
 	property string displayText;
 
 	width: theme.mSize(textLabel.font).width * displayText.length
-	height: textLabel.height
+	height: theme.mSize(textLabel.font).height
 
 	PlasmaComponents.Label {
 		id: textLabel
