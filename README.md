@@ -37,6 +37,6 @@ plasmapkg2 -u <path/to/keystate-plasmoid>/package/
 License
 ----
 
-The code is licensed under the GNU General Public License v2.0
+See `LICENSE` file.
 
 Copyright (c) 2010-2015 Martin Blumenstingl
