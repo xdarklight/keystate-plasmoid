@@ -39,4 +39,4 @@ License
 
 See `LICENSE` file.
 
-Copyright (c) 2010-2015 Martin Blumenstingl
+Copyright (c) 2010-2016 Martin Blumenstingl
