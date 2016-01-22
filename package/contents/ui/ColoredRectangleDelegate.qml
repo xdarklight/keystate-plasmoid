@@ -5,6 +5,6 @@ Component {
 		width: 40
 		height: 20
 
-		color: plasmoid.configuration[colorConfigKey]
+		color: keyColor
 	}
 }

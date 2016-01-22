@@ -11,7 +11,7 @@ Item {
 		id: textLabel
 
 		font: plasmoid.configuration["Font"]
-		color: plasmoid.configuration[colorConfigKey]
+		color: keyColor
 
 		text: displayText
 	}

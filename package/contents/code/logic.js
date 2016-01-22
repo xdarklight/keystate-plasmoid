@@ -108,11 +108,46 @@ var keyInformation = {
 
 var indexToDataSourceName = new Array();
 
-function getModel() {
+function isKeyDisplayed(plasmoid, keyInfo)
+{
+	var isConfiguredToShow = plasmoid.configuration[keyInfo.visibilityConfigKey];
+
+	if (!isConfiguredToShow) {
+		return false;
+	}
+
+	return keyInfo.isPressed;
+}
+
+function getKeyColor(plasmoid, keyInfo)
+{
+	if (keyInfo.isPressed) {
+		return plasmoid.configuration[keyInfo.colorConfigKey].toString();
+	}
+
+	return null;
+}
+
+function getModel(plasmoid) {
 	var model = new Array();
 
 	for (var dataSourceName in keyInformation) {
-		model.push(keyInformation[dataSourceName]);
+		if (isKeyDisplayed(plasmoid, keyInformation[dataSourceName])) {
+
+			var keyElement = {
+				sortIndex: 0,
+				name: null,
+				symbol: null,
+				keyColor: "",
+			};
+
+			keyElement.sortIndex = keyInformation[dataSourceName].sortIndex;
+			keyElement.name = keyInformation[dataSourceName].name;
+			keyElement.symbol = keyInformation[dataSourceName].symbol;
+			keyElement.keyColor = getKeyColor(plasmoid, keyInformation[dataSourceName]);
+
+			model.push(keyElement);
+		}
 	}
 
 	return model;

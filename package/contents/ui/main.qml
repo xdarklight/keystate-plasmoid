@@ -40,18 +40,10 @@ Item {
 	function updateModel() {
 		keyListModel.clear();
 
-		var keyInfoItems = [];
-
-		Logic.getModel().forEach(function(keyInfo) {
-			if (keyInfo.isPressed && plasmoid.configuration[keyInfo.visibilityConfigKey]) {
-				keyInfoItems.push(keyInfo);
-			}
-		});
-
-		keyInfoItems.sort(function(a, b) {
+		Logic.getModel(plasmoid).sort(function(a, b) {
 			return a.sortIndex - b.sortIndex;
-		}).forEach(function(keyInfo) {
-			keyListModel.append(keyInfo);
+		}).forEach(function(keyElement) {
+			keyListModel.append(keyElement);
 		});
 	}
 }
