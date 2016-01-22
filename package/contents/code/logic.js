@@ -111,12 +111,13 @@ var indexToDataSourceName = new Array();
 function isKeyDisplayed(plasmoid, keyInfo)
 {
 	var isConfiguredToShow = plasmoid.configuration[keyInfo.visibilityConfigKey];
+	var showInactiveKeys = plasmoid.configuration["ShowInactiveKeys"];
 
 	if (!isConfiguredToShow) {
 		return false;
 	}
 
-	return keyInfo.isPressed;
+	return keyInfo.isPressed || showInactiveKeys;
 }
 
 function getKeyColor(plasmoid, keyInfo)
@@ -125,7 +126,7 @@ function getKeyColor(plasmoid, keyInfo)
 		return plasmoid.configuration[keyInfo.colorConfigKey].toString();
 	}
 
-	return null;
+	return plasmoid.configuration["InactiveKeyColor"].toString();
 }
 
 function getModel(plasmoid) {

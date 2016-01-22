@@ -16,6 +16,7 @@ Item {
 	property alias cfg_ShowHyperPressed: checkBoxHyperPressed.checked
 	property alias cfg_ShowAltPressed: checkBoxAltPressed.checked
 	property alias cfg_ShowAltGrPressed: checkBoxAltGrPressed.checked
+	property alias cfg_ShowInactiveKeys: checkBoxShowInactiveKeys.checked
 
 	property alias cfg_NumLockColor: colorSelectorNumLock.color
 	property alias cfg_CapsLockColor: colorSelectorCapsLock.color
@@ -26,6 +27,7 @@ Item {
 	property alias cfg_HyperPressedColor: colorSelectorHyperPressed.color
 	property alias cfg_AltPressedColor: colorSelectorAltPressed.color
 	property alias cfg_AltGrPressedColor: colorSelectorAltGrPressed.color
+	property alias cfg_InactiveKeyColor: colorSelectorInactiveKey.color
 
 	QtLayouts.GridLayout {
 		columns: 2
@@ -109,6 +111,15 @@ Item {
 
 		KeyStateComponents.ColorSelector {
 			id: colorSelectorAltGrPressed
+		}
+
+		QtControls.CheckBox {
+			id: checkBoxShowInactiveKeys
+			text: i18n("Always show inactive keys")
+		}
+
+		KeyStateComponents.ColorSelector {
+			id: colorSelectorInactiveKey
 		}
 	}
 }
