@@ -6,6 +6,12 @@ import "../code/logic.js" as Logic
 Item {
 	id: root
 
+	Connections {
+		target: plasmoid
+
+		onUserConfiguringChanged: updateModel()
+	}
+
 	PlasmaCore.DataModel {
 		id: keyStateDataModel
 
