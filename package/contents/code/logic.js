@@ -23,7 +23,7 @@ var keyInformation = {
 		sortIndex: 1,
 
 		name: "Caps",
-		symbol: "⬇",
+		symbol: "⇪",
 
 		isPressed: false,
 	},
