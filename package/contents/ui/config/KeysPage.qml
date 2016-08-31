@@ -9,6 +9,7 @@ Item {
 
 	property alias cfg_ShowNumLock: checkBoxNumLock.checked
 	property alias cfg_ShowCapsLock: checkBoxCapsLock.checked
+	property alias cfg_ShowScrollLock: checkBoxScrollLock.checked
 	property alias cfg_ShowShiftPressed: checkBoxShiftPressed.checked
 	property alias cfg_ShowCtrlPressed: checkBoxCtrlPressed.checked
 	property alias cfg_ShowMetaPressed: checkBoxMetaPressed.checked
@@ -20,6 +21,7 @@ Item {
 
 	property alias cfg_NumLockColor: colorSelectorNumLock.color
 	property alias cfg_CapsLockColor: colorSelectorCapsLock.color
+	property alias cfg_ScrollLockColor: colorSelectorScrollLock.color
 	property alias cfg_ShiftPressedColor: colorSelectorShiftPressed.color
 	property alias cfg_CtrlPressedColor: colorSelectorCtrlPressed.color
 	property alias cfg_MetaPressedColor: colorSelectorMetaPressed.color
@@ -48,6 +50,15 @@ Item {
 
 		KeyStateComponents.ColorSelector {
 			id: colorSelectorCapsLock
+		}
+
+		QtControls.CheckBox {
+			id: checkBoxScrollLock
+			text: i18n("Scroll Lock")
+		}
+
+		KeyStateComponents.ColorSelector {
+			id: colorSelectorScrollLock
 		}
 
 		QtControls.CheckBox {
