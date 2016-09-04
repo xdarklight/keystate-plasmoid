@@ -23,7 +23,18 @@ var keyInformation = {
 		sortIndex: 1,
 
 		name: "Caps",
-		symbol: "⬇",
+		symbol: "⇪",
+
+		isPressed: false,
+	},
+	"Scroll Lock": {
+		visibilityConfigKey: "ShowScrollLock",
+		colorConfigKey: "ScrollLockColor",
+
+		sortIndex: 2,
+
+		name: "Scrl",
+		symbol: "⇳",
 
 		isPressed: false,
 	},
@@ -31,7 +42,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowShiftPressed",
 		colorConfigKey: "ShiftPressedColor",
 
-		sortIndex: 2,
+		sortIndex: 3,
 
 		name: "Shift",
 		symbol: "⇧",
@@ -42,7 +53,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowCtrlPressed",
 		colorConfigKey: "CtrlPressedColor",
 
-		sortIndex: 3,
+		sortIndex: 4,
 
 		name: "Ctrl",
 		symbol: "^",
@@ -53,7 +64,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowMetaPressed",
 		colorConfigKey: "MetaPressedColor",
 
-		sortIndex: 4,
+		sortIndex: 5,
 
 		name: "Meta",
 		symbol: "⚑",
@@ -64,7 +75,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowSuperPressed",
 		colorConfigKey: "SuperPressedColor",
 
-		sortIndex: 5,
+		sortIndex: 6,
 
 		name: "Super",
 		symbol: "⚑",
@@ -75,7 +86,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowHyperPressed",
 		colorConfigKey: "HyperPressedColor",
 
-		sortIndex: 6,
+		sortIndex: 7,
 
 		name: "Hyper",
 		symbol: "⚑",
@@ -86,7 +97,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowAltPressed",
 		colorConfigKey: "AltPressedColor",
 
-		sortIndex: 7,
+		sortIndex: 8,
 
 		name: "Alt",
 		symbol: "⎇",
@@ -97,7 +108,7 @@ var keyInformation = {
 		visibilityConfigKey: "ShowAltGrPressed",
 		colorConfigKey: "AltGrPressedColor",
 
-		sortIndex: 8,
+		sortIndex: 9,
 
 		name: "AltGr",
 		symbol: "_",

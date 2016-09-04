@@ -12,6 +12,9 @@
 		<entry name="CapsLockColor" type="Color">
 			<default>red</default>
 		</entry>
+		<entry name="ScrollLockColor" type="Color">
+			<default>blue</default>
+		</entry>
 		<entry name="ShiftPressedColor" type="Color">
 			<default>#887422</default>
 		</entry>
@@ -58,6 +61,9 @@
 			<default>true</default>
 		</entry>
 		<entry name="ShowCapsLock" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="ShowScrollLock" type="Bool">
 			<default>true</default>
 		</entry>
 		<entry name="ShowCtrlPressed" type="Bool">
