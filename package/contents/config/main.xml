@@ -64,7 +64,7 @@
 			<default>true</default>
 		</entry>
 		<entry name="ShowScrollLock" type="Bool">
-			<default>true</default>
+			<default>false</default>
 		</entry>
 		<entry name="ShowCtrlPressed" type="Bool">
 			<default>false</default>
