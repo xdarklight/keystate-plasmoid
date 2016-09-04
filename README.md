@@ -29,7 +29,7 @@ plasmapkg2 -u <path/to/keystate-plasmoid>/package/
 **Q:** Ok, I've installed it but how do I uninstall it?  
 **A:** ```plasmapkg2 -r eu.blumenstingl.martin.keystateplasmoid```
 
-**Q:** Scroll Lock is not working for me (in X.Org)
+**Q:** Scroll Lock is not working for me (in X.Org)  
 **A:** This is a limitation of X.Org's default configuration. A workaround is available at [https://bugs.freedesktop.org/show_bug.cgi?id=94226]():
 ```
 xmodmap -e "add mod3 = Scroll_Lock"
