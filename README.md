@@ -23,11 +23,17 @@ plasmapkg2 -u <path/to/keystate-plasmoid>/package/
 
 ### Questions + Answers
 
-**Q:** Where does the plasmoid get it's data from?<br>
+**Q:** Where does the plasmoid get it's data from?  
 **A:** It gets it's data from the 'keystatus' DataEngine (which is shipped with Plasma)
 
-**Q:** Ok, I've installed it but how do I uninstall it?<br>
+**Q:** Ok, I've installed it but how do I uninstall it?  
 **A:** ```plasmapkg2 -r eu.blumenstingl.martin.keystateplasmoid```
+
+**Q:** Scroll Lock is not working for me (in X.Org)
+**A:** This is a limitation of X.Org's default configuration. A workaround is available at [https://bugs.freedesktop.org/show_bug.cgi?id=94226]():
+```
+xmodmap -e "add mod3 = Scroll_Lock"
+```
 
 ### Todo's
 
